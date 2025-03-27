@@ -1,0 +1,17 @@
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px; /* Adjust gap as needed */
+  padding-bottom: 8px; /* Add some padding to avoid scrollbar overlap */
+  
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 4px;
+  background-color: #1D066F;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #1E3A8A; /* Adjust color as needed */
+  border-radius: 4px;
+}

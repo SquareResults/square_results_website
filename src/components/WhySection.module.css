@@ -1,0 +1,22 @@
+.image-container {
+  position: relative;
+  padding: 40px 0; /* Adjust padding as needed */
+}
+
+.image-container::before,
+.image-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 5px; /* Adjust height as needed */
+  background-color: #1D066F; /* Adjust color as needed */
+}
+
+.image-container::before {
+  top: 0;
+}
+
+.image-container::after {
+  bottom: 0;
+}
