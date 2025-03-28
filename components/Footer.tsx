@@ -86,28 +86,28 @@ const Footer = () => {
               </p> */}
               <div className="flex justify-center space-x-4 mb-4 text-justify">
                 <a
-                  href="https://www.facebook.com"
+                  href="https://www.facebook.com/people/Theradarlist/100092114480865/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-[#4DCCE6] transition-colors duration-200">
                   <FaFacebook size={24} />
                 </a>
                 <a
-                  href="https://www.twitter.com"
+                  href="https://twitter.com/the_radar_list"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-[#4DCCE6] transition-colors duration-200">
                   <FaTwitter size={24} />
                 </a>
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/company/squareresults/about/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-[#4DCCE6] transition-colors duration-200">
                   <FaLinkedin size={24} />
                 </a>
                 <a
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/theradarlist/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-[#4DCCE6] transition-colors duration-200">

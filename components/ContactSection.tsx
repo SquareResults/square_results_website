@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, Facebook, Twitter, Instagram } from "lucide-react"; // TODO: Deprecated Icons - Replace with actual icons or use a different icon library if needed
+import {
+  Phone,
+  Mail,
+  // Facebook,
+  // Twitter,
+  // Instagram,
+  // LinkedIn,
+} from "lucide-react"; // TODO: Deprecated Icons - Replace with actual icons or use a different icon library if needed
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { useState } from "react";
 
 const ContactSection = () => {
@@ -94,19 +102,24 @@ const ContactSection = () => {
               </div>
               <div className="flex gap-4 mb-8">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/people/Theradarlist/100092114480865/"
                   className="text-gray-300 hover:text-primary transition-colors">
-                  <Facebook className="w-6 h-6 text-[#4DCCE6]" />
+                  <FaFacebook size={24} className="w-6 h-6 text-[#4DCCE6]" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/squareresults/about/"
                   className="text-gray-300 hover:text-primary transition-colors">
-                  <Twitter className="w-6 h-6 text-[#4DCCE6]" />
+                  <FaLinkedin size={24} className="w-6 h-6 text-[#4DCCE6]" />
                 </a>
                 <a
-                  href="#"
+                  href="https://twitter.com/the_radar_list"
                   className="text-gray-300 hover:text-primary transition-colors">
-                  <Instagram className="w-6 h-6 text-[#4DCCE6]" />
+                  <FaTwitter size={24} className="w-6 h-6 text-[#4DCCE6]" />
+                </a>
+                <a
+                  href="https://www.instagram.com/theradarlist/"
+                  className="text-gray-300 hover:text-primary transition-colors">
+                  <FaInstagram size={24} className="w-6 h-6 text-[#4DCCE6]" />
                 </a>
               </div>
               <form onSubmit={handleSubmit} className="w-full max-w-lg">
