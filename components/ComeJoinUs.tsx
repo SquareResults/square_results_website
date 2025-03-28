@@ -1,15 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ComeJoinUs: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col md:flex-row">
       <div className="flex-1 flex flex-col justify-center items-center bg-secondary text-white p-8">
-        <h1 className="text-5xl font-bold mb-8">Come Join Us</h1>
-        <Link to="/career">
-          <button className="bg-primary text-white px-6 py-3 rounded hover:bg-primary-dark transition-colors">
-            Search Open Roles
-          </button>
+        <h1 className="text-[#1E3A8A] text-5xl font-bold mb-8">Come Join Us</h1>
+        <Link
+          to="/careers"
+          reloadDocument={true}
+          className="bg-primary text-[#1E3A8A] px-6 py-3 rounded hover:bg-primary-dark transition-colors">
+          {/* <button className="bg-primary text-[#1E3A8A] px-6 py-3 rounded hover:bg-primary-dark transition-colors"> */}
+          Search Open Roles
+          {/* </button> */}
         </Link>
       </div>
       <div className="flex-1">
