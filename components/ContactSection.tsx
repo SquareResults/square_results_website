@@ -76,7 +76,7 @@ const ContactSection = () => {
               <div className="flex items-center mb-4">
                 <Phone className="w-6 h-6 mr-2 text-[#1E3A8A]" />
                 <a
-                  href="tel:(602) 418-6255"
+                  href="tel:+16024186255"
                   className="text-[#1E3A8A] hover:text-primary transition-colors">
                   (602) 418-6255
                 </a>
@@ -84,9 +84,9 @@ const ContactSection = () => {
               <div className="flex items-center mb-8">
                 <Mail className="w-6 h-6 mr-2 text-[#1E3A8A]" />
                 <a
-                  href="mailto:mark@squareresults.com"
+                  href="mailto:contact@squareresults.com"
                   className="text-[#1E3A8A] hover:text-primary transition-colors">
-                  mark@squareresults.com
+                  contact@squareresults.com
                 </a>
               </div>
               <div className="mb-8">
