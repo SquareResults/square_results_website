@@ -77,7 +77,8 @@ const Footer = () => {
               <p className="text-xs text-white leading-relaxed mb-4">
                 7150 East Camelback Rd Suite 444, Scottsdale, AZ 85251
               </p>
-              {/* <p className="text-xs text-white leading-relaxed mb-4 text-justify">
+              {/* TODO: remove if not needed
+              <p className="text-xs text-white leading-relaxed mb-4 text-justify">
                 Suite 100, City,
               </p>
               <p className="text-xs text-white leading-relaxed mb-4 text-justify">
