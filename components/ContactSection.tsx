@@ -55,14 +55,13 @@ const ContactSection = () => {
               transition={{ duration: 0.5 }}
               className="flex justify-center items-center">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153168!3d-37.81627977975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d9b8f9b1e0e2!2sEnvato!5e0!3m2!1sen!2sau!4v1611816751234!5m2!1sen!2sau"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2417.2337358346585!2d-111.92925859023784!3d33.502798773257744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0bbd35df8635%3A0xd2ec9819054f0e8e!2s7150%20E%20Camelback%20Rd%2C%20Scottsdale%2C%20AZ%2085251!5e1!3m2!1sen!2sus!4v1743433592482!5m2!1sen!2sus"
                 width="100%"
                 height="800"
-                frameBorder="0"
                 style={{ border: 0 }}
                 allowFullScreen
-                aria-hidden="false"
-                tabIndex={0}></iframe>
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"></iframe>
             </motion.div>
 
             <motion.div
