@@ -8,6 +8,24 @@ const CareersSection: React.FC = () => {
   const [locationFilter, setLocationFilter] = useState("");
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
 
+  const departmentOptions = [
+    "", // All Departments
+    "Technology",
+    "Operations",
+    "Administration",
+    "Marketing",
+    "Finance",
+    "Sales",
+    // Add more departments as needed
+  ];
+
+  const locationOptions = [
+    "", // All Locations
+    "Tempe, AZ",
+    // Add more locations as needed
+    // Note: Ensure these match the job data's location field for filtering to work correctly
+  ];
+
   const filteredJobs = jobs.filter((job) => {
     return (
       (job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -42,20 +60,21 @@ const CareersSection: React.FC = () => {
             value={departmentFilter}
             onChange={(e) => setDepartmentFilter(e.target.value)}
             className="px-12 py-2 rounded bg-black-200 text-gray-700 ml-4">
-            <option value="">All Departments</option>
-            <option value="Engineering">Engineering</option>
-            <option value="Product">Product</option>
-            <option value="Administration">Administration</option>
-            {/* Add more departments as needed */}
+            {departmentOptions.map((option, index) => (
+              <option key={index} value={option}>
+                {option || "All Departments"}
+              </option>
+            ))}
           </select>
           <select
             value={locationFilter}
             onChange={(e) => setLocationFilter(e.target.value)}
             className="px-12 py-2 rounded bg-black-200 text-gray-700 ml-4">
-            <option value="">All Locations</option>
-            <option value="New York, NY">New York, NY</option>
-            <option value="San Francisco, CA">San Francisco, CA</option>
-            <option value="Tempe, AZ">Tempe, AZ</option>
+            {locationOptions.map((option, index) => (
+              <option key={index} value={option}>
+                {option || "All Locations"}
+              </option>
+            ))}
             {/* Add more locations as needed */}
           </select>
           <input
@@ -79,11 +98,14 @@ const CareersSection: React.FC = () => {
                   <h2 className="text-2xl font-semibold">{job.title}</h2>
                   <p className="text-sm text-gray-500">{job.datePosted}</p>
                 </div>
-                <button
-                  onClick={() => handleExpand(job.id)}
-                  className="text-primary hover:underline">
-                  {expandedJob === job.id ? "Hide Details" : "Show Details"}
-                </button>
+                <div>
+                  <p className="text-sm text-gray-500">{job.department}</p>
+                  <button
+                    onClick={() => handleExpand(job.id)}
+                    className="text-primary hover:underline">
+                    {expandedJob === job.id ? "Hide Details" : "Show Details"}
+                  </button>
+                </div>
               </div>
               {expandedJob === job.id && (
                 <div className="mt-4">

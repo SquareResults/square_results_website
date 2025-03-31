@@ -29,6 +29,7 @@ const Resources = () => {
       title: "Complete Hiring Guide 2024",
       description: "Learn the latest hiring trends and best practices",
       downloadLink: "#",
+      url: "https://theradarlist.com/what-we-do",
     },
     {
       type: "Video",
@@ -36,6 +37,7 @@ const Resources = () => {
       title: "Platform Tutorial Series",
       description: "Step-by-step guide to using our platform",
       downloadLink: "#",
+      url: "https://theradarlist.com/courselist",
     },
     {
       type: "eBook",
@@ -43,6 +45,7 @@ const Resources = () => {
       title: "Recruitment Analytics",
       description: "Understanding hiring metrics and KPIs",
       downloadLink: "#",
+      url: "https://theradarlist.com/assessment",
     },
   ];
 
@@ -74,7 +77,7 @@ const Resources = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}>
               <a
-                href="https://theradarlist.com"
+                href={resource.url} // ✅ Fixed URL to point to the resource link
                 target="_blank"
                 rel="noopener noreferrer">
                 <Card className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
