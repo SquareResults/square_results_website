@@ -44,7 +44,7 @@ const ContactSection = () => {
             initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-5xl font-bold mt-12 mb-12 text-[#4DCCE6] text-center">
+            className="text-5xl font-bold mt-12 mb-12 text-primary-light text-center">
             Contact Us
           </motion.h2>
 
@@ -69,30 +69,30 @@ const ContactSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center text-center md:text-left md:items-start">
-              <h3 className="text-2xl text-[#1E3A8A] font-semibold mb-2">
+              <h3 className="text-2xl text-primary font-semibold mb-2">
                 Get in Touch
               </h3>
               <div className="flex items-center mb-4">
-                <Phone className="w-6 h-6 mr-2 text-[#1E3A8A]" />
+                <Phone className="w-6 h-6 mr-2 text-primary" />
                 <a
                   href="tel:+16024186255"
-                  className="text-[#1E3A8A] hover:text-primary transition-colors">
+                  className="text-primary hover:text-primary transition-colors">
                   (602) 418-6255
                 </a>
               </div>
               <div className="flex items-center mb-8">
-                <Mail className="w-6 h-6 mr-2 text-[#1E3A8A]" />
+                <Mail className="w-6 h-6 mr-2 text-primary" />
                 <a
                   href="mailto:contact@squareresults.com"
-                  className="text-[#1E3A8A] hover:text-primary transition-colors">
+                  className="text-primary hover:text-primary transition-colors">
                   contact@squareresults.com
                 </a>
               </div>
               <div className="mb-8">
-                <h3 className="text-2xl text-[#1E3A8A] font-semibold mb-2">
+                <h3 className="text-2xl text-primary font-semibold mb-2">
                   Our Address
                 </h3>
-                <p className="text-[#1E3A8A]">
+                <p className="text-primary">
                   7150 East Camelback Rd Suite 444,
                   <br />
                   Scottsdale, AZ 85251
@@ -103,28 +103,37 @@ const ContactSection = () => {
                 <a
                   href="https://www.facebook.com/people/Theradarlist/100092114480865/"
                   className="text-gray-300 hover:text-primary transition-colors">
-                  <FaFacebook size={24} className="w-6 h-6 text-[#4DCCE6]" />
+                  <FaFacebook
+                    size={24}
+                    className="w-6 h-6 text-primary-light"
+                  />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/squareresults/about/"
                   className="text-gray-300 hover:text-primary transition-colors">
-                  <FaLinkedin size={24} className="w-6 h-6 text-[#4DCCE6]" />
+                  <FaLinkedin
+                    size={24}
+                    className="w-6 h-6 text-primary-light"
+                  />
                 </a>
                 <a
                   href="https://twitter.com/the_radar_list"
                   className="text-gray-300 hover:text-primary transition-colors">
-                  <FaTwitter size={24} className="w-6 h-6 text-[#4DCCE6]" />
+                  <FaTwitter size={24} className="w-6 h-6 text-primary-light" />
                 </a>
                 <a
                   href="https://www.instagram.com/theradarlist/"
                   className="text-gray-300 hover:text-primary transition-colors">
-                  <FaInstagram size={24} className="w-6 h-6 text-[#4DCCE6]" />
+                  <FaInstagram
+                    size={24}
+                    className="w-6 h-6 text-primary-light"
+                  />
                 </a>
               </div>
               <form onSubmit={handleSubmit} className="w-full max-w-lg">
                 <div className="mb-4">
                   <label
-                    className="block text-[#1E3A8A] text-sm font-bold mb-2"
+                    className="block text-primary text-sm font-bold mb-2"
                     htmlFor="name">
                     Name
                   </label>
@@ -140,7 +149,7 @@ const ContactSection = () => {
                 </div>
                 <div className="mb-4">
                   <label
-                    className="block text-[#1E3A8A] text-sm font-bold mb-2"
+                    className="block text-primary text-sm font-bold mb-2"
                     htmlFor="email">
                     Email
                   </label>
@@ -156,7 +165,7 @@ const ContactSection = () => {
                 </div>
                 <div className="mb-4">
                   <label
-                    className="block text-[#1E3A8A] text-sm font-bold mb-2"
+                    className="block text-primary text-sm font-bold mb-2"
                     htmlFor="userType">
                     I am a
                   </label>
@@ -173,7 +182,7 @@ const ContactSection = () => {
                 </div>
                 <div className="mb-4">
                   <label
-                    className="block text-[#1E3A8A] text-sm font-bold mb-2"
+                    className="block text-primary text-sm font-bold mb-2"
                     htmlFor="message">
                     Message
                   </label>
@@ -189,7 +198,7 @@ const ContactSection = () => {
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="bg-[#1E3A8A] text-white px-4 py-2 rounded hover:text-[#4DCCE6] transition-colors">
+                    className="bg-[#1E3A8A] text-white px-4 py-2 rounded hover:text-primary-light transition-colors">
                     Send Message
                   </button>
                 </div>

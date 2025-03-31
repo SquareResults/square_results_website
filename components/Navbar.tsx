@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full p-4 flex items-center justify-between z-20 transition-all duration-300 bg-[#081321] ${
+        className={`fixed top-0 left-0 w-full p-4 flex items-center justify-between z-20 transition-all duration-300 bg-primary-dark ${
           scrolled ? "shadow-lg" : ""
         }`}>
         <Link href="/" className="flex items-center">
@@ -51,10 +51,10 @@ const Navbar = () => {
           ].map((item) => (
             <motion.div
               key={item}
-              className={`text-white transition-colors duration-200 ${
+              className={`text-semantic-white transition-colors duration-200 ${
                 isActive(item === "home" ? "/" : `/${item}`)
-                  ? "text-[#4DCCE6] font-bold"
-                  : "hover:text-[#4DCCE6]"
+                  ? "text-primary-light font-bold"
+                  : "hover:text-primary-light"
               }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}>
@@ -67,7 +67,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={handleDemoClick}
-            className="px-4 py-1 bg-[#FFFFFF] text-black font-semibold rounded-full hover:bg-[#1D066F/90] transition-colors duration-200">
+            className="px-4 py-1 bg-semantic-white text-semantic-black font-semibold rounded-full hover:bg-primary-medium/90 hover:text-semantic-white transition-colors duration-200">
             Book An Appointment
           </motion.button>
         </div>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +6,8 @@
 
 @layer base {
   :root {
+    --primary-dark: #1e3a8a; /* Dark Blue */
+    --primary-light: #3b82f6; /* Light Blue */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
