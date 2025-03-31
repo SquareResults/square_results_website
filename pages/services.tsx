@@ -23,6 +23,7 @@ const services = [
     description:
       "Introducing SWFT, our innovative solution that transforms the job search process. Utilizing advanced AI technology, SWFT accelerates the search, matches candidates with ideal positions, and offers personalized recommendations based on individual skills and preferences.",
     url: "#",
+    comingSoon: true, // Indicates that this service is coming soon
   },
 ];
 
@@ -82,6 +83,12 @@ const Services = () => {
                     </CardTitle>
                     <CardDescription className="text-xl text-gray-600 mt-32 text-justify">
                       {service.description}
+                      {service.comingSoon && (
+                        <span className="text-base text-red-500 font-semibold ml-2">
+                          (Coming Soon)
+                        </span>
+                      )}
+                      {/* Display "Coming Soon" if the property is true */}
                     </CardDescription>
                   </CardHeader>
                 </Card>
