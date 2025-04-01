@@ -26,6 +26,8 @@ const CareersSection: React.FC = () => {
     // Note: Ensure these match the job data's location field for filtering to work correctly
   ];
 
+  const mailToLink = "";
+
   const filteredJobs = jobs.filter((job) => {
     return (
       (job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -170,9 +172,16 @@ const CareersSection: React.FC = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition-colors">
-                    Apply Now
-                  </button>
+                  <a
+                    href={`mailto:contact@squareresults.com?subject=Job%20Application:%20${
+                      job.title
+                    }&body=Hello,%0D%0A%0D%0APlease%20submit%20your%20resume,%20cover%20letter/portfolio%20for%20the%20${job.title
+                      .split(" ")
+                      .join("%20")}%20position.%0D%0A%0D%0AThank%20you!`}>
+                    <button className="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition-colors">
+                      Apply Now
+                    </button>
+                  </a>
                 </div>
               )}
             </div>
