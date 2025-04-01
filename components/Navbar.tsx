@@ -39,7 +39,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center">
           <img src="/images/SQRlogo.jpg" alt="Logo" className="w-15 h-14" />
         </Link>
-        <div className="hidden md:flex items-center flex justify-end flex-wrap text-xl space-x-14 ml-auto">
+        <div className="hidden md:flex items-center justify-end flex-wrap text-xl space-x-14 ml-auto">
           {[
             "",
             "home",

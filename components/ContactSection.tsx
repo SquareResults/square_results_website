@@ -28,7 +28,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const formLink = `https://formsubmit.co/ajax/${process.env.FORM_SUBMIT_TEST}`;
+    const formLink = `https://formsubmit.co/ajax/${process.env.FORM_SUBMIT}`;
     // Simulate API call
     await fetch(formLink, {
       method: "POST",

@@ -60,7 +60,7 @@ export function DemoForm({
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
-      const formLink = `https://formsubmit.co/ajax/${process.env.FORM_SUBMIT_TEST}`;
+      const formLink = `https://formsubmit.co/ajax/${process.env.FORM_SUBMIT}`;
       // Simulate API call
       await fetch(formLink, {
         method: "POST",

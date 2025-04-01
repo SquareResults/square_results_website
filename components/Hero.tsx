@@ -277,8 +277,8 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="group relative px-8 py-3 bg-white text-[#1D066F] border-2 border-[#1D066F] rounded-full hover:bg-white/90 text-black transition-colors duration-200 transform flex items-center">
-              <span className="relative z-10">Hiring Partners</span>
+              className="group relative px-8 py-3 bg-semantic-white text-purple border-2 border-[#1D066F] rounded-full hover:bg-white/90  transition-colors duration-200 transform flex items-center">
+              <span className="relative z-10 text-purple">Hiring Partners</span>
               <ChevronRight className="inline-block ml-2 w-5 h-5" />
               {/* <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#1E3A8A] rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse" /> */}
               <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black opacity-20 rounded-full pointer-events-none" />

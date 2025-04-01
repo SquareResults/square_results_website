@@ -23,9 +23,9 @@ export default {
           black: "#000000", // Used for black backgrounds
         },
         purple: {
-          DEFAULT: "1D066F",
+          DEFAULT: "#1D066F",
           dark: "#1D066F", // Used for deep purple color
-        }
+        },
       },
     },
   },
