@@ -3,8 +3,21 @@ import { motion } from "framer-motion";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Calendar, X } from "lucide-react";
@@ -18,7 +31,13 @@ const formSchema = z.object({
   jobRole: z.string().min(2, "Job role must be at least 2 characters"),
 });
 
-export function DemoForm({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
+export function DemoForm({
+  open,
+  onOpenChange,
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -41,7 +60,16 @@ export function DemoForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
+      const formLink = `https://formsubmit.co/ajax/${process.env.FORM_SUBMIT_TEST}`;
       // Simulate API call
+      await fetch(formLink, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(values),
+      });
       await new Promise((resolve) => setTimeout(resolve, 1500));
       console.log(values);
       toast({
@@ -66,18 +94,18 @@ export function DemoForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
       <DialogContent className="sm:max-w-[600px] overflow-hidden bg-black bg-opacity-100 shadow-lg rounded-lg">
         <button
           onClick={handleCancel}
-          className="bg-white absolute right-4 top-4 rounded-sm opacity-100 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none"
-        >
+          className="bg-white absolute right-4 top-4 rounded-sm opacity-100 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>
         </button>
-        
+
         <DialogHeader>
           <DialogTitle className="text-3xl font-bold text-white">
             Request a Demo Today
           </DialogTitle>
           <DialogDescription className="text-lg text-gray-300">
-            Discover how SquareResults services can help you find your next opportunity or talent.
+            Discover how SquareResults services can help you find your next
+            opportunity or talent.
           </DialogDescription>
         </DialogHeader>
 
@@ -102,7 +130,10 @@ export function DemoForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
           </div>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:col-span-2">
+            <form
+              id="myForm"
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-4 md:col-span-2">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
@@ -111,7 +142,11 @@ export function DemoForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
                     <FormItem>
                       <FormLabel className="text-white">First Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John" {...field} className="bg-white" />
+                        <Input
+                          placeholder="John"
+                          {...field}
+                          className="bg-white"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -125,7 +160,11 @@ export function DemoForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
                     <FormItem>
                       <FormLabel className="text-white">Last Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Doe" {...field} className="bg-white" />
+                        <Input
+                          placeholder="Doe"
+                          {...field}
+                          className="bg-white"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -140,7 +179,11 @@ export function DemoForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
                   <FormItem>
                     <FormLabel className="text-white">Work Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="john@company.com" {...field} className="bg-white" />
+                      <Input
+                        placeholder="john@company.com"
+                        {...field}
+                        className="bg-white"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -154,7 +197,11 @@ export function DemoForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
                   <FormItem>
                     <FormLabel className="text-white">Phone Number</FormLabel>
                     <FormControl>
-                      <Input placeholder="+1 (555) 000-0000" {...field} className="bg-white" />
+                      <Input
+                        placeholder="+1 (555) 000-0000"
+                        {...field}
+                        className="bg-white"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -168,7 +215,11 @@ export function DemoForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
                   <FormItem>
                     <FormLabel className="text-white">Job Role</FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g. HR Manager" {...field} className="bg-white" />
+                      <Input
+                        placeholder="e.g. HR Manager"
+                        {...field}
+                        className="bg-white"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -179,8 +230,7 @@ export function DemoForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
                 <Button
                   type="submit"
                   className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-2 px-4 rounded-full"
-                  disabled={isSubmitting}
-                >
+                  disabled={isSubmitting}>
                   {isSubmitting ? (
                     "Submitting..."
                   ) : (
@@ -194,8 +244,7 @@ export function DemoForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
                   type="button"
                   variant="outline"
                   onClick={handleCancel}
-                  className="px-8 rounded-full text-black border-white"
-                >
+                  className="px-8 rounded-full text-black border-white">
                   Cancel
                 </Button>
               </div>

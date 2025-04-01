@@ -1,22 +1,18 @@
 import { motion } from "framer-motion";
-import {
-  Phone,
-  Mail,
-  // Facebook,
-  // Twitter,
-  // Instagram,
-  // LinkedIn,
-} from "lucide-react"; // TODO: Deprecated Icons - Replace with actual icons or use a different icon library if needed
+import { Phone, Mail } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
 
 const ContactSection = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
     userType: "Hiring Partner",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -30,10 +26,30 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Handle form submission logic here
-    console.log(formData);
+    const formLink = `https://formsubmit.co/ajax/${process.env.FORM_SUBMIT_TEST}`;
+    // Simulate API call
+    await fetch(formLink, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    setIsLoading(true);
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+      userType: "Hiring Partner",
+    });
+    toast({
+      title: "Form Submitted!",
+      description: "We'll contact you shortly to discuss.",
+    });
   };
 
   return (
@@ -130,8 +146,19 @@ const ContactSection = () => {
                   />
                 </a>
               </div>
-              <form onSubmit={handleSubmit} className="w-full max-w-lg">
+
+              {/* --- CONTACT FORM --- */}
+              <form
+                id="myForm"
+                onSubmit={handleSubmit}
+                className="w-full max-w-lg">
                 <div className="mb-4">
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="New submission for Square Results!"
+                  />
+                  <input type="hidden" name="_template" value="table" />
                   <label
                     className="block text-primary text-sm font-bold mb-2"
                     htmlFor="name">
