@@ -25,7 +25,7 @@ export const jobs = [
       "HR Management: Oversee human resources functions, including recruitment, employee development, performance management, fostering a positive workplace culture, addressing workplace issues, resolving conflicts, and ensuring compliance with labor laws and company policies.",
     ],
     aboutTheRole:
-      "As COO, you will be a key member of the executive team, responsible for overseeing the day-to-day operations of SquareResults and ensuring alignment with our strategic goals. You will work closely with the CEO and other department heads to drive operational excellence, optimize processes, and support the company's rapid growth.",
+      "As COO, you will be a key member of the leadership team, responsible for overseeing the day-to-day operations of SquareResults and ensuring alignment with our strategic goals. You will work closely with the CEO and other department heads to drive operational excellence, optimize processes, and support the company's rapid growth.",
     qualifications: [
       "10+ years of experience in operational leadership roles, preferably in the technology or staffing industries.",
       "Proven track record of success in scaling high-growth companies.",
@@ -65,7 +65,7 @@ export const jobs = [
       "Collaboration: Work closely with product, marketing, and sales teams to ensure alignment between technology and business objectives.",
     ],
     aboutTheRole:
-      "As CTO, you will be a key member of the executive team, responsible for leading the technology strategy and development of SquareResults' innovative platform. You will work closely with the CEO and other department heads to drive technological innovation, ensure scalability, and maintain a competitive edge in the market.",
+      "As CTO, you will be a key member of the leadership team, responsible for leading the technology strategy and development of SquareResults' innovative platform. You will work closely with the CEO and other department heads to drive technological innovation, ensure scalability, and maintain a competitive edge in the market.",
     qualifications: [
       "10+ years of experience in technology leadership roles, preferably in the SaaS or AI industries.",
       "Proven track record of success in developing and launching innovative technology products.",
@@ -107,7 +107,7 @@ export const jobs = [
       "Manage the marketing budget effectively and efficiently.",
     ],
     aboutTheRole:
-      "As CMO, you will be a key member of the executive team, responsible for developing and executing the company's marketing strategy to drive brand awareness, generate leads, and achieve business growth objectives. You will work closely with the CEO and other department heads to build a strong brand presence, position SquareResults as a market leader, and drive customer acquisition.",
+      "As CMO, you will be a key member of the leadership team, responsible for developing and executing the company's marketing strategy to drive brand awareness, generate leads, and achieve business growth objectives. You will work closely with the CEO and other department heads to build a strong brand presence, position SquareResults as a market leader, and drive customer acquisition.",
     qualifications: [
       "10+ years of experience in marketing leadership roles, preferably in the technology or SaaS industries.",
       "Proven track record of success in developing and executing successful marketing campaigns.",
@@ -153,7 +153,7 @@ export const jobs = [
       "Team Leadership & Development: Build and lead a high-performing finance team",
     ],
     aboutTheRole:
-      "As the CFO of SquareResults, you will be a key member of the executive team, responsible for all aspects of the company's financial operations. You will play a critical role in driving financial strategy, ensuring financial stability, and supporting the company's growth and profitability.",
+      "As the CFO of SquareResults, you will be a key member of the leadership team, responsible for all aspects of the company's financial operations. You will play a critical role in driving financial strategy, ensuring financial stability, and supporting the company's growth and profitability.",
     qualifications: [
       "10+ years of experience in senior finance roles, preferably in the technology or SaaS industries.",
       "Strong financial acumen, including experience in financial modeling, budgeting, forecasting, and financial analysis.",
@@ -191,9 +191,9 @@ export const jobs = [
       "Sales Strategy & Leadership:Develop and implement a comprehensive sales strategy aligned with the company's overall business objectives. Lead, mentor, and motivate the sales team to achieve and exceed sales targets. Build and maintain a high-performance sales culture.",
       "Revenue Growth & Client Acquisition:Drive revenue growth by acquiring new clients and expanding relationships with existing ones. Identify and pursue new market opportunities and target accounts. Develop and manage key client relationships.",
       "Sales Operations & Process Improvement: Establish and optimize sales processes, methodologies, and best practices. Implement and manage sales tools and technologies (CRM, sales automation). Analyze sales data and metrics to identify areas for improvement.",
-      "Sales Forecasting & Reporting: Develop accurate sales forecasts and provide regular reports to the CEO and executive team. Monitor sales performance and identify trends and opportunities.",
+      "Sales Forecasting & Reporting: Develop accurate sales forecasts and provide regular reports to the CEO and leadership team. Monitor sales performance and identify trends and opportunities.",
       "Cross-Functional Collaboration: Collaborate with marketing, product, and engineering teams to ensure alignment and effective communication. Provide valuable feedback to the product team based on market needs and client feedback.",
-      "Market Analysis & Competitive Intelligence: Stay informed about industry trends, competitor activities, and market dynamics. Provide insights and recommendations to the executive team.",
+      "Market Analysis & Competitive Intelligence: Stay informed about industry trends, competitor activities, and market dynamics. Provide insights and recommendations to the leadership team.",
     ],
     aboutTheRole:
       "As the Chief Sales Officer (CSO) at SquareResults, you will be a strategic leader responsible for driving revenue growth and building a high-performing sales organization. You will develop and execute comprehensive sales strategies, build strong client relationships, and lead the sales team to achieve ambitious targets. This role requires a visionary leader with a proven track record of success in building and scaling sales operations in a fast-paced technology startup environment.",
