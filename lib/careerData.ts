@@ -355,7 +355,7 @@ export const jobs = [
   },
   {
     id: 8,
-    title: "Project Manager",
+    title: "Program Manager",
     reportsTo: "Chief Operating Officer (COO)",
     department: "Operations",
     location: "Tempe, AZ",
