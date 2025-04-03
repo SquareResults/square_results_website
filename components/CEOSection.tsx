@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import LetterFromMark from "./LetterFromMark";
 
 const CEOSection = () => {
+  const [showLetter, setShowLetter] = useState(false);
+
+  const handleOpenLetter = () => {
+    setShowLetter(true);
+  };
+
   return (
     <section className="p-20 ">
       <div className="container max-w-6xl bg-gradient-to-br from-[#f0f4f8] to-[#d9e2ec]">
@@ -9,10 +17,10 @@ const CEOSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}>
-            <h2 className="text-4xl font-bold text-[#1D066F] mb-6">
+            <h2 className="text-4xl font-bold text-purple mb-6">
               Meet the CEO: Mark Burks
             </h2>
-            <p className="text-lg text-[#081321] leading-relaxed mb-6 text-justify">
+            <p className="text-lg text-primary-dark leading-relaxed mb-6 text-justify">
               With over two decades of experience in talent acquisition and HR
               technology, our CEO has been at the forefront of revolutionizing
               how companies and candidates connect. Their vision for
@@ -20,12 +28,18 @@ const CEOSection = () => {
               faced by both job seekers and recruiters in today's dynamic job
               market.
             </p>
-            <p className="text-lg text-[#081321] leading-relaxed text-justify">
+            <p className="text-lg text-primary-dark leading-relaxed text-justify">
               Under their leadership, SquareResults has grown from a startup to
               an industry leader, helping thousands of professionals find their
               dream roles and enabling companies to build high-performing teams
               efficiently.
             </p>
+            <button
+              onClick={handleOpenLetter}
+              className=" my-4 shadow-md hover:shadow-primary-medium/50 shadow-primary-light/50 hover:bg-primary-light py-2 px-4 hover:text-primary-dark bg-primary-medium text-semantic-white rounded-full ">
+              Read Mark's Letter
+            </button>
+            <LetterFromMark open={showLetter} onOpenChange={setShowLetter} />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
