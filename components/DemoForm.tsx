@@ -135,6 +135,12 @@ export function DemoForm({
               onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-4 md:col-span-2">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New submission for Square Results!"
+                />
+                <input type="hidden" name="_template" value="table" />
                 <FormField
                   control={form.control}
                   name="firstName"
