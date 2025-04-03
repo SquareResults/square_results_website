@@ -75,7 +75,7 @@ const Footer = () => {
                 Our Address
               </h2>
               <p className="text-xs text-white leading-relaxed mb-4">
-                7150 East Camelback Rd Suite 444, Scottsdale, AZ 85251
+                410 N Scottsdale Rd, Tempe, AZ 85288
               </p>
               {/* TODO: remove if not needed
               <p className="text-xs text-white leading-relaxed mb-4 text-justify">

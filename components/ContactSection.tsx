@@ -109,9 +109,9 @@ const ContactSection = () => {
                   Our Address
                 </h3>
                 <p className="text-primary">
-                  7150 East Camelback Rd Suite 444,
+                  410 N Scottsdale Rd,
                   <br />
-                  Scottsdale, AZ 85251
+                  Tempe, AZ 85288
                   <br />
                 </p>
               </div>
