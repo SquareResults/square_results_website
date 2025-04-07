@@ -3,6 +3,7 @@ import { Phone, Mail } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import officeLobbyImage from "../public/images/office_img.png";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -54,8 +55,8 @@ const ContactSection = () => {
 
   return (
     <section className="py-24 bg-secondary text-white min-h-screen">
-      <div className="container mx-auto  flex h-full">
-        <div className="w-full max-w-8xl">
+      <div className="container mx-auto flex h-full ">
+        <div className="w-full max-w-8xl ">
           <motion.h2
             initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -64,16 +65,23 @@ const ContactSection = () => {
             Contact Us
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto ml-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto sm:ml-0 lg:ml-20">
             <motion.div
               initial={{ opacity: 0, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex justify-center items-center">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2417.2337358346585!2d-111.92925859023784!3d33.502798773257744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0bbd35df8635%3A0xd2ec9819054f0e8e!2s7150%20E%20Camelback%20Rd%2C%20Scottsdale%2C%20AZ%2085251!5e1!3m2!1sen!2sus!4v1743433592482!5m2!1sen!2sus"
+              className="flex flex-col gap-5 justify-center items-center">
+              <img
+                src={officeLobbyImage.src}
+                alt="Image of the lobby for the office"
                 width="100%"
-                height="800"
+                className="w-3/4 h-auto lg:max-w-xl"
+              />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.9150292487925!2d-111.92750740000001!3d33.433383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b091f4fb018d1%3A0x484b7ba9cbecbcab!2s410%20N%20Scottsdale%20Rd%2C%20Tempe%2C%20AZ%2085288!5e1!3m2!1sen!2sus!4v1744047290162!5m2!1sen!2sus"
+                width="100%"
+                height="450"
+                className="w-3/4"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
@@ -151,7 +159,7 @@ const ContactSection = () => {
               <form
                 id="myForm"
                 onSubmit={handleSubmit}
-                className="w-full max-w-lg">
+                className="w-3/4 max-w-lg">
                 <div className="mb-4">
                   <input
                     type="hidden"
