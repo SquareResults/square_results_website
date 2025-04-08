@@ -14,14 +14,20 @@ import { Control } from "react-hook-form"; // Ensure this import exists if using
 import { DialogClose } from "../ui/dialog";
 
 interface PersonalInfoProps {
-  form: { control: Control<any> }; // Replace 'any' with the specific type if known
+  register: (name: string) => {
+    onChange: () => void;
+    onBlur: () => void;
+    ref: React.Ref<any>;
+  };
+  errors: Record<string, { message: string }>; // Replace with a more specific type if available
   jobRole: { title: string } | null;
   handleCancel: () => void;
   goNext: () => void;
 }
 
 const PersonalInfo: React.FC<PersonalInfoProps> = ({
-  form,
+  register,
+  errors,
   jobRole,
   handleCancel,
   goNext,
@@ -30,118 +36,43 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({
     <>
       <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="flex flex-col gap-2">
-          <FormField
-            control={form.control}
-            name="firstName"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>First Name</FormLabel>
-                <FormControl>
-                  <Input placeholder="John" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
+          {/* First Name */}
+          <div className="mb-4">
+            <label htmlFor="firstName" className="block font-medium mb-2">
+              First Name
+            </label>
+            <Input {...register("firstName")} />
+            {errors.firstName && (
+              <p className="text-red-500 text-sm">{errors.firstName.message}</p>
             )}
-          />
-          <FormField
-            control={form.control}
-            name="lastName"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Last Name</FormLabel>
-                <FormControl>
-                  <Input placeholder="Doe" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="janedoe@gmail.com" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Phone Number</FormLabel>
-                <FormControl>
-                  <Input placeholder="(123) 456-7890" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="linkedIn"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>LinkedIn Profile</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="https://linkedin.com/in/yourprofile"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          </div>
+
+          <Input placeholder="Doe" />
+
+          <Input placeholder="janedoe@gmail.com" />
+
+          <Input placeholder="(123) 456-7890" />
+
+          <Input placeholder="https://linkedin.com/in/yourprofile" />
         </div>
         <div className="flex flex-col gap-2">
-          <FormField
-            control={form.control}
-            name="jobRole"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Job Role</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Software Engineer"
-                    {...field}
-                    className="bg-gray-200"
-                    disabled
-                    value={jobRole ? jobRole.title : ""}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+          <Input
+            placeholder="Software Engineer"
+            className="bg-gray-200"
+            disabled
+            value={jobRole ? jobRole.title : ""}
           />
-          <FormField
-            control={form.control}
-            name="resume"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Resume</FormLabel>
-                <FormControl>
-                  <Input
-                    type="file"
-                    accept=".pdf,.doc,.docx"
-                    onChange={(e) =>
-                      field.onChange(e.target.files?.[0] || null)
-                    }
-                    onBlur={field.onBlur}
-                    name={field.name}
-                    ref={field.ref}
-                    className="hover:bg-gray-50 hover:text-primary-medium cursor-pointer"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+
+          <Input
+            type="file"
+            accept=".pdf,.doc,.docx"
+            onChange={(e) => field.onChange(e.target.files?.[0] || null)}
+            onBlur={field.onBlur}
+            name={field.name}
+            ref={field.ref}
+            className="hover:bg-gray-50 hover:text-primary-medium cursor-pointer"
           />
+
           <FormField
             control={form.control}
             name="coverLetter"
