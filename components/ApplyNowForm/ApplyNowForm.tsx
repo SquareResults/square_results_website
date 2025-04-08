@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -23,9 +23,15 @@ import { Label } from "@/components/ui/label";
 import { Form } from "../ui/form";
 
 const ApplicantSchema = z.object({
-  firstName: z.string().min(2, "First name must be at least 2 characters"),
-  lastName: z.string().min(2, "Last name must be at least 2 characters"),
-  emailAddress: z.string().email("Invalid email address"),
+  firstName: z
+    .string()
+    .min(2, "First name must be at least 2 characters")
+    .nonempty(),
+  lastName: z
+    .string()
+    .min(2, "Last name must be at least 2 characters")
+    .nonempty(),
+  emailAddress: z.string().email("Invalid email address").nonempty(),
   phoneNumber: z.string().min(10, "Phone number must be at least 10 digits"),
   jobRole: z.string().min(2, "Job role must be at least 2 characters"),
   resume: z
@@ -77,6 +83,7 @@ export function ApplyNowForm({
   jobRole: { title: string } | null;
 }) {
   const form = useForm<FormValues>({
+    mode: "onChange", // Enables validation on value change
     resolver: zodResolver(ApplicantSchema),
     defaultValues: {
       firstName: "",
@@ -107,8 +114,6 @@ export function ApplyNowForm({
     form.reset();
     onOpenChange(false);
   };
-
-  console.log(window.location);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -241,6 +246,7 @@ export function ApplyNowForm({
                         <input
                           id="github"
                           type="url"
+                          placeholder="https://github.com/yourusername"
                           {...form.register("github")}
                           className="w-full px-3 py-2 border rounded"
                         />
@@ -264,6 +270,7 @@ export function ApplyNowForm({
                         <input
                           id="linkedIn"
                           type="url"
+                          placeholder="https://linkedin.com/in/yourprofile"
                           {...form.register("linkedIn")}
                           className="w-full px-3 py-2 border rounded"
                         />
@@ -552,9 +559,6 @@ export function ApplyNowForm({
                   </Button>
                   <Button
                     type="submit"
-                    disabled={
-                      !form.formState.isValid || !form.formState.isDirty
-                    }
                     className="w-full text-semantic-white shadow-md shadow-slate-500/50">
                     Submit
                   </Button>
