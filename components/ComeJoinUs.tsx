@@ -9,10 +9,8 @@ const ComeJoinUs: React.FC = () => {
         <Link
           to="/careers"
           reloadDocument={true}
-          className="bg-primary text-[#1E3A8A] px-6 py-3 rounded hover:bg-primary-dark transition-colors">
-          {/* <button className="bg-primary text-[#1E3A8A] px-6 py-3 rounded hover:bg-primary-dark transition-colors"> */}
+          className="bg-primary text-semantic-white px-6 py-3 rounded hover:bg-primary-dark transition-colors shadow-md shadow-slate-500/50">
           Search Open Roles
-          {/* </button> */}
         </Link>
       </div>
       <div className="flex-1">
