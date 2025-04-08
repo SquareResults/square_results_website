@@ -26,7 +26,7 @@ const Resources = () => {
     {
       type: "Guide",
       icon: FileText,
-      title: "Complete Hiring Guide 2024",
+      title: "Complete Hiring Guide 2025",
       description: "Learn the latest hiring trends and best practices",
       downloadLink: "#",
       url: "https://theradarlist.com/what-we-do",

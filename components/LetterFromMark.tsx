@@ -25,7 +25,7 @@ const LetterFromMark = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogPortal>
         <DialogOverlay className="fixed inset-0 bg-black/10 transition-opacity overflow-y-auto">
-          <DialogContent className="sm:max-w-3xl h-full overflow-y-auto ">
+          <DialogContent className="sm:max-w-3xl h-full overflow-y-auto">
             <button
               onClick={handleCancel}
               className="bg-white absolute right-4 top-4 rounded-sm opacity-100 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">

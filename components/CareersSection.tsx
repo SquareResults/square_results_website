@@ -1,14 +1,44 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { jobs } from "@/lib/careerData"; // Assuming you have a jobs data file
-import { ApplyNowForm } from "./ApplyNowForm";
+import { ApplyNowForm } from "./ApplyNowForm/ApplyNowForm";
+
+type JobRole = {
+  id: number;
+  title: string;
+  datePosted: string;
+  description: string[];
+  reportsTo: string;
+  location: string;
+  department: string;
+  aboutTheRole: string;
+  responsabilities: string[];
+  qualifications: string[];
+  preferredQualifications?: string[];
+  benefits: string[];
+};
 
 const CareersSection: React.FC = () => {
+  const jobRoleSchema = {
+    id: 0,
+    title: "",
+    datePosted: "",
+    description: [],
+    reportsTo: "",
+    location: "",
+    department: "",
+    aboutTheRole: "",
+    responsabilities: [],
+    qualifications: [],
+    preferredQualifications: [],
+    benefits: [],
+  };
   const [searchTerm, setSearchTerm] = useState("");
   const [departmentFilter, setDepartmentFilter] = useState("");
   const [locationFilter, setLocationFilter] = useState("");
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
   const [showApplyForm, setShowApplyForm] = useState(false);
+  const [jobRole, setJobRole] = useState<JobRole>(jobRoleSchema);
 
   const departmentOptions = [
     "", // All Departments
@@ -43,6 +73,12 @@ const CareersSection: React.FC = () => {
     setExpandedJob(expandedJob === id ? null : id);
   };
 
+  const handleApplyNow = (role: string) => {
+    setShowApplyForm(true);
+    const foundJob = filteredJobs.find((job) => job.id === expandedJob);
+    setJobRole(foundJob || jobRoleSchema);
+  };
+
   return (
     <section className="py-12 text-white min-h-screen">
       <div className="container mx-auto px-24">
@@ -59,7 +95,7 @@ const CareersSection: React.FC = () => {
 
         {/* === Filter and Search Section === */}
         {/* This section allows users to filter by department and location, and search by job title or description */}
-        <div className="flex justify-between mb-8">
+        <div className="flex lg:flex-row sm:flex-col justify-between sm:gap-4 mb-8">
           <select
             value={departmentFilter}
             onChange={(e) => setDepartmentFilter(e.target.value)}
@@ -185,7 +221,7 @@ const CareersSection: React.FC = () => {
                     </button>
                   </a> */}
                   <button
-                    onClick={() => setShowApplyForm(true)}
+                    onClick={() => handleApplyNow(job.title)}
                     className="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition-colors">
                     Apply Now
                   </button>
@@ -195,7 +231,11 @@ const CareersSection: React.FC = () => {
           ))}
         </div>
       </div>
-      <ApplyNowForm open={showApplyForm} onOpenChange={setShowApplyForm} />
+      <ApplyNowForm
+        open={showApplyForm}
+        onOpenChange={setShowApplyForm}
+        jobRole={jobRole}
+      />
     </section>
   );
 };
