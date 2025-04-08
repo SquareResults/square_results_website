@@ -108,7 +108,7 @@ const HiringPartners = () => {
               Community
             </h1>
           </motion.div>
-          <div className="grid md:grid-cols-1 gap-8">
+          <div className="grid md:grid-cols-1 gap-8 h-3/4">
             {community.map((item, index) => (
               <motion.div
                 key={index}
