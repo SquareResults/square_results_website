@@ -20,8 +20,16 @@ const Navbar = () => {
       name: "Services",
       path: "/services",
       submenu: [
-        { name: "Job Seekers", path: "/services/job-seekers" },
-        { name: "Hiring Partners", path: "/services/hiring-partners" },
+        {
+          name: "Job Seekers",
+          path: "/services/job-seekers",
+          description: "For Job Seekers / Candidates",
+        },
+        {
+          name: "Hiring Partners",
+          path: "/services/hiring-partners",
+          description: "For Corporate / Leaders",
+        },
       ],
     },
     { name: "Resources", path: "/resources" },
@@ -94,7 +102,7 @@ const Navbar = () => {
                               {subItem.name}
                             </span>
                             <p className="mt-1 text-gray-600">
-                              For {subItem.name} / Candidates
+                              {subItem.description}
                             </p>
                           </div>
                         </Link>

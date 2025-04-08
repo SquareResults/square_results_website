@@ -32,11 +32,11 @@ const ApplicantSchema = z.object({
     .any()
     .refine(
       (fileList) =>
-        fileList.length > 0 && fileList[0].type === "application/pdf",
+        fileList?.length > 0 && fileList[0].type === "application/pdf",
       "Only PDF files are allowed."
     )
     .refine(
-      (fileList) => fileList.length > 0 && fileList[0].size <= 5 * 1024 * 1024,
+      (fileList) => fileList?.length > 0 && fileList[0].size <= 5 * 1024 * 1024,
       "File size must be less than 5MB."
     ),
   coverLetter: z.any().optional().or(z.literal(undefined)),
@@ -59,7 +59,10 @@ const ApplicantSchema = z.object({
     ),
   willingToRelocate: z
     .boolean()
-    .refine((val) => val === true, "You must be willing to relocate"),
+    .refine(
+      (val) => (val === true ? "Yes" : val === false ? "No" : "Depends"),
+      "You must be willing to relocate"
+    ),
 });
 
 type FormValues = z.infer<typeof ApplicantSchema>;
@@ -339,9 +342,12 @@ export function ApplyNowForm({
                 </div>
 
                 {/* Further Questions Section */}
-                <h2 className="text-xl font-semibold mb-4">
-                  Further Questions
-                </h2>
+                <h2 className="text-xl font-semibold ">Further Questions</h2>
+                <DialogDescription className="text-slate-500 mb-4">
+                  Please note, your responses to these questions are for
+                  informational purposes only and will not influence the outcome
+                  of your submission.
+                </DialogDescription>
                 <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <div className="mb-6">
@@ -361,12 +367,12 @@ export function ApplyNowForm({
                           <SelectContent className="bg-white shadow rounded">
                             <SelectItem
                               value="Yes"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               Yes
                             </SelectItem>
                             <SelectItem
                               value="No"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               No
                             </SelectItem>
                           </SelectContent>
@@ -394,12 +400,12 @@ export function ApplyNowForm({
                           <SelectContent className="bg-white shadow rounded">
                             <SelectItem
                               value="Yes"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               Yes
                             </SelectItem>
                             <SelectItem
                               value="No"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               No
                             </SelectItem>
                           </SelectContent>
@@ -427,17 +433,17 @@ export function ApplyNowForm({
                           <SelectContent className="bg-white shadow rounded">
                             <SelectItem
                               value="Yes"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               Yes
                             </SelectItem>
                             <SelectItem
                               value="No"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               No
                             </SelectItem>
                             <SelectItem
                               value="Depends"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               Depends
                             </SelectItem>
                           </SelectContent>
@@ -468,27 +474,27 @@ export function ApplyNowForm({
                           <SelectContent className="bg-white shadow rounded">
                             <SelectItem
                               value="High School"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               High School
                             </SelectItem>
                             <SelectItem
                               value="Associate Degree"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               Associate Degree
                             </SelectItem>
                             <SelectItem
                               value="Bachelor's Degree"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               Bachelor's Degree
                             </SelectItem>
                             <SelectItem
                               value="Master's Degree"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               Master's Degree
                             </SelectItem>
                             <SelectItem
                               value="PhD"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               PhD
                             </SelectItem>
                           </SelectContent>
@@ -516,12 +522,12 @@ export function ApplyNowForm({
                           <SelectContent className="bg-white shadow rounded">
                             <SelectItem
                               value="Yes"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               Yes
                             </SelectItem>
                             <SelectItem
                               value="No"
-                              className="px-3 py-2 hover:bg-gray-200">
+                              className="px-3 py-2 pl-8 hover:bg-gray-200">
                               No
                             </SelectItem>
                           </SelectContent>
@@ -546,6 +552,9 @@ export function ApplyNowForm({
                   </Button>
                   <Button
                     type="submit"
+                    disabled={
+                      !form.formState.isValid || !form.formState.isDirty
+                    }
                     className="w-full text-semantic-white shadow-md shadow-slate-500/50">
                     Submit
                   </Button>
