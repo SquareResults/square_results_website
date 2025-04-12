@@ -50,7 +50,7 @@ const BoardAdvisorSection = () => {
                 />
               </div>
               <div className="advisor__div advisor__div--info">
-                <h2 className="advisor__name">{member.name}</h2>
+                <h2 className="advisor__name font-bold">{member.name}</h2>
                 <p className="advisor__desc">{member.description}</p>
               </div>
               <div className="advisor__div advisor__div--name">

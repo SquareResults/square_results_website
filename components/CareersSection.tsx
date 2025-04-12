@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { jobs } from "@/lib/careerData"; // Assuming you have a jobs data file
 import { ApplyNowForm } from "./ApplyNowForm/ApplyNowForm";
 

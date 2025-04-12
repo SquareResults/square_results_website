@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import styles from './WhySection.module.css';
+import { motion } from "motion/react";
+import styles from "./WhySection.module.css";
 
 const WhySection = () => {
   return (
@@ -10,26 +10,25 @@ const WhySection = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6"
-          >
+            className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold text-secondary">
               Why <br />
               <span className="text-[#1E3A8A]">SquareResults?</span>
             </h2>
             <p className="text-lg text-gray-600">
-              SquareResults is revolutionizing the hiring process by creating an ecosystem that
-              bridges the gaps in recruitment. We eliminate the chaos, improve
-              transparency, and prioritize human connections—ensuring job seekers find
-              real opportunities and recruiters discover the best talent, faster.
+              SquareResults is revolutionizing the hiring process by creating an
+              ecosystem that bridges the gaps in recruitment. We eliminate the
+              chaos, improve transparency, and prioritize human
+              connections—ensuring job seekers find real opportunities and
+              recruiters discover the best talent, faster.
             </p>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className={`relative p-4 bg-white rounded-2xl shadow-xl overflow-hidden ${styles['image-container']}`}
-          >
+            className={`relative p-4 bg-white rounded-2xl shadow-xl overflow-hidden ${styles["image-container"]}`}>
             <img
               src="/images/why_sqr.png"
               alt="Team collaboration"

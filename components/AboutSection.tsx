@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import aboutUsImg from "../public/images/about_us.jpg";
 import Image from "next/image";
 

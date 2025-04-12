@@ -1,30 +1,30 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const partners = [
   {
     logo: "/images/amazon.png",
-    name: "Amazon"
+    name: "Amazon",
   },
   {
     logo: "/images/microsoft.png",
-    name: "Microsoft"
+    name: "Microsoft",
   },
   {
     logo: "/images/oracle.png",
-    name: "Oracle"
+    name: "Oracle",
   },
   {
     logo: "/images/salesforce.png",
-    name: "Salesforce"
+    name: "Salesforce",
   },
   {
     logo: "/images/twicth.png",
-    name: "Twitch"
+    name: "Twitch",
   },
   {
     logo: "/images/zillow.png",
-    name: "Zillow"
-  }
+    name: "Zillow",
+  },
 ];
 
 const PartnersSection = () => {
@@ -36,8 +36,7 @@ const PartnersSection = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center"
-          >
+            className="flex justify-center">
             <img
               src="/images/partners.png"
               alt="Team collaboration"
@@ -50,8 +49,7 @@ const PartnersSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-4xl font-bold text-secondary mb-12 ml-12"
-            >
+              className="text-4xl font-bold text-secondary mb-12 ml-12">
               Our Partners
             </motion.h2>
 
@@ -62,9 +60,13 @@ const PartnersSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center justify-center"
-                >
-                  <img src={partner.logo} alt={partner.name} className="w-24 h-24 object-contain" /> {/* Set fixed size */}
+                  className="flex items-center justify-center">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="w-24 h-24 object-contain"
+                  />{" "}
+                  {/* Set fixed size */}
                 </motion.div>
               ))}
             </div>

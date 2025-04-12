@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link"; // ✅ Use Next.js Link
 import { useRouter } from "next/router"; // ✅ Use Next.js Router
 import { Menu, X } from "lucide-react";

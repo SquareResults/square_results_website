@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const CEOSection = () => {
   return (
@@ -8,25 +8,30 @@ const CEOSection = () => {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-4xl font-bold text-[#1D066F] mb-6">Meet the CEO</h2>
+            transition={{ duration: 0.5 }}>
+            <h2 className="text-4xl font-bold text-[#1D066F] mb-6">
+              Meet the CEO
+            </h2>
             <p className="text-lg text-[#081321] leading-relaxed mb-6 text-justify">
-              With over two decades of experience in talent acquisition and HR technology, our CEO has been at the forefront of 
-              revolutionizing how companies and candidates connect. Their vision for SquareResults stems from a deep understanding 
-              of the challenges faced by both job seekers and recruiters in today's dynamic job market.
+              With over two decades of experience in talent acquisition and HR
+              technology, our CEO has been at the forefront of revolutionizing
+              how companies and candidates connect. Their vision for
+              SquareResults stems from a deep understanding of the challenges
+              faced by both job seekers and recruiters in today's dynamic job
+              market.
             </p>
             <p className="text-lg text-[#081321] leading-relaxed text-justify">
-              Under their leadership, SquareResults has grown from a startup to an industry leader, helping thousands of 
-              professionals find their dream roles and enabling companies to build high-performing teams efficiently.
+              Under their leadership, SquareResults has grown from a startup to
+              an industry leader, helping thousands of professionals find their
+              dream roles and enabling companies to build high-performing teams
+              efficiently.
             </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative flex justify-center"
-          >
+            className="relative flex justify-center">
             <div className="relative w-100 h-200 overflow-hidden rounded-lg shadow-lg">
               <img
                 src="/images/Mark.png"

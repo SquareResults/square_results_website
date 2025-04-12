@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);

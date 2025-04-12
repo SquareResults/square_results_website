@@ -1,10 +1,11 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const teamMembers = [
   {
     name: "Lisa Seigneur",
     linkedin: "https://linkedin.com/in/lisaseigneur",
-    description: "Expert in talent acquisition with over 15 years of experience.",
+    description:
+      "Expert in talent acquisition with over 15 years of experience.",
   },
   {
     name: "Vlp Delgado",
@@ -14,7 +15,8 @@ const teamMembers = [
   {
     name: "Alicia N. Scott",
     linkedin: "https://linkedin.com/in/alicia-n-scott",
-    description: "HR technology enthusiast with a focus on AI-driven solutions.",
+    description:
+      "HR technology enthusiast with a focus on AI-driven solutions.",
   },
   {
     name: "Racquel Robinson",
@@ -101,10 +103,13 @@ const TeamSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold text-[#081321] mb-8 tracking-wide">Built By Passionate People</h2>
-          <p className="mt-10 text-3xl text-[#081321] mb-8 tracking-wide">Meet Our Core Team</p>
+          className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-[#081321] mb-8 tracking-wide">
+            Built By Passionate People
+          </h2>
+          <p className="mt-10 text-3xl text-[#081321] mb-8 tracking-wide">
+            Meet Our Core Team
+          </p>
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
@@ -113,13 +118,16 @@ const TeamSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
-            >
+              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
               <div className="flex items-center mb-4">
                 {/* <div className="w-16 h-16 bg-gray-300 rounded-full mr-4"></div> */}
                 <div>
-                  <h3 className="text-xl font-bold text-[#081321]">{member.name}</h3>
-                  <a href={member.linkedin} className="text-[#4DCCE6] hover:text-[#45B5B5] transition-colors">
+                  <h3 className="text-xl font-bold text-[#081321]">
+                    {member.name}
+                  </h3>
+                  <a
+                    href={member.linkedin}
+                    className="text-[#4DCCE6] hover:text-[#45B5B5] transition-colors">
                     LinkedIn
                   </a>
                 </div>

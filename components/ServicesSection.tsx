@@ -1,22 +1,25 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Radar, Circle, ArrowUp } from "lucide-react";
 
 const services = [
   {
     title: "RADAR",
-    description: "There is just enough space here for several lines of text. Use it well.",
-    icon: Radar
+    description:
+      "There is just enough space here for several lines of text. Use it well.",
+    icon: Radar,
   },
   {
     title: "SquareCircle",
-    description: "There is just enough space here for several lines of text. Use it well.",
-    icon: Circle
+    description:
+      "There is just enough space here for several lines of text. Use it well.",
+    icon: Circle,
   },
   {
     title: "SquareTop",
-    description: "There is just enough space here for several lines of text. Use it well.",
-    icon: ArrowUp
-  }
+    description:
+      "There is just enough space here for several lines of text. Use it well.",
+    icon: ArrowUp,
+  },
 ];
 
 const ServicesSection = () => {
@@ -27,8 +30,7 @@ const ServicesSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center text-secondary mb-16"
-        >
+          className="text-4xl font-bold text-center text-secondary mb-16">
           OUR SERVICES
         </motion.h2>
 
@@ -39,8 +41,7 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
-            >
+              className="text-center">
               <div className="mb-6 relative">
                 <div className="w-32 h-32 mx-auto bg-sky-100 rounded-full flex items-center justify-center">
                   <service.icon className="w-16 h-16 text-primary" />

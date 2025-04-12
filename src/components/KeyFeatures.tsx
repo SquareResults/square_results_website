@@ -1,25 +1,28 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { FileText, Users, CheckCircle } from "lucide-react";
 
 const features = [
   {
     title: "RADAR Access",
-    description: "Tap into a high-quality, pre-vetted candidate pool to fast-track your hiring process and find top talent effortlessly.",
+    description:
+      "Tap into a high-quality, pre-vetted candidate pool to fast-track your hiring process and find top talent effortlessly.",
     image: "/images/image.png",
-    icon: FileText
+    icon: FileText,
   },
   {
     title: "Industry Events",
-    description: "Gain insights from industry leaders through exclusive webinars, fireside chats, and live Q&A sessions covering the latest hiring trends.",
+    description:
+      "Gain insights from industry leaders through exclusive webinars, fireside chats, and live Q&A sessions covering the latest hiring trends.",
     image: "/images/image.png",
-    icon: Users
+    icon: Users,
   },
   {
     title: "Discussion Threads",
-    description: "Engage in meaningful conversations with top TA professionals, share best practices, and discuss hiring challenges in a collaborative space.",
+    description:
+      "Engage in meaningful conversations with top TA professionals, share best practices, and discuss hiring challenges in a collaborative space.",
     image: "/images/image.png",
-    icon: CheckCircle
-  }
+    icon: CheckCircle,
+  },
 ];
 
 const KeyFeatures = () => {
@@ -30,8 +33,7 @@ const KeyFeatures = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center text-secondary text-[#1D066F] mb-16"
-        >
+          className="text-4xl font-bold text-center text-secondary text-[#1D066F] mb-16">
           KEY FEATURES
         </motion.h2>
 
@@ -42,8 +44,7 @@ const KeyFeatures = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-            >
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="aspect-w-16 aspect-h-9">
                 <img
                   src={feature.image}

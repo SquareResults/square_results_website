@@ -23,7 +23,7 @@
 }
 
 .advisor__img {
-  width: 100%;
+  width: 80%;
   height: 500px;
   margin: 0 auto;
   display: block;
@@ -49,6 +49,7 @@
   max-width: 300px;
   line-height: 1.5;
   padding: 0 20px;
+  font-weight: bold;
   transition: all 0.4s;
 }
 
