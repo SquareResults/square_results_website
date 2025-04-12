@@ -2,32 +2,15 @@ import { motion } from "framer-motion";
 
 const teamMembers = [
   {
-    name: "Lisa Seigneur",
-    linkedin: "https://linkedin.com/in/lisaseigneur",
-    description:
-      "Expert in talent acquisition with over 15 years of experience.",
+    name: "Vaishnavie Suresh",
+    linkedin: "https://linkedin.com/in/vaishnavie-suresh",
+    description: "Experienced in remote hiring and onboarding.",
   },
   {
     name: "Gi Diaz",
     linkedin: "https://www.linkedin.com/in/gisseldiazf/",
     description:
       "Specialist in innovating solutions for better user experience",
-  },
-  {
-    name: "Alicia N. Scott",
-    linkedin: "https://linkedin.com/in/alicia-n-scott",
-    description:
-      "HR technology enthusiast with a focus on AI-driven solutions.",
-  },
-  {
-    name: "Racquel Robinson",
-    linkedin: "https://linkedin.com/in/racquelrobinsonatx",
-    description: "Passionate about creating inclusive hiring practices.",
-  },
-  {
-    name: "Vaishnavie Suresh",
-    linkedin: "https://linkedin.com/in/vaishnavie-suresh",
-    description: "Experienced in remote hiring and onboarding.",
   },
   {
     name: "Amad Arshad",
@@ -38,21 +21,6 @@ const teamMembers = [
     name: "Diksha Bokade",
     linkedin: "https://linkedin.com/in/diksha-bokade",
     description: "Specialist in recruitment marketing and employer branding.",
-  },
-  {
-    name: "Samikshya Mohapatra",
-    linkedin: "https://linkedin.com/in/samikshya-mohapatra",
-    description: "Focused on leveraging technology for efficient hiring.",
-  },
-  {
-    name: "Mya Richardson",
-    linkedin: "https://linkedin.com/in/mya-richardson11",
-    description: "Expert in candidate experience and engagement.",
-  },
-  {
-    name: "Sarala Sharanappa Kanakagiri",
-    linkedin: "https://linkedin.com/in/sarala-sharanappa-kanakagiri",
-    description: "Specialist in diversity and inclusion initiatives.",
   },
   {
     name: "Jamiah Cypress",
@@ -70,29 +38,14 @@ const teamMembers = [
     description: "Specialist in employee engagement and retention.",
   },
   {
-    name: "J Biddle",
-    linkedin: "https://linkedin.com/in/j-biddle",
-    description: "Experienced in global recruitment and staffing.",
-  },
-  {
-    name: "Bob Nessel",
-    linkedin: "https://linkedin.com/in/bob-nessel-8527181",
-    description: "Focused on strategic talent acquisition.",
-  },
-  {
-    name: "Victoria N. Armah",
-    linkedin: "https://linkedin.com/in/victoria-n-armah-mba-812684207",
-    description: "Expert in HR analytics and workforce planning.",
-  },
-  {
     name: "Cherris Armour",
     linkedin: "https://linkedin.com/in/cherris-armour-871a0418",
     description: "Specialist in leadership development and coaching.",
   },
   {
-    name: "Billy Meade",
-    linkedin: "https://linkedin.com/in/billymeade",
-    description: "Focused on innovative recruitment solutions.",
+    name: "George Thomas Mohan",
+    linkedin: "https://www.linkedin.com/in/georgethomasmohan/",
+    description: "Experienced business operations and creator.",
   },
 ];
 
