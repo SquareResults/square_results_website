@@ -1,21 +1,28 @@
 import { motion } from "framer-motion";
 import aboutUsImg from "../public/images/about_us.jpg";
+import Image from "next/image";
 
 const AboutSection = () => {
   return (
     <section className="relative">
       {/* Background Image Section */}
-      <div
-        className="bg-cover bg-center flex flex-col justify-end items-center p-4"
-        style={{
-          backgroundImage: `url(${aboutUsImg.src})`, // Use the imported image
-          height: "80vh",
-        }}></div>
+      <div>
+        <Image
+          src={aboutUsImg.src}
+          width={100}
+          height={100}
+          sizes="(max-width: 768px) 100vw, 33vw"
+          alt="About Us"
+          loading="lazy"
+          className="w-full h-80vh object-cover"
+          style={{ filter: "blur(2px)", height: "80vh" }}
+        />
+      </div>
 
       {/* About Us Text Section */}
       <div className="relative py-10 bg-gradient-to-br from-[#f0f4f8] to-[#d9e2ec]">
         <div className="p-4 rounded-lg">
-          <h1 className="text-5xl mb-20 font-bold text-[#1D066F] mb-4 text-center">
+          <h1 className="text-5xl font-bold text-[#1D066F] mb-4 text-center">
             About Us
           </h1>
         </div>
