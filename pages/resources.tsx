@@ -144,7 +144,9 @@ const Resources = () => {
             transition={{ duration: 0.2 }}
             className="fixed bottom-4 right-4 z-50"
             ref={chatIconRef}>
-            <Button>
+            <Button
+              size="icon"
+              className="rounded-full size-14 p-2 bg-gray-100 hover:text-semantic-white shadow-lg">
               {!isChatOpen ? (
                 <MessageCircle className="size-12" />
               ) : (

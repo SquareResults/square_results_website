@@ -2,22 +2,14 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import AboutSection from "@/components/AboutSection";
-import MissionSection from "@/components/MissionSection";
-import CEOSection from "@/components/CEOSection";
-import BlogsSection from "@/components/BlogsSection";
 import WhySection from "@/components/WhySection";
 import JobSeekersSection from "@/components/JobSeekersSection";
 import HiringManagersSection from "@/components/HiringManagersSection";
-import KeyFeatures from "@/components/KeyFeatures";
-import UpcomingEvents from "@/components/UpcomingEvents";
-import ServicesSection from "@/components/ServicesSection";
 import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PartnersSection from "@/components/PartnersSection";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import { useState, useEffect, useRef, use, Children } from "react";
+import { useState, useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -114,7 +106,7 @@ const Home = () => {
             <Button
               onClick={toggleChat}
               size="icon"
-              className="rounded-full size-14 p-2 bg-gray shadow-lg">
+              className="rounded-full size-14 p-2 bg-gray-100 hover:text-semantic-white shadow-lg">
               {!isChatOpen ? (
                 <MessageCircle className="size-12" />
               ) : (
