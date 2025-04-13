@@ -23,13 +23,13 @@ const Index = () => {
       <Hero />
       <WhySection />
       {/* <KeyFeatures/> */}
-      <JobSeekersSection /> 
+      <JobSeekersSection />
       <HiringManagersSection />
       <StatsSection />
       <TestimonialsSection />
       {/* <UpcomingEvents/> */}
       <PartnersSection />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

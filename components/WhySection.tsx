@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import styles from "./WhySection.module.css";
+import styles from "../styles/WhySection.module.css";
 
 const WhySection = () => {
   return (

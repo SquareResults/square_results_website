@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Star, StarHalf, StarOff } from "lucide-react";
-import styles from "./TestimonialsSection.module.css";
+import styles from "../styles/TestimonialsSection.module.css";
 
 const testimonials = [
   {
