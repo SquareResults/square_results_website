@@ -24,7 +24,7 @@ const BlogsSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-6">Blogs</h2>
-          <p className="text-lg text-gray-400">
+          <p className="text-lg text-gray-300">
             Stay updated with the latest insights in recruitment and HR
             technology.
           </p>
@@ -45,7 +45,7 @@ const BlogsSection = () => {
                 <h3 className="text-xl font-bold text-semantic-white mb-3">
                   {blog.title}
                 </h3>
-                <p className="text-gray-400 mb-4">
+                <p className="text-gray-300 mb-4">
                   {expanded[index] ? blog.fullText : blog.excerpt}
                 </p>
                 <div className="flex items-center text-sm text-gray-500 mb-4">

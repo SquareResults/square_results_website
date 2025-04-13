@@ -117,7 +117,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-8 text-center text-gray-400 mx-auto">
+        <div className="mt-8 text-center text-gray-300 mx-auto">
           &copy; {new Date().getFullYear()} SquareResults. All rights reserved.
         </div>
       </div>

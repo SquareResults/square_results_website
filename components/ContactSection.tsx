@@ -61,7 +61,7 @@ const ContactSection = () => {
             initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-5xl font-bold mt-12 mb-12 text-primary-light text-center">
+            className="text-5xl font-bold mt-12 mb-12 text-primary-medium text-center">
             Contact Us
           </motion.h2>
 
@@ -129,7 +129,7 @@ const ContactSection = () => {
                   className="text-gray-300 hover:text-primary transition-colors">
                   <FaFacebook
                     size={24}
-                    className="w-6 h-6 text-primary-light"
+                    className="w-6 h-6 text-primary-medium"
                   />
                 </a>
                 <a
@@ -137,20 +137,23 @@ const ContactSection = () => {
                   className="text-gray-300 hover:text-primary transition-colors">
                   <FaLinkedin
                     size={24}
-                    className="w-6 h-6 text-primary-light"
+                    className="w-6 h-6 text-primary-medium"
                   />
                 </a>
                 <a
                   href="https://twitter.com/the_radar_list"
                   className="text-gray-300 hover:text-primary transition-colors">
-                  <FaTwitter size={24} className="w-6 h-6 text-primary-light" />
+                  <FaTwitter
+                    size={24}
+                    className="w-6 h-6 text-primary-medium"
+                  />
                 </a>
                 <a
                   href="https://www.instagram.com/theradarlist/"
                   className="text-gray-300 hover:text-primary transition-colors">
                   <FaInstagram
                     size={24}
-                    className="w-6 h-6 text-primary-light"
+                    className="w-6 h-6 text-primary-medium"
                   />
                 </a>
               </div>

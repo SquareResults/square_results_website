@@ -136,13 +136,13 @@ const CareersSection: React.FC = () => {
               <div className="flex justify-between items-center">
                 <div>
                   <h2 className="text-2xl font-semibold">{job.title}</h2>
-                  <p className="text-sm text-gray-500">{job.datePosted}</p>
+                  <p className="text-sm text-[#1b54b1]">{job.datePosted}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">{job.department}</p>
+                  <p className="text-sm text-[#1b54b1]">{job.department}</p>
                   <button
                     onClick={() => handleExpand(job.id)}
-                    className="text-primary hover:underline">
+                    className="text-primary hover:underline font-semibold">
                     {expandedJob === job.id ? "Hide Details" : "Show Details"}
                   </button>
                 </div>

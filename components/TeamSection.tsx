@@ -81,7 +81,7 @@ const TeamSection = () => {
                   </h3>
                   <a
                     href={member.linkedin}
-                    className="text-[#4DCCE6] hover:text-[#45B5B5] transition-colors">
+                    className="text-primary-medium hover:text-[#45B5B5] transition-colors">
                     LinkedIn
                   </a>
                 </div>

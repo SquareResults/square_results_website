@@ -96,7 +96,7 @@ const Resources = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <span className="inline-block bg-[#4DCCE6]/5 text-[#4DCCE6] px-3 py-1 rounded-full text-sm">
+                    <span className="inline-block bg-[#4DCCE6]/5 text-primary-medium px-3 py-1 rounded-full text-sm">
                       {resource.type}
                     </span>
                   </CardContent>
@@ -129,7 +129,7 @@ const Resources = () => {
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 bg-[#4DCCE6] text-white px-6 py-3 rounded-full hover:bg-[#45B5B5] transition-colors">
+            className="inline-flex items-center gap-2 bg-primary-medium text-white px-6 py-3 rounded-full hover:bg-[#45B5B5] transition-colors">
             Contact Us
           </a>
         </motion.div>
