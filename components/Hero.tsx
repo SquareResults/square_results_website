@@ -254,10 +254,7 @@ const Hero = () => {
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center"
           transition={{ delay: 0.4, duration: 0.5 }}>
-          <a
-            href="https://theradarlist.com/"
-            target="_blank"
-            rel="noopener noreferrer">
+          <a href="/services/job-seekers" rel="noopener noreferrer">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -270,10 +267,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black opacity-20 rounded-full pointer-events-none" />
             </motion.button>
           </a>
-          <a
-            href="https://squarecircle.group/"
-            target="_blank"
-            rel="noopener noreferrer">
+          <a href="/services/hiring-partners" rel="noopener noreferrer">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
