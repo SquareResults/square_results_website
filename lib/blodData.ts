@@ -1,35 +1,5 @@
 export const blogs = [
   {
-    title: "The Future of AI in Recruitment",
-    excerpt:
-      "Exploring how artificial intelligence is transforming the hiring process by automating repetitive tasks, enhancing candidate matching, and providing data-driven insights to improve decision-making...",
-    fullText:
-      "Exploring how artificial intelligence is transforming the hiring process by automating repetitive tasks, enhancing candidate matching, and providing data-driven insights to improve decision-making. AI is revolutionizing the recruitment landscape by streamlining processes, reducing biases, and improving the overall candidate experience.",
-    date: "March 15, 2024",
-    author: "Sarah Johnson",
-    category: "Technology",
-  },
-  {
-    title: "Building Inclusive Hiring Practices",
-    excerpt:
-      "Best practices for creating diverse and inclusive recruitment strategies that foster a welcoming environment, promote equal opportunities, and drive innovation through a diverse workforce...",
-    fullText:
-      "Best practices for creating diverse and inclusive recruitment strategies that foster a welcoming environment, promote equal opportunities, and drive innovation through a diverse workforce. Learn how to implement effective DEI initiatives and create a culture of inclusivity within your organization.",
-    date: "March 12, 2024",
-    author: "Michael Chen",
-    category: "DEI",
-  },
-  {
-    title: "Remote Hiring Success Stories",
-    excerpt:
-      "Case studies of successful remote recruitment and onboarding, highlighting the challenges faced, solutions implemented, and the positive outcomes achieved by companies embracing remote work...",
-    fullText:
-      "Case studies of successful remote recruitment and onboarding, highlighting the challenges faced, solutions implemented, and the positive outcomes achieved by companies embracing remote work. Discover how companies are adapting to the remote work trend and achieving success in a distributed work environment.",
-    date: "March 10, 2024",
-    author: "Emma Williams",
-    category: "Remote Work",
-  },
-  {
     title:
       "Why the first mile, not the last mile is the key to finding the job you want",
     excerpt:
@@ -38,37 +8,41 @@ export const blogs = [
       "When you are looking for a new job, you might be tempted to focus on the last mile of the process: the interview, the offer, the negotiation. But what if I told you that the most important part of your job search is actually the first mile: the research, the exploration, the discovery? In this article, I will explain why the first mile is the key to finding the job you love, and how you can make the most of it.",
     date: "Aug 23, 2023",
     author: "Mark Burks",
-    category: "",
+    category: "Job Hunting",
+    url: "https://theradarlist.medium.com/why-the-first-mile-not-the-last-mile-is-the-key-to-finding-the-job-you-want-7ba0820068a3",
   },
   {
     title: "Six Ways to Separate Yourself from Other Job Candidates",
     excerpt:
-      "In today's competitive job market, it can be hard to stand out from the crowd and impress potential employers... ",
+      "In today's competitive job market, it can be hard to stand out from the crowd and impress potential employers. However, there are some strategies that can help you separate yourself from other job candidates and increase your chances of landing your dream job. ",
     fullText:
       "In today's competitive job market, it can be hard to stand out from the crowd and impress potential employers. However, there are some strategies that can help you separate yourself from other job candidates and increase your chances of landing your dream job. ",
     date: "Aug 30, 2023",
     author: "Mark Burks",
     category: "Networking",
+    url: "https://theradarlist.medium.com/six-ways-to-separate-yourself-from-other-job-candidates-8fd4b0b1789e",
   },
   {
     title: "3 Key Stories Your Resume Should Convey About Yourself",
     excerpt:
-      "Your resume is more than just a list of your skills and experiences. It is a story that showcases who you are, what you can do...",
+      "Your resume is more than just a list of your skills and experiences. It is a story that showcases who you are, what you can do, and why you are the right person for the job.",
     fullText:
       "Your resume is more than just a list of your skills and experiences. It is a story that showcases who you are, what you can do, and why you are the right person for the job.",
     date: "Sep 21, 2023",
     author: "Mark Burks",
     category: "Job Hunting",
+    url: "https://theradarlist.medium.com/3-key-stories-your-resume-should-convey-about-yourself-b254fe7d1220",
   },
   {
     title: "Finding a Great Place to Work",
     excerpt:
-      "Compensation is not just about the salary, but also the benefits and incentives that a company offers to its employees...",
+      "Compensation is not just about the salary, but also the benefits and incentives that a company offers to its employees. A great place to work pays its workers fairly and competitively, and rewards them for their performance and achievements...",
     fullText:
       "Compensation is not just about the salary, but also the benefits and incentives that a company offers to its employees. A great place to work pays its workers fairly and competitively, and rewards them for their performance and achievements. Culture is the set of values, beliefs, and behaviors that shape how a company operates and treats its people. A great place to work fosters a positive, inclusive, and collaborative culture, where employees feel respected, valued, and empowered. Community is the sense of belonging and connection that a company creates among its employees and with its customers, partners, and stakeholders.",
     date: "Sep 27, 2023",
     author: "Mark Burks",
     category: "Job Search",
+    url: "https://theradarlist.medium.com/finding-a-great-place-to-work-ed41ad9527e9",
   },
   {
     title: "7 Factors that Makes a Company a Great Place to Work",
@@ -79,26 +53,29 @@ export const blogs = [
     date: "Oct 13, 2023",
     author: "Mark Burks",
     category: "Job Hunting",
+    url: "https://theradarlist.medium.com/7-factors-that-makes-a-company-a-great-place-to-work-94e8ebbfe6d5",
   },
   {
     title: "10 Things To Leave Off Your Resume",
     excerpt:
-      "When you're applying for a job, you want to make a good impression with your resume. But sometimes, less is more...",
+      "When you're applying for a job, you want to make a good impression with your resume. But sometimes, less is more. Here are 10 things you should leave off your resume to avoid cluttering it or hurting your chances of getting hired.",
     fullText:
       "When you're applying for a job, you want to make a good impression with your resume. But sometimes, less is more. Here are 10 things you should leave off your resume to avoid cluttering it or hurting your chances of getting hired.",
     date: "Oct 21, 2023",
     author: "Mark Burks",
     category: "Job Hunting",
+    url: "https://theradarlist.medium.com/10-things-to-leave-off-your-resume-7f56fe4e6820",
   },
   {
     title: "How To Nail Your Phone Interview",
     excerpt:
-      "Phone interviews are a common way for employers to screen candidates before inviting them for an in-person interview...",
+      "Phone interviews are a common way for employers to screen candidates before inviting them for an in-person interview. They can be challenging, as you have to make a good impression without seeing the interviewer’s body language or facial expressions...",
     fullText:
       "Phone interviews are a common way for employers to screen candidates before inviting them for an in-person interview. They can be challenging, as you have to make a good impression without seeing the interviewer’s body language or facial expressions. However, with some preparation and practice, you can ace your phone interview and move on to the next stage of the hiring process.",
     date: "Nov 10, 2023",
     author: "Mark Burks",
     category: "Career Development",
+    url: "https://theradarlist.medium.com/how-to-nail-your-phone-interview-8828e7b06ada",
   },
   {
     title: "Common Mistakes When Switching Careers",
@@ -109,6 +86,7 @@ export const blogs = [
     date: "Feb 1, 2024",
     author: "Mark Burks",
     category: "Career Advice",
+    url: "https://theradarlist.medium.com/common-mistakes-when-switching-careers-d215266c0d84",
   },
   {
     title: "Tips and Tricks For Finding Your New Career Path",
@@ -119,6 +97,7 @@ export const blogs = [
     date: "Feb 6, 2024",
     author: "Mark Burks",
     category: "Career Advice",
+    url: "https://theradarlist.medium.com/tips-and-tricks-for-finding-your-new-career-path-796c42d5fe03",
   },
   {
     title: "How To Find Networking Events",
@@ -129,6 +108,7 @@ export const blogs = [
     date: "Feb 13, 2024",
     author: "Mark Burks",
     category: "Networking",
+    url: "https://theradarlist.medium.com/how-to-find-networking-events-22b40f201951",
   },
   {
     title: "Why Not To Settle For A Job That Doesn't Make You Happy",
@@ -139,6 +119,7 @@ export const blogs = [
     date: "Feb 20, 2024",
     author: "Mark Burks",
     category: "Career Advice",
+    url: "https://theradarlist.medium.com/why-not-to-settle-for-a-job-that-doesnt-make-you-happy-b101d7b927f1",
   },
   {
     title:
@@ -150,6 +131,7 @@ export const blogs = [
     date: "Feb 27, 2024",
     author: "Mark Burks",
     category: "Career Development",
+    url: "https://theradarlist.medium.com/how-to-turn-a-passion-or-a-skill-that-you-have-into-fulfilling-and-rewarding-work-ae4c3a9e7bc5",
   },
   {
     title: "How to Thrive After Being Laid Off",
@@ -160,5 +142,6 @@ export const blogs = [
     date: "Jul 21, 2023",
     author: "Mark Burks",
     category: "Networking",
+    url: "https://theradarlist.medium.com/how-to-thrive-after-being-laid-off-12b2fc432c9",
   },
 ];

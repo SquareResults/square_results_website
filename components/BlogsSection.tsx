@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Calendar, User, ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
+import { Calendar, User, ArrowRight, ExternalLink } from "lucide-react";
 import { blogs } from "../lib/blodData";
 
 const BlogsSection = () => {
@@ -16,7 +16,7 @@ const BlogsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-[#081321] to-[#081321]">
+    <section className="py-20 bg-gradient-to-br from-[#081321] to-[#081321] border-b-2 border-[#4DCCE6]">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -54,12 +54,20 @@ const BlogsSection = () => {
                   <User className="w-4 h-4 ml-4 mr-2" />
                   <span>{blog.author}</span>
                 </div>
-                <button
-                  onClick={() => toggleExpand(index)}
-                  className="text-[#4DCCE6] font-semibold flex items-center hover:text-[#45B5B5] transition-colors">
-                  {expanded[index] ? "Show Less" : "Read More"}{" "}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </button>
+                <div className="flex justify-between items-center">
+                  <button
+                    onClick={() => toggleExpand(index)}
+                    className="cursor-pointer text-[#4DCCE6] font-semibold flex items-center hover:text-[#45B5B5] transition-colors">
+                    {expanded[index] ? "Show Less" : "Read More"}{" "}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </button>
+                  <a
+                    href={blog.url}
+                    target="_blank"
+                    className="cursor-pointer text-[#4DCCE6] font-semibold flex items-center hover:text-[#45B5B5] transition-colors">
+                    Visit Blog <ExternalLink className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}
