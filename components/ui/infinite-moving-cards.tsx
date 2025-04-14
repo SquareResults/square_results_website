@@ -1,5 +1,3 @@
-"use client";
-
 import { Star, StarHalf, StarOff } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { cn } from "../../lib/utils";
@@ -63,11 +61,11 @@ export const InfiniteMovingCards = ({
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "100s");
+        containerRef.current.style.setProperty("--animation-duration", "50s");
       } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "300s");
+        containerRef.current.style.setProperty("--animation-duration", "100s");
       } else {
-        containerRef.current.style.setProperty("--animation-duration", "500s");
+        containerRef.current.style.setProperty("--animation-duration", "300s");
       }
     }
   };
