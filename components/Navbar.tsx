@@ -4,7 +4,7 @@ import Link from "next/link"; // ✅ Use Next.js Link
 import { useRouter } from "next/router"; // ✅ Use Next.js Router
 import { Menu, X } from "lucide-react";
 import { DemoForm } from "./DemoForm";
-import { FaAngleDown, FaUser, FaUsers } from "react-icons/fa";
+import { FaBuilding, FaUser, FaUsers } from "react-icons/fa";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 const Navbar = () => {
@@ -24,17 +24,36 @@ const Navbar = () => {
           name: "Job Seekers",
           path: "/services/job-seekers",
           description: "For Job Seekers / Candidates",
+          icon: <FaUser className="text-primary text-lg" />,
         },
         {
           name: "Hiring Partners",
           path: "/services/hiring-partners",
           description: "For Corporate / Leaders",
+          icon: <FaUsers className="text-primary text-2xl" />,
         },
       ],
     },
     { name: "Resources", path: "/resources" },
     { name: "Contact", path: "/contact" },
-    { name: "Careers", path: "/careers" },
+    {
+      name: "Careers",
+      path: "/careers",
+      submenu: [
+        {
+          name: "Square Results Openings",
+          path: "/careers",
+          description: "In House Opportunities",
+          icon: <FaUsers className="text-primary text-2xl" />,
+        },
+        {
+          name: "Coorporate Openings",
+          path: "https://theradarlist.com/jobs",
+          description: "See All Opportunities",
+          icon: <FaBuilding className="text-primary text-2xl" />,
+        },
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -65,7 +84,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center">
           <img src="/images/SQRlogo.jpg" alt="Logo" className="w-15 h-14" />
         </Link>
-        <div className="hidden md:flex items-center justify-end flex-wrap text-xl space-x-14 ml-auto">
+        <div className="hidden md:flex items-center justify-end flex-wrap text-xl space-x-10 ml-auto">
           {menuItems.map((item) => (
             <motion.div
               key={item.name}
@@ -80,22 +99,17 @@ const Navbar = () => {
                 <Popover>
                   <PopoverTrigger className="inline-flex items-center gap-x-1">
                     <span>{item.name}</span>
-                    {/* <FaAngleDown className="text-primary-light" /> */}
                   </PopoverTrigger>
 
-                  <PopoverContent className="w-screen max-w-sm flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 ring-1 shadow-lg ring-gray-900/5">
+                  <PopoverContent className="w-4/4 max-w-sm flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 ring-1 shadow-lg ring-gray-900/5">
                     <div className="flex flex-col p-4 bg-semantic-white">
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.name}
                           href={subItem.path}
-                          className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                          className="group relative flex gap-x-4 rounded-lg p-2 hover:bg-gray-50">
                           <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                            {subItem.name === "Job Seekers" ? (
-                              <FaUser className="text-primary text-lg" />
-                            ) : (
-                              <FaUsers className="text-primary text-2xl" />
-                            )}
+                            {subItem.icon}
                           </div>
                           <div>
                             <span className="font-semibold text-gray-900">
@@ -146,22 +160,17 @@ const Navbar = () => {
                   <Popover>
                     <PopoverTrigger className="inline-flex items-center gap-x-1">
                       <span>{item.name}</span>
-                      {/* <FaAngleDown className="text-primary-light" /> */}
                     </PopoverTrigger>
 
-                    <PopoverContent className="w-screen max-w-sm flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 ring-1 shadow-lg ring-gray-900/5">
-                      <div className="flex flex-col p-4 bg-semantic-white">
+                    <PopoverContent className="w-4/4 max-w-sm flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 ring-1 shadow-lg ring-gray-900/5">
+                      <div className="flex flex-col p-2 bg-semantic-white">
                         {item.submenu.map((subItem) => (
                           <Link
                             key={subItem.name}
                             href={subItem.path}
-                            className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                            className="group relative flex gap-x-4 rounded-lg p-2 hover:bg-gray-50">
                             <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                              {subItem.name === "Job Seekers" ? (
-                                <FaUser className="text-primary text-lg" />
-                              ) : (
-                                <FaUsers className="text-primary text-2xl" />
-                              )}
+                              {subItem.icon}
                             </div>
                             <div>
                               <span className="font-semibold text-gray-900">
@@ -186,7 +195,7 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="px-4 py-2 bg-[#4DCCE6] text-black font-semibold rounded-full hover:bg-[#3BB0C1] transition-colors duration-200">
+              className="px-2 py-2 bg-[#4DCCE6] text-black font-semibold rounded-full hover:bg-[#3BB0C1] transition-colors duration-200">
               <Link href="/book-demo" onClick={closeMenu}>
                 Book An Appointment
               </Link>
