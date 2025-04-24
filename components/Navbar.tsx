@@ -41,15 +41,15 @@ const Navbar = () => {
       path: "/careers",
       submenu: [
         {
-          name: "Square Results Openings",
+          name: "Join Our Team",
           path: "/careers",
-          description: "In House Opportunities",
+          description: "SquareResults Jobs",
           icon: <FaUsers className="text-primary text-2xl" />,
         },
         {
-          name: "Coorporate Openings",
+          name: "Global Job Board",
           path: "https://theradarlist.com/jobs",
-          description: "See All Opportunities",
+          description: "Other Companies Jobs",
           icon: <FaBuilding className="text-primary text-2xl" />,
         },
       ],
