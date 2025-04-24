@@ -2,13 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
-import {
-  X,
-  MessageCircle,
-  Send,
-  Loader2,
-  ArrowDownCircleIcon,
-} from "lucide-react";
+import { X, Send, Loader2, ArrowDownCircleIcon } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useChat } from "@ai-sdk/react";
 import Image from "next/image";
@@ -33,6 +27,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
+// import { Label } from "@/components/ui/label";
 
 const Home = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -82,6 +77,10 @@ const Home = () => {
       scrollRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
+
+  console.log("Messages:", messages);
+  console.log("Input:", input);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -241,15 +240,18 @@ const Home = () => {
               </CardContent>
               <CardFooter className="p-4 flex flex-col space-y-2">
                 {/* <div className="flex fle items-center justify-between gap-2">
-                  <label className="text-sm border border-gray-200 py-1 px-2 rounded-xl">
+                  <Label className="cursor-pointer hover:shadow-md text-sm border border-gray-200 py-1 px-2 rounded-xl">
+                    Our Services
+                  </Label>
+                  <Label className="cursor-pointer hover:shadow-md text-sm border border-gray-200 py-1 px-2 rounded-xl">
                     Our Values
-                  </label>
-                  <label className="text-sm border border-gray-200 py-1 px-2 rounded-xl">
+                  </Label>
+                  <Label className="cursor-pointer hover:shadow-md text-sm border border-gray-200 py-1 px-2 rounded-xl">
                     Job Seekers
-                  </label>
-                  <label className="text-sm border border-gray-200 py-1 px-2 rounded-xl">
+                  </Label>
+                  <Label className="cursor-pointer hover:shadow-md text-sm border border-gray-200 py-1 px-2 rounded-xl">
                     Hiring Managers
-                  </label>
+                  </Label>
                 </div> */}
                 <form
                   onSubmit={handleSubmit}
