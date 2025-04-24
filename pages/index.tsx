@@ -1,5 +1,19 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
+import ReactMarkdown from "react-markdown";
+import {
+  X,
+  MessageCircle,
+  Send,
+  Loader2,
+  ArrowDownCircleIcon,
+} from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { useChat } from "@ai-sdk/react";
+import Image from "next/image";
+import remarkGfm from "remark-gfm";
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WhySection from "@/components/WhySection";
@@ -9,10 +23,6 @@ import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PartnersSection from "@/components/PartnersSection";
 import Footer from "@/components/Footer";
-import { useState, useEffect, useRef } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -23,15 +33,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import {
-  X,
-  MessageCircle,
-  Send,
-  Loader2,
-  ArrowDownCircleIcon,
-} from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
-import { useChat } from "@ai-sdk/react";
 
 const Home = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -87,11 +88,13 @@ const Home = () => {
 
       <Hero />
       <WhySection />
+
       {/* <KeyFeatures/> */}
       <JobSeekersSection />
       <HiringManagersSection />
       <StatsSection />
       <TestimonialsSection />
+
       {/* <UpcomingEvents/> */}
       <PartnersSection />
       <AnimatePresence>
@@ -106,9 +109,15 @@ const Home = () => {
             <Button
               onClick={toggleChat}
               size="icon"
-              className="rounded-full size-14 p-2 bg-gray-100 hover:text-semantic-white shadow-lg">
+              className="rounded-full size-14 bg-gray-100 hover:text-semantic-white shadow-md shadow-slate-400">
               {!isChatOpen ? (
-                <MessageCircle className="size-12" />
+                <Image
+                  src="/images/Mark.png"
+                  alt="Mark picture"
+                  width={50}
+                  height={50}
+                  className="rounded-full"
+                />
               ) : (
                 <ArrowDownCircleIcon />
               )}
@@ -124,10 +133,17 @@ const Home = () => {
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.2 }}
             className="fixed bottom-4 right-4 z-50 w-[95%] md:w-[500px]">
-            <Card className="border-2 bg-white shadow-lg">
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
-                <CardTitle className="text-lg font-bold">
-                  Chat with Us
+            <Card className="border-2 bg-white shadow-lg rounded-xl">
+              <CardHeader className="p-4 flex flex-row items-center justify-between space-y-0 pb-3 border-b border-gray-200">
+                <CardTitle className="text-lg font-bold flex items-center gap-2">
+                  <Image
+                    src="/images/Mark.png"
+                    alt="Mark picture"
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                  <p>Chat with Us</p>
                 </CardTitle>
                 <Button
                   onClick={toggleChat}
@@ -223,7 +239,18 @@ const Home = () => {
                   <div ref={scrollRef} />
                 </ScrollArea>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="p-4 flex flex-col space-y-2">
+                {/* <div className="flex fle items-center justify-between gap-2">
+                  <label className="text-sm border border-gray-200 py-1 px-2 rounded-xl">
+                    Our Values
+                  </label>
+                  <label className="text-sm border border-gray-200 py-1 px-2 rounded-xl">
+                    Job Seekers
+                  </label>
+                  <label className="text-sm border border-gray-200 py-1 px-2 rounded-xl">
+                    Hiring Managers
+                  </label>
+                </div> */}
                 <form
                   onSubmit={handleSubmit}
                   className="flex w-full items-center space-x-2">
@@ -231,14 +258,14 @@ const Home = () => {
                     value={input}
                     onChange={handleInputChange}
                     className="flex-1"
-                    placeholder="type your message here.."
+                    placeholder="Type your question here..."
                   />
                   <Button
                     type="submit"
                     className="size-9"
                     disabled={isLoading}
                     size="icon">
-                    <Send className="size-4" />
+                    <Send className="size-4 text-semantic-white" />
                   </Button>
                 </form>
               </CardFooter>
