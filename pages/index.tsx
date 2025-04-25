@@ -27,7 +27,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-// import { Label } from "@/components/ui/label";
 
 const Home = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -124,6 +123,8 @@ const Home = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* ==== Chat UI ==== */}
       <AnimatePresence>
         {isChatOpen && (
           <motion.div
@@ -153,7 +154,7 @@ const Home = () => {
                 </Button>
               </CardHeader>
               <CardContent>
-                <ScrollArea className="h-[300px] pr-4">
+                <ScrollArea className="h-[40rem] pr-4">
                   {messages?.length === 0 && (
                     <div className="w-full mt-32 text-gray-500 items-center justify-center flex gap-3">
                       No messages yet
@@ -162,14 +163,14 @@ const Home = () => {
                   {messages?.map((message, index) => (
                     <div
                       key={index}
-                      className={`mb-4 ${
+                      className={`my-4  ${
                         message.role === "user" ? "text-right" : "text-left"
                       }`}>
                       <div
                         className={`inline-block p-2 rounded-lg${
                           message.role === "user"
-                            ? "bg-primary text-primary"
-                            : "bg-muted"
+                            ? "text-primary bg-slate-200 rounded-l-lg rounded-br-lg"
+                            : "text-primary bg-slate-200 rounded-r-lg rounded-bl-lg"
                         }`}>
                         <ReactMarkdown
                           children={message.content}
@@ -239,20 +240,6 @@ const Home = () => {
                 </ScrollArea>
               </CardContent>
               <CardFooter className="p-4 flex flex-col space-y-2">
-                {/* <div className="flex fle items-center justify-between gap-2">
-                  <Label className="cursor-pointer hover:shadow-md text-sm border border-gray-200 py-1 px-2 rounded-xl">
-                    Our Services
-                  </Label>
-                  <Label className="cursor-pointer hover:shadow-md text-sm border border-gray-200 py-1 px-2 rounded-xl">
-                    Our Values
-                  </Label>
-                  <Label className="cursor-pointer hover:shadow-md text-sm border border-gray-200 py-1 px-2 rounded-xl">
-                    Job Seekers
-                  </Label>
-                  <Label className="cursor-pointer hover:shadow-md text-sm border border-gray-200 py-1 px-2 rounded-xl">
-                    Hiring Managers
-                  </Label>
-                </div> */}
                 <form
                   onSubmit={handleSubmit}
                   className="flex w-full items-center space-x-2">
