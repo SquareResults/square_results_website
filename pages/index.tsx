@@ -77,9 +77,6 @@ const Home = () => {
     }
   }, [messages]);
 
-  console.log("Messages:", messages);
-  console.log("Input:", input);
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
