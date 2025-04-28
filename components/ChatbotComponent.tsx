@@ -85,8 +85,8 @@ const ChatbotComponent = () => {
               className="rounded-full size-14 bg-gray-100 hover:text-semantic-white shadow-md shadow-slate-400">
               {!isChatOpen ? (
                 <Image
-                  src="/images/Mark.png"
-                  alt="Mark picture"
+                  src="/images/chatbot_profile.png"
+                  alt="chatbot picture"
                   width={50}
                   height={50}
                   className="rounded-full"
@@ -111,8 +111,8 @@ const ChatbotComponent = () => {
               <CardHeader className="p-4 flex flex-row items-center justify-between space-y-0 pb-3 border-b border-gray-200">
                 <CardTitle className="text-lg font-bold flex items-center gap-2">
                   <Image
-                    src="/images/Mark.png"
-                    alt="Mark picture"
+                    src="/images/chatbot_profile.png"
+                    alt="chatbot profile picture"
                     width={40}
                     height={40}
                     className="rounded-full"
