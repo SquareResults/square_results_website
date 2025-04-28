@@ -9,7 +9,6 @@ if (!process.env.GOOGLE_API_KEY) {
 }
 
 const google = createGoogleGenerativeAI({
-  /* --- CHANGE API String with Actual API KEY --- */
   apiKey: process.env.GOOGLE_API_KEY,
 });
 
