@@ -37,7 +37,7 @@ const BlogsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-primary-mirage rounded-lg shadow-md hover:shadow-primary-light overflow-hidden hover:shadow-xl transition-shadow">
+              className="bg-primary-mirage rounded-lg shadow-md hover:shadow-primary-light overflow-hidden hover:shadow-sm transition-shadow">
               <div className="p-6">
                 <div className="text-sm text-primary-light font-semibold mb-2">
                   {blog.category}

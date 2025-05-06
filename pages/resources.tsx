@@ -1,12 +1,5 @@
-import { AnimatePresence, motion } from "motion/react";
-import {
-  FileText,
-  Video,
-  BookOpen,
-  Download,
-  MessageCircle,
-  ArrowDownCircleIcon,
-} from "lucide-react";
+import { motion } from "motion/react";
+import { FileText, Video, BookOpen } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -18,8 +11,7 @@ import {
 import Navbar from "@/components/Navbar";
 import BlogsSection from "@/components/BlogsSection";
 import Footer from "@/components/Footer";
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+import React from "react";
 
 const Resources = () => {
   const resources = [
@@ -48,10 +40,6 @@ const Resources = () => {
       url: "https://theradarlist.com/assessment",
     },
   ];
-
-  const [showChatIcon, setShowChatIcon] = useState(true);
-  const [isChatOpen, setIsChatOpen] = useState(false);
-  const chatIconRef = React.useRef(null);
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f0f4f8] to-[#d9e2ec]">
       <Navbar />
@@ -100,15 +88,7 @@ const Resources = () => {
                       {resource.type}
                     </span>
                   </CardContent>
-                  <CardFooter>
-                    {/* TODO: Add download functionality 
-                    <a href={resource.downloadLink}
-                    className="inline-flex items-center gap-2 text-[#4DCCE6] hover:text-[#45B5B5] transition-colors"
-                  >
-                    <Download className="w-4 h-4" />
-                    <span>Download</span>
-                  </a> */}
-                  </CardFooter>
+                  <CardFooter></CardFooter>
                 </Card>
               </a>
             </motion.div>
@@ -135,27 +115,6 @@ const Resources = () => {
         </motion.div>
       </div>
       <BlogsSection />
-      <AnimatePresence>
-        {showChatIcon && (
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 100 }}
-            transition={{ duration: 0.2 }}
-            className="fixed bottom-4 right-4 z-50"
-            ref={chatIconRef}>
-            <Button
-              size="icon"
-              className="rounded-full size-14 p-2 bg-gray-100 hover:text-semantic-white shadow-lg">
-              {!isChatOpen ? (
-                <MessageCircle className="size-12" />
-              ) : (
-                <ArrowDownCircleIcon />
-              )}
-            </Button>
-          </motion.div>
-        )}
-      </AnimatePresence>
       <Footer />
     </div>
   );
