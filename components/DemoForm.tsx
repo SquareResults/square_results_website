@@ -71,7 +71,6 @@ export function DemoForm({
         body: JSON.stringify(values),
       });
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log(values);
       toast({
         title: "Demo Requested!",
         description: "We'll contact you shortly to schedule your demo.",

@@ -8,18 +8,26 @@ import type { AppProps } from "next/app";
 
 // Import BrowserRouter conditionally
 import dynamic from "next/dynamic";
-const BrowserRouter = dynamic(() => import("react-router-dom").then(mod => mod.BrowserRouter), { ssr: false });
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+const BrowserRouter = dynamic(
+  () => import("react-router-dom").then((mod) => mod.BrowserRouter),
+  { ssr: false }
+);
 
 const queryClient = new QueryClient();
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter> {/* ✅ Only runs on the client */}
+      <BrowserRouter>
+        {/* ✅ Only runs on the client */}
         <TooltipProvider>
           <Toaster />
           <Sonner />
+          <Navbar />
           <Component {...pageProps} />
+          <Footer />
         </TooltipProvider>
       </BrowserRouter>
     </QueryClientProvider>

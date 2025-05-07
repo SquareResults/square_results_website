@@ -48,15 +48,27 @@ const Footer = () => {
             <div className="w-1/4">
               <img src="/images/SQRlogo.jpg" alt="Logo" className="w-25 h-25" />
             </div>
-            <div className="flex flex-row my-2 center gap-2 md:mb-0">
-              <h2 className="text-sm font-semibold text-primary-light mb-4">
-                Terms &#124;
+            <div className="flex flex-row my-2 center gap-2 md:mb-0 text-primary-light text-sm">
+              <h2 className=" font-semibold  mb-4">
+                <Link href="/terms" className="leading-relaxed hover:underline">
+                  Terms
+                </Link>{" "}
+                &#124;
               </h2>
-              <h2 className="text-sm font-semibold text-primary-light mb-4">
-                Legal Policies &#124;
+              <h2 className=" font-semibold mb-4">
+                <Link
+                  href="/privacy"
+                  className="leading-relaxed hover:underline">
+                  Legal Policy
+                </Link>{" "}
+                &#124;
               </h2>
-              <h2 className="text-sm font-semibold text-primary-light mb-4">
-                Cookie Policy
+              <h2 className=" font-semibold mb-4">
+                <Link
+                  href="/cookies"
+                  className="leading-relaxed hover:underline">
+                  Cookie Policy
+                </Link>{" "}
               </h2>
             </div>
             <div className="my-2 text-gray-300 mx-auto">

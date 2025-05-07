@@ -13,7 +13,7 @@ const AboutSection = () => {
           height={100}
           sizes="(max-width: 768px) 100vw, 33vw"
           alt="About Us"
-          loading="lazy"
+          priority={false}
           className="w-full h-80vh object-cover"
           style={{ filter: "blur(2px)", height: "80vh" }}
         />

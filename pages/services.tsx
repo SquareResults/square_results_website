@@ -5,8 +5,6 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Image from "next/image"; // ✅ Next.js optimized image import
 
 const services = [
@@ -47,7 +45,6 @@ const community = [
 const Services = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f0f4f8] to-[#d9e2ec]">
-      <Navbar />
       <div className="container mx-auto px-6 py-24 pt-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -140,7 +137,6 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
