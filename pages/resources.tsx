@@ -46,8 +46,8 @@ const Resources = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#081321] mb-6">
-            Resource <span className="text-[#4DCCE6]">Center</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-primary-dark mb-6">
+            Resource <span className="text-primary-light">Center</span>
           </h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Access our comprehensive library of hiring resources.
@@ -67,13 +67,13 @@ const Resources = () => {
                 rel="noopener noreferrer">
                 <Card className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                   <CardHeader>
-                    <div className="w-12 h-12 bg-[#4DCCE6]/10 rounded-lg flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 bg-primary-light/10 rounded-lg flex items-center justify-center mb-4">
                       {React.createElement(resource.icon, {
-                        className: "w-6 h-6 text-[#4DCCE6]",
+                        className: "w-6 h-6 text-primary-light",
                       })}{" "}
                       {/* ✅ Fixed Icon */}
                     </div>
-                    <CardTitle className="text-[#081321]">
+                    <CardTitle className="text-primary-dark">
                       {resource.title}
                     </CardTitle>
                     <CardDescription className="text-gray-600">
@@ -81,7 +81,7 @@ const Resources = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <span className="inline-block bg-[#4DCCE6]/5 text-primary-medium px-3 py-1 rounded-full text-sm">
+                    <span className="inline-block bg-primary-light/5 text-primary-medium px-3 py-1 rounded-full text-sm">
                       {resource.type}
                     </span>
                   </CardContent>
@@ -96,8 +96,8 @@ const Resources = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-16 p-8 bg-[#4DCCE6]/5 rounded-2xl text-center">
-          <h2 className="text-2xl font-bold text-[#081321] mb-4">
+          className="mt-16 p-8 bg-primary-light/5 rounded-2xl text-center">
+          <h2 className="text-2xl font-bold text-primary-dark mb-4">
             Need Custom Resources?
           </h2>
           <p className="text-gray-700 mb-6">

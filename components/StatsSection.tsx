@@ -34,13 +34,13 @@ const StatsSection = () => {
               <img
                 src={stat.icon}
                 alt={stat.label}
-                className="w-24 h-24 text-[#1E3A8A] mx-auto mb-4"
+                className="w-24 h-24 text-primary mx-auto mb-4"
               />
               <motion.div
                 initial={{ scale: 0.5 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                className="text-5xl font-bold text-[#1E3A8A] mb-2">
+                className="text-5xl font-bold text-primary mb-2">
                 {stat.number}
               </motion.div>
               <div className="text-xl text-gray-600">{stat.label}</div>

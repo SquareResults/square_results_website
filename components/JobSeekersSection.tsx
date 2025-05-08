@@ -69,9 +69,9 @@ const FeatureCard = ({
 
         <div className="flex items-center gap-4 mb-4">
           <div className="p-3 rounded-2xl bg-gray-50 group-hover:bg-white transition-colors duration-500">
-            <feature.icon className="w-8 h-8 text-[#1D066F]" />
+            <feature.icon className="w-8 h-8 text-purple" />
           </div>
-          <h3 className="text-2xl font-semibold text-[#1D066F]">
+          <h3 className="text-2xl font-semibold text-purple">
             {feature.title}
           </h3>
         </div>
@@ -145,7 +145,7 @@ const JobSeekersSection = () => {
             <span className="px-4 py-1.5 rounded-full text-xl font-medium bg-gray-100 text-gray-800 inline-block mb-4">
               For Job Seekers
             </span>
-            <h2 className="text-4xl font-bold text-[#1D066F] mb-4">
+            <h2 className="text-4xl font-bold text-purple mb-4">
               Transform Your Job Search
             </h2>
             <p className="text-lg text-gray-600">

@@ -22,7 +22,7 @@ const AboutSection = () => {
       {/* About Us Text Section */}
       <div className="relative py-10 bg-gradient-to-br from-[#f0f4f8] to-[#d9e2ec]">
         <div className="p-4 rounded-lg">
-          <h1 className="text-5xl font-bold text-[#1D066F] mb-4 text-center">
+          <h1 className="text-5xl font-bold text-purple mb-4 text-center">
             About Us
           </h1>
         </div>
@@ -32,7 +32,7 @@ const AboutSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className=" max-w-6xl mx-auto">
-            <h4 className="text-4xl font-bold text-[#081321] mb-8">
+            <h4 className="text-4xl font-bold text-primary-dark mb-8">
               We're redefining hiring—making it fair, transparent, and human.
             </h4>
             <p className="text-lg text-gray-700 leading-relaxed mb-10 text-justify">
@@ -50,7 +50,7 @@ const AboutSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className=" max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#081321] mb-8">
+            <h2 className="text-4xl font-bold text-primary-dark mb-8">
               Our Story
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-8 text-justify">

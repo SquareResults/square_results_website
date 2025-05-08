@@ -30,7 +30,7 @@ const CoreValues: React.FC = () => {
 
   return (
     <div className="p-8 text-center bg-gradient-to-b from-blue-50 to-white">
-      <h1 className="text-5xl font-extrabold mb-16 text-[#1D066F]">
+      <h1 className="text-5xl font-extrabold mb-16 text-purple">
         Our Core Values
       </h1>
       <div className="flex flex-wrap justify-center gap-6">
@@ -43,7 +43,7 @@ const CoreValues: React.FC = () => {
               alt={value.title}
               className="w-36 h-36 rounded-full mx-auto mb-6 shadow-md"
             />
-            <h2 className="text-2xl font-semibold-500 mb-4 text-[#1D066F]">
+            <h2 className="text-2xl font-semibold-500 mb-4 text-purple">
               {value.title}
             </h2>
             <p className="text-gray-700">{value.description}</p>

@@ -37,7 +37,7 @@ const JobSeekers = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#081321] mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary-dark mb-6">
             Job Seekers
           </h1>
         </motion.div>
@@ -50,8 +50,8 @@ const JobSeekers = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#081321] mb-6">
-              Our <span className="text-[#4DCCE6]">Services</span>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-dark mb-6">
+              Our <span className="text-primary-light">Services</span>
             </h1>
           </motion.div>
 
@@ -65,7 +65,7 @@ const JobSeekers = () => {
                 <a href={service.url} target="_blank" rel="noopener noreferrer">
                   <Card className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
                     <CardHeader>
-                      <div className="w-32 h-32 bg-[#4DCCE6]/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                      <div className="w-32 h-32 bg-primary-light/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
                         <Image
                           src={service.icon}
                           alt={service.title}
@@ -74,7 +74,7 @@ const JobSeekers = () => {
                         />{" "}
                         {/* ✅ Fixed Image */}
                       </div>
-                      <CardTitle className="text-[#081321] flex items-center text-2xl justify-center mb-32 padding-12">
+                      <CardTitle className="text-primary-dark flex items-center text-2xl justify-center mb-32 padding-12">
                         {service.title}
                       </CardTitle>
                       <CardDescription className="text-xl text-gray-600 mt-32 text-justify">
@@ -101,7 +101,7 @@ const JobSeekers = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#081321] mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-dark mb-6">
               Community
             </h1>
           </motion.div>
@@ -115,7 +115,7 @@ const JobSeekers = () => {
                 <a href={item.url} target="_blank" rel="noopener noreferrer">
                   <Card className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                     <CardHeader>
-                      <div className="w-32 h-32 bg-[#4DCCE6]/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                      <div className="w-32 h-32 bg-primary-light/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
                         <Image
                           src={item.icon}
                           alt={item.title}
@@ -124,7 +124,7 @@ const JobSeekers = () => {
                         />{" "}
                         {/* ✅ Fixed Image */}
                       </div>
-                      <CardTitle className="text-[#081321] text-2xl flex items-center justify-center">
+                      <CardTitle className="text-primary-dark text-2xl flex items-center justify-center">
                         {item.title}
                       </CardTitle>
                       <CardDescription className="text-xl text-gray-600 text-justify">

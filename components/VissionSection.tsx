@@ -10,7 +10,7 @@ const VissionSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#081321] mb-8 w-3/4">
+          <h2 className="text-4xl font-bold text-primary-dark mb-8 w-3/4">
             Our Vision
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">

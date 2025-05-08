@@ -58,10 +58,10 @@ const TeamSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#081321] mb-8 tracking-wide">
+          <h2 className="text-4xl font-bold text-primary-dark mb-8 tracking-wide">
             Built By Passionate People
           </h2>
-          <p className="mt-10 text-3xl text-[#081321] mb-8 tracking-wide">
+          <p className="mt-10 text-3xl text-primary-dark mb-8 tracking-wide">
             Meet Our Core Team
           </p>
         </motion.div>
@@ -76,7 +76,7 @@ const TeamSection = () => {
               <div className="flex items-center mb-4">
                 {/* <div className="w-16 h-16 bg-gray-300 rounded-full mr-4"></div> */}
                 <div>
-                  <h3 className="text-xl font-bold text-[#081321]">
+                  <h3 className="text-xl font-bold text-primary-dark">
                     {member.name}
                   </h3>
                   <a

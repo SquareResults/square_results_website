@@ -14,7 +14,7 @@ export default {
         primary: {
           DEFAULT: "#1E3A8A", // Jacksons Purple
           light: "#4DCCE6", // Picton blue
-          blumine: "#195e6b", // Blumine
+          blumine: "#195E6B", // Blumine
           medium: "#1E3A8A",
           dark: "#081321", // Firefly
           mirage: "#1A1A2E", // Mirage
@@ -29,7 +29,7 @@ export default {
           200: "#F3F4F6", // Athens Gray
           300: "#D1D5DB", // Mischka Gray
           400: "#4B5563", // River Bed Gray
-          500: "#a0a9bb", // Gull Gray
+          500: "#A0A9BB", // Gull Gray
           600: "#374151", // Oxford Blue Gray
           700: "#1F2937", // Ebony Clay
         },

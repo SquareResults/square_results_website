@@ -88,7 +88,7 @@ const CareersSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#081321] mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary-dark mb-6">
             Careers
           </h1>
         </motion.div>

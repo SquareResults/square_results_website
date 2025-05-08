@@ -33,7 +33,7 @@ const KeyFeatures = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center text-secondary text-[#1D066F] mb-16">
+          className="text-4xl font-bold text-center text-secondary text-purple mb-16">
           KEY FEATURES
         </motion.h2>
 
@@ -53,7 +53,7 @@ const KeyFeatures = () => {
                 />
               </div>
               <div className="p-6">
-                <feature.icon className="w-10 h-10 text-[#1D066F] mb-4" />
+                <feature.icon className="w-10 h-10 text-purple mb-4" />
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>

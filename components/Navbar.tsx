@@ -145,14 +145,14 @@ const Navbar = () => {
           </button>
         </div>
         {isOpen && (
-          <div className="absolute top-16 left-0 w-full bg-[#081321] text-white flex flex-col items-center space-y-4 py-4 md:hidden">
+          <div className="absolute top-16 left-0 w-full bg-primary-dark text-white flex flex-col items-center space-y-4 py-4 md:hidden">
             {menuItems.map((item) => (
               <motion.div
                 key={item.name}
-                className={`text-[#4DCCE6] transition-colors duration-200 ${
+                className={`text-primary-light transition-colors duration-200 ${
                   isActive(item.path)
-                    ? "text-[#4DCCE6] font-bold"
-                    : "hover:text-[#4DCCE6]"
+                    ? "text-primary-light font-bold"
+                    : "hover:text-primary-light"
                 }`}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}>
@@ -195,7 +195,7 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="px-2 py-2 bg-[#4DCCE6] text-black font-semibold rounded-full hover:bg-[#3BB0C1] transition-colors duration-200">
+              className="px-2 py-2 bg-primary-light text-black font-semibold rounded-full hover:bg-[#3BB0C1] transition-colors duration-200">
               <Link href="/book-demo" onClick={closeMenu}>
                 Book An Appointment
               </Link>
