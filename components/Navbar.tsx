@@ -2,20 +2,55 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import Link from "next/link"; // ✅ Use Next.js Link
 import { useRouter } from "next/router"; // ✅ Use Next.js Router
-import { Menu, X } from "lucide-react";
-import { DemoForm } from "./DemoForm";
+import { ChevronRight, Menu, X } from "lucide-react";
 import { FaBuilding, FaUser, FaUsers } from "react-icons/fa";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import MobileNavbar from "./MobileNavbar";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [showDemoForm, setShowDemoForm] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState("");
   const router = useRouter(); // ✅ Next.js router
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+    {
+      name: "About",
+      path: "/about",
+      submenu: [
+        {
+          name: "About Us",
+          path: "/about",
+          submenu: undefined,
+        },
+        {
+          name: "Resources",
+          path: "/resources",
+          submenu: undefined,
+          description: undefined,
+          icon: undefined,
+        },
+        {
+          name: "Careers",
+          path: "/careers",
+          submenu: [
+            {
+              name: "Join Our Team",
+              path: "/careers",
+              description: "SquareResults Jobs",
+              icon: <FaUsers className="text-primary text-2xl" />,
+            },
+            {
+              name: "Global Job Board",
+              path: "https://theradarlist.com/jobs",
+              description: "Other Companies Jobs",
+              icon: <FaBuilding className="text-primary text-2xl" />,
+            },
+          ],
+        },
+      ],
+    },
     {
       name: "Services",
       path: "/services",
@@ -23,37 +58,20 @@ const Navbar = () => {
         {
           name: "Job Seekers",
           path: "/services/job-seekers",
+          submenu: undefined,
           description: "For Job Seekers / Candidates",
           icon: <FaUser className="text-primary text-lg" />,
         },
         {
           name: "Hiring Partners",
           path: "/services/hiring-partners",
+          submenu: undefined,
           description: "For Corporate / Leaders",
           icon: <FaUsers className="text-primary text-2xl" />,
         },
       ],
     },
-    { name: "Resources", path: "/resources" },
     { name: "Contact", path: "/contact" },
-    {
-      name: "Careers",
-      path: "/careers",
-      submenu: [
-        {
-          name: "Join Our Team",
-          path: "/careers",
-          description: "SquareResults Jobs",
-          icon: <FaUsers className="text-primary text-2xl" />,
-        },
-        {
-          name: "Global Job Board",
-          path: "https://theradarlist.com/jobs",
-          description: "Other Companies Jobs",
-          icon: <FaBuilding className="text-primary text-2xl" />,
-        },
-      ],
-    },
   ];
 
   useEffect(() => {
@@ -68,12 +86,8 @@ const Navbar = () => {
   const isActive = (path: string) => router.pathname === path;
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
-  const handleDemoClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setShowDemoForm(true);
-    closeMenu();
-  };
+
+  const toggleDropdown = (item: string) => setIsDropdownOpen(item);
 
   return (
     <>
@@ -84,7 +98,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center">
           <img src="/images/SQRlogo.jpg" alt="Logo" className="w-15 h-14" />
         </Link>
-        <div className="hidden md:flex items-center justify-end flex-wrap text-xl space-x-10 ml-auto">
+        <div className="hidden md:flex items-center justify-end flex-wrap text-xl space-x-20 mr-10">
           {menuItems.map((item) => (
             <motion.div
               key={item.name}
@@ -96,31 +110,79 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}>
               {item.submenu ? (
-                <Popover>
-                  <PopoverTrigger className="inline-flex items-center gap-x-1">
+                <Popover open={isDropdownOpen === item.name}>
+                  <PopoverTrigger
+                    onClick={() => toggleDropdown(item.name)}
+                    className="inline-flex items-center gap-x-1">
                     <span>{item.name}</span>
                   </PopoverTrigger>
 
-                  <PopoverContent className="w-4/4 max-w-sm flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 ring-1 shadow-lg ring-gray-900/5">
-                    <div className="flex flex-col p-4 bg-semantic-white">
-                      {item.submenu.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          href={subItem.path}
-                          className="group relative flex gap-x-4 rounded-lg p-2 hover:bg-gray-50">
-                          <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                            {subItem.icon}
-                          </div>
-                          <div>
-                            <span className="font-semibold text-gray-900">
-                              {subItem.name}
-                            </span>
-                            <p className="mt-1 text-gray-600">
-                              {subItem.description}
-                            </p>
-                          </div>
-                        </Link>
-                      ))}
+                  <PopoverContent
+                    className={`w-full max-w-sm overflow-hidden rounded-lg bg-semantic-white text-sm/6 ring-1 shadow-lg ring-gray-900/5`}>
+                    <div className="flex flex-col p-2 space-y-2 bg-semantic-white">
+                      {item.submenu.map((subItem) => {
+                        if (subItem.submenu) {
+                          return (
+                            <Popover key={subItem.name}>
+                              <PopoverTrigger className="px-2 py-1 w-full items-center font-semibold text-gray-900 group relative flex gap-x-4 rounded-lg hover:bg-gray-200">
+                                <p className="">{subItem.name}</p>
+                                <ChevronRight className="ml-auto h-4 w-4" />
+                              </PopoverTrigger>
+                              <PopoverContent
+                                side="right"
+                                className="w-4/4 max-w-sm ml-4 flex-auto overflow-hidden rounded-lg bg-semantic-white text-sm/6 ring-1 shadow-lg ring-gray-900/5">
+                                <div className="flex flex-col p-1 bg-semantic-white">
+                                  {subItem.submenu.map((subSubItem) => (
+                                    <Link
+                                      key={subSubItem.name}
+                                      href={subSubItem.path}
+                                      onClick={() => toggleDropdown("")}
+                                      className="group relative flex gap-x-4 rounded-lg p-2 hover:bg-gray-200">
+                                      <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                        {subSubItem.icon}
+                                      </div>
+                                      <div>
+                                        <span className="font-semibold text-gray-900">
+                                          {subSubItem.name}
+                                        </span>
+                                        {subSubItem.description && (
+                                          <p className="mt-1 text-gray-600">
+                                            {subSubItem.description}
+                                          </p>
+                                        )}
+                                      </div>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </PopoverContent>
+                            </Popover>
+                          );
+                        }
+
+                        return (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.path}
+                            onClick={() => toggleDropdown("")}
+                            className="px-2 w-full group relative flex gap-x-4 py-1 rounded-md hover:bg-gray-200">
+                            {subItem.icon && (
+                              <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                {subItem.icon}
+                              </div>
+                            )}
+                            <div className="">
+                              <p className="font-semibold text-gray-900">
+                                {subItem.name}
+                              </p>
+                              {subItem.description && (
+                                <p className="mt-1 text-gray-600">
+                                  {subItem.description}
+                                </p>
+                              )}
+                            </div>
+                          </Link>
+                        );
+                      })}
                     </div>
                   </PopoverContent>
                 </Popover>
@@ -129,13 +191,6 @@ const Navbar = () => {
               )}
             </motion.div>
           ))}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={handleDemoClick}
-            className="px-4 py-1 bg-semantic-white text-semantic-black font-semibold rounded-full hover:bg-primary-medium/90 hover:text-semantic-white transition-colors duration-200">
-            Book An Appointment
-          </motion.button>
         </div>
         <div className="md:hidden flex items-center">
           <button
@@ -144,66 +199,15 @@ const Navbar = () => {
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-        {isOpen && (
-          <div className="absolute top-16 left-0 w-full bg-primary-dark text-white flex flex-col items-center space-y-4 py-4 md:hidden">
-            {menuItems.map((item) => (
-              <motion.div
-                key={item.name}
-                className={`text-primary-light transition-colors duration-200 ${
-                  isActive(item.path)
-                    ? "text-primary-light font-bold"
-                    : "hover:text-primary-light"
-                }`}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}>
-                {item.submenu ? (
-                  <Popover>
-                    <PopoverTrigger className="inline-flex items-center gap-x-1">
-                      <span>{item.name}</span>
-                    </PopoverTrigger>
 
-                    <PopoverContent className="w-4/4 max-w-sm flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 ring-1 shadow-lg ring-gray-900/5">
-                      <div className="flex flex-col p-2 bg-semantic-white">
-                        {item.submenu.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            href={subItem.path}
-                            className="group relative flex gap-x-4 rounded-lg p-2 hover:bg-gray-50">
-                            <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                              {subItem.icon}
-                            </div>
-                            <div>
-                              <span className="font-semibold text-gray-900">
-                                {subItem.name}
-                              </span>
-                              <p className="mt-1 text-gray-600">
-                                For {subItem.name} / Candidates
-                              </p>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </PopoverContent>
-                  </Popover>
-                ) : (
-                  <Link href={item.path} onClick={closeMenu}>
-                    {item.name}
-                  </Link>
-                )}
-              </motion.div>
-            ))}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="px-2 py-2 bg-primary-light text-black font-semibold rounded-full hover:bg-[#3BB0C1] transition-colors duration-200">
-              <Link href="/book-demo" onClick={closeMenu}>
-                Book An Appointment
-              </Link>
-            </motion.button>
-          </div>
-        )}
+        {/* ========== MOBILE MENU ========= */}
+        <MobileNavbar
+          isOpen={isOpen}
+          menuItems={menuItems}
+          isActive={isActive}
+          toggleMenu={toggleMenu}
+        />
       </nav>
-      <DemoForm open={showDemoForm} onOpenChange={setShowDemoForm} />
     </>
   );
 };
