@@ -1,76 +1,36 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import { Phone, Mail } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { useState } from "react";
-import { useToast } from "@/components/ui/use-toast";
+import { DemoForm } from "./DemoForm/DemoForm";
 import officeLobbyImage from "../public/images/office_img.png";
 
 const ContactSection = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    userType: "Hiring Partner",
-  });
-  const [isLoading, setIsLoading] = useState(false);
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const formLink = `https://formsubmit.co/ajax/${process.env.FORM_SUBMIT}`;
-    // Simulate API call
-    await fetch(formLink, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    setIsLoading(true);
-
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-      userType: "Hiring Partner",
-    });
-    toast({
-      title: "Form Submitted!",
-      description: "We'll contact you shortly to discuss.",
-    });
+  const openContactForm = () => {
+    setIsDemoOpen(!isDemoOpen);
   };
 
   return (
-    <section className="py-24 bg-secondary text-white min-h-screen">
+    <section className="py-20 sm:py-18 bg-secondary text-white min-h-screen">
       <div className="container mx-auto flex h-full ">
         <div className="w-full max-w-8xl ">
           <motion.h2
             initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-5xl font-bold mt-12 mb-12 text-primary-medium text-center">
+            className="text-5xl font-bold mt-12 text-primary-medium text-center">
             Contact Us
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto sm:ml-0 lg:ml-20">
+          <div className="grid grid-cols-1 md:grid-cols-2  mx-auto sm:ml-0 lg:ml-20">
+            {/* ====== LEFT SECTION: MAPS & IMAGE ======= */}
             <motion.div
               initial={{ opacity: 0, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col gap-5 justify-center items-center">
+              className="flex flex-col gap-5 justify-center items-center mt-12">
               <img
                 src={officeLobbyImage.src}
                 alt="Image of the lobby for the office"
@@ -88,11 +48,12 @@ const ContactSection = () => {
                 referrerPolicy="no-referrer-when-downgrade"></iframe>
             </motion.div>
 
+            {/* ====== RIGHT SECTION: CONTACT INFORMATION ======= */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col items-center text-center md:text-left md:items-start">
+              className="flex flex-col items-center text-center md:text-left md:items-start mt-12">
               <h3 className="text-2xl text-primary font-semibold mb-2">
                 Get in Touch
               </h3>
@@ -158,89 +119,23 @@ const ContactSection = () => {
                 </a>
               </div>
 
-              {/* --- CONTACT FORM --- */}
-              <form
-                id="myForm"
-                onSubmit={handleSubmit}
-                className="w-3/4 max-w-lg">
-                <div className="mb-4">
-                  <input
-                    type="hidden"
-                    name="_subject"
-                    value="New submission for Square Results!"
-                  />
-                  <input type="hidden" name="_template" value="table" />
-                  <label
-                    className="block text-primary text-sm font-bold mb-2"
-                    htmlFor="name">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 text-gray-700 bg-gray-200 rounded"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label
-                    className="block text-primary text-sm font-bold mb-2"
-                    htmlFor="email">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 text-gray-700 bg-gray-200 rounded"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label
-                    className="block text-primary text-sm font-bold mb-2"
-                    htmlFor="userType">
-                    I am a
-                  </label>
-                  <select
-                    id="userType"
-                    name="userType"
-                    value={formData.userType}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 text-gray-700 bg-gray-200 rounded"
-                    required>
-                    <option value="Hiring Partner">Hiring Partner</option>
-                    <option value="Job Seeker">Job Seeker</option>
-                  </select>
-                </div>
-                <div className="mb-4">
-                  <label
-                    className="block text-primary text-sm font-bold mb-2"
-                    htmlFor="message">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 text-gray-700 bg-gray-200 rounded"
-                    rows={4}
-                    required></textarea>
-                </div>
-                <div className="flex justify-center">
-                  <button
-                    type="submit"
-                    className="bg-primary text-white px-4 py-2 rounded hover:text-primary-light transition-colors">
-                    Send Message
-                  </button>
-                </div>
-              </form>
+              {/* ===== CONTACT FORM ====== */}
+              <div className="flex items-center px-8 md:pr-8 sm:px-0">
+                <p className="text-primary mb-4">
+                  <strong>Get Started with a Demo</strong> If you're new here,
+                  scheduling a demo is the perfect way to explore our services.
+                  Simply reach out, and we'll connect with you shortly to
+                  understand your needs and arrange a personalized demo.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <button
+                  onClick={openContactForm}
+                  className="bg-primary hover:bg-semantic-white hover:font-bold text-white hover:text-primary px-4 py-2 rounded-lg transition-colors hover:shadow-md hover:shadow-primary">
+                  Book an Appointment
+                </button>
+              </div>
+              <DemoForm open={isDemoOpen} onOpenChange={openContactForm} />
             </motion.div>
           </div>
         </div>
