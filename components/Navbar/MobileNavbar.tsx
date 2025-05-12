@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { ReactNode } from "react";
 import Link from "next/link"; // ✅ Use Next.js Link
 import { ChevronRight } from "lucide-react";
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 
 interface MobileNavbarProps {
   isOpen: boolean;
@@ -39,11 +39,11 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
   return (
     <>
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-primary-dark text-white flex flex-col items-center space-y-4 py-4 md:hidden">
+        <div className="absolute top-16 left-0 w-full bg-primary-dark text-semantic-white flex flex-col items-center space-y-4 py-4 md:hidden">
           {menuItems.map((item) => (
             <motion.div
               key={item.name}
-              className={`text-semantic-white transition-colors duration-200 ${
+              className={`transition-colors duration-200 ${
                 isActive(item.path)
                   ? "text-primary-light font-bold"
                   : "hover:text-primary-light"
@@ -76,7 +76,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
                                       href={subSubItem.path}
                                       onClick={toggleMenu}
                                       className="group relative flex gap-x-4 rounded-lg p-2 hover:bg-gray-200">
-                                      <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                      <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-semantic-white">
                                         {subSubItem.icon}
                                       </div>
                                       <div>

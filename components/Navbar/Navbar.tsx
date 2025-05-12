@@ -4,14 +4,13 @@ import Link from "next/link"; // ✅ Use Next.js Link
 import { useRouter } from "next/router"; // ✅ Use Next.js Router
 import { ChevronRight, Menu, X } from "lucide-react";
 import { FaBuilding, FaUser, FaUsers } from "react-icons/fa";
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import MobileNavbar from "./MobileNavbar";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState("");
-  const router = useRouter(); // ✅ Next.js router
+  const router = useRouter();
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -87,8 +86,6 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const toggleDropdown = (item: string) => setIsDropdownOpen(item);
-
   return (
     <>
       <nav
@@ -102,21 +99,18 @@ const Navbar = () => {
           {menuItems.map((item) => (
             <motion.div
               key={item.name}
-              className={`text-semantic-white transition-colors duration-200 ${
+              className={`transition-colors duration-200 ${
                 isActive(item.path)
                   ? "text-primary-light font-bold"
-                  : "hover:text-primary-light"
+                  : "text-semantic-white hover:text-primary-light"
               }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}>
               {item.submenu ? (
-                <Popover open={isDropdownOpen === item.name}>
-                  <PopoverTrigger
-                    onClick={() => toggleDropdown(item.name)}
-                    className="inline-flex items-center gap-x-1">
+                <Popover>
+                  <PopoverTrigger className="inline-flex items-center gap-x-1">
                     <span>{item.name}</span>
                   </PopoverTrigger>
-
                   <PopoverContent
                     className={`w-full max-w-sm overflow-hidden rounded-lg bg-semantic-white text-sm/6 ring-1 shadow-lg ring-gray-900/5`}>
                     <div className="flex flex-col p-2 space-y-2 bg-semantic-white">
@@ -136,7 +130,6 @@ const Navbar = () => {
                                     <Link
                                       key={subSubItem.name}
                                       href={subSubItem.path}
-                                      onClick={() => toggleDropdown("")}
                                       className="group relative flex gap-x-4 rounded-lg p-2 hover:bg-gray-200">
                                       <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                                         {subSubItem.icon}
@@ -163,7 +156,6 @@ const Navbar = () => {
                           <Link
                             key={subItem.name}
                             href={subItem.path}
-                            onClick={() => toggleDropdown("")}
                             className="px-2 w-full group relative flex gap-x-4 py-1 rounded-md hover:bg-gray-200">
                             {subItem.icon && (
                               <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">

@@ -5,7 +5,7 @@ import type { AppProps } from "next/app";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 import ChatbotComponent from "@/components/ChatbotComponent";
 import "@/styles/index.css";
