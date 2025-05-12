@@ -5,7 +5,7 @@ export default function Submitted() {
 
   return (
     <div className="min-h-screen">
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-primary-light to-primary-medium text-white">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-primary-light to-primary-medium text-semantic-white">
         {/* Cool Animated Icon */}
         <div className="mb-6">
           <svg

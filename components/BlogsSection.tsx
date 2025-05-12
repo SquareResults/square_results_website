@@ -23,7 +23,7 @@ const BlogsSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-6">Blogs</h2>
+          <h2 className="text-4xl font-bold text-semantic-white mb-6">Blogs</h2>
           <p className="text-lg text-gray-300">
             Stay updated with the latest insights in recruitment and HR
             technology.

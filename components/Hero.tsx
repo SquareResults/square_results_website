@@ -241,9 +241,9 @@ const Hero = () => {
         style={{ background: "semi-transparent" }}
       />
       <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
-      <div className="relative z-1 flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-30 p-6 rounded-lg">
+      <div className="relative z-1 flex flex-col items-center justify-center h-full text-center text-semantic-white bg-black bg-opacity-30 p-6 rounded-lg">
         <h1 className="text-10xl md:text-7xl font-bold mb-6 mt-80">
-          <span className="text-white tracking-wider">
+          <span className="text-semantic-white tracking-wider">
             Making the Job Search Easier
           </span>
           <br />
@@ -258,8 +258,8 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="group relative px-8 py-3 bg-purple text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all duration-200 transform overflow-hidden flex items-center">
-              <span className="relative z-10 group-hover:text-white">
+              className="group relative px-8 py-3 bg-purple text-semantic-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all duration-200 transform overflow-hidden flex items-center">
+              <span className="relative z-10 group-hover:text-semantic-white">
                 Job Seekers
               </span>
               <ChevronRight className="inline-block ml-2 w-5 h-5" />

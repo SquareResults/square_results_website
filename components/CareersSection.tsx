@@ -80,7 +80,7 @@ const CareersSection: React.FC = () => {
   };
 
   return (
-    <section className="py-12 text-white min-h-screen">
+    <section className="py-12 text-semantic-white min-h-screen">
       <div className="container mx-auto px-24">
         {/* === Section Header === */}
         <motion.div
@@ -216,13 +216,13 @@ const CareersSection: React.FC = () => {
                     }&body=Hello,%0D%0A%0D%0APlease%20submit%20your%20resume,%20cover%20letter/portfolio%20for%20the%20${job.title
                       .split(" ")
                       .join("%20")}%20position.%0D%0A%0D%0AThank%20you!`}>
-                    <button className="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition-colors">
+                    <button className="mt-4 bg-primary text-semantic-white px-4 py-2 rounded hover:bg-primary-dark transition-colors">
                       Apply Now
                     </button>
                   </a> */}
                   <button
                     onClick={() => handleApplyNow(job.title)}
-                    className="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition-colors">
+                    className="mt-4 bg-primary text-semantic-white px-4 py-2 rounded hover:bg-primary-dark transition-colors">
                     Apply Now
                   </button>
                 </div>

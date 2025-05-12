@@ -13,7 +13,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-20 sm:py-18 bg-secondary text-white min-h-screen">
+    <section className="py-20 sm:py-18 bg-secondary text-semantic-white min-h-screen">
       <div className="container mx-auto flex h-full ">
         <div className="w-full max-w-8xl ">
           <motion.h2
@@ -131,7 +131,7 @@ const ContactSection = () => {
               <div className="flex justify-center">
                 <button
                   onClick={openContactForm}
-                  className="bg-primary hover:bg-semantic-white hover:font-bold text-white hover:text-primary px-4 py-2 rounded-lg transition-colors hover:shadow-md hover:shadow-primary">
+                  className="bg-primary hover:bg-semantic-white hover:font-bold text-semantic-white hover:text-primary px-4 py-2 rounded-lg transition-colors hover:shadow-md hover:shadow-primary">
                   Book an Appointment
                 </button>
               </div>

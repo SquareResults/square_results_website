@@ -81,7 +81,7 @@ export function FormFields({
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white flex items-center">
+              <FormLabel className="text-semantic-white flex items-center">
                 <label>Work Email</label>
                 <Asterisk className="w-4 h-4 text-red-500" />
               </FormLabel>
@@ -102,7 +102,7 @@ export function FormFields({
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white flex items-center">
+              <FormLabel className="text-semantic-white flex items-center">
                 Phone Number
               </FormLabel>
               <FormControl>
@@ -122,7 +122,7 @@ export function FormFields({
         name="jobRole"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-white flex items-center">
+            <FormLabel className="text-semantic-white flex items-center">
               <label>Job Role</label>
               <Asterisk className="w-4 h-4 text-red-500" />
             </FormLabel>
@@ -159,7 +159,7 @@ export function FormFields({
         name="message"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-white flex items-center">
+            <FormLabel className="text-semantic-white flex items-center">
               <label>Message</label>
               <Asterisk className="w-4 h-4 text-red-500" />
             </FormLabel>
