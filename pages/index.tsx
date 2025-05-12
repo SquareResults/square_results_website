@@ -7,7 +7,6 @@ import HiringManagersSection from "@/components/HiringManagersSection";
 import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PartnersSection from "@/components/PartnersSection";
-import ChatbotComponent from "@/components/ChatbotComponent";
 
 const Home = () => {
   return (
@@ -23,9 +22,6 @@ const Home = () => {
 
       {/* <UpcomingEvents/> */}
       <PartnersSection />
-
-      {/* ==== Chat Component ==== */}
-      <ChatbotComponent />
     </div>
   );
 };

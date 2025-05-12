@@ -1,15 +1,16 @@
-import "@/styles/index.css";
-import "@/styles/App.css";
+// Import BrowserRouter conditionally
+import dynamic from "next/dynamic";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import type { AppProps } from "next/app";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import type { AppProps } from "next/app";
-
-// Import BrowserRouter conditionally
-import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChatbotComponent from "@/components/ChatbotComponent";
+import "@/styles/index.css";
+import "@/styles/App.css";
+
 const BrowserRouter = dynamic(
   () => import("react-router-dom").then((mod) => mod.BrowserRouter),
   { ssr: false }
@@ -27,6 +28,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           <Sonner />
           <Navbar />
           <Component {...pageProps} />
+
+          {/* ==== Chat Component ==== */}
+          <ChatbotComponent />
           <Footer />
         </TooltipProvider>
       </BrowserRouter>

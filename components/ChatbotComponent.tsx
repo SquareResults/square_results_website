@@ -4,9 +4,9 @@ import { useState, useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import { X, Send, Loader2, ArrowDownCircleIcon } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import remarkGfm from "remark-gfm";
 import { useChat } from "@ai-sdk/react";
 import Image from "next/image";
-import remarkGfm from "remark-gfm";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -42,7 +42,7 @@ const ChatbotComponent = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
+      if (window.scrollY > 20) {
         setShowChatIcon(true);
       } else {
         setShowChatIcon(false);
@@ -128,7 +128,7 @@ const ChatbotComponent = () => {
                 </Button>
               </CardHeader>
               <CardContent>
-                <ScrollArea className="h-[40rem] pr-4">
+                <ScrollArea className="h-[30rem] pr-4">
                   {messages?.length === 0 && (
                     <div className="w-full mt-32 text-gray-500 items-center justify-center flex gap-3">
                       No messages yet

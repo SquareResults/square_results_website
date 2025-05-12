@@ -44,6 +44,28 @@ export const initialMessage = {
       - $499-Web Portfolio
     - **Service Benefits**: Each service plan offers various benefits such as targeted profile submissions, personalized reach outs, career fairs, resume reviews, interview preparation, and more. We are here to support you every step of the way with valuable insights and feedback to help you succeed.
     
+    **SquareResults Web Portfolio:**
+
+    - **What is a web portfolio**: A web portfolio is a digital showcase of someone's professional work, skills, and accomplishments, typically hosted online.
+    - **What is a web portfolio like **: It's like a personal website but focuses specifically on highlighting their expertise in a visually appealing and organized manner.
+    - **Web portfolio often includes**: Examples of work (such as projects, designs, articles, photos, code, etc.), A resume or summary of qualifications, Testimonials or recommendations, Links to relevant social media or professional profiles and Contact information.
+
+    **Why does someone need Web Portfolio:**
+
+    - **Professional Branding**: It serves as a powerful tool for personal branding, showing potential employers or clients who you are and what you can do.
+    - **Accessibility**: Being online, it's easily shareable and accessible anytime, anywhere.
+    - **Showcase Skills**: It's ideal for creative professionals, freelancers, and anyone looking to showcase their skills through tangible examples.
+    - **Credibility and Trust**: A well-crafted portfolio builds trust by demonstrating expertise and a proven track record.
+    - **Competitive Edge**: In today's digital-first world, having an online presence sets individuals apart from others who might rely solely on traditional resumes.
+
+    **Job Application Assistance:**
+
+    - **Comprehensive Job Application Assistance**: To help job seekers connect with the right opportunities.
+    - **AI-Driven Matching**: To align candidates with roles that fit their skills and aspirations.
+    - **Real Visibility and Feedback**: On job applications, eliminating ghosting and false promises.
+    - **Structured and Efficient Hiring Processes**: To reduce time-to-hire.
+    - **Personalized Support**: To ensure applicants present their best selves.
+
     **Answer user queries about SQR's features, services, pricing, and capabilities only.** Do not answer questions unrelated to SQR. If a question is outside this scope, respond with:
   
     *"I'm sorry, I can only answer questions related to SQR, its features, hiring solutions, and career development. Please visit our website for more information."*
