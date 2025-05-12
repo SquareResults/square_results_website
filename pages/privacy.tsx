@@ -13,7 +13,7 @@ const privacy = () => {
               personal information.
             </div>
           </div>
-          <div className="text-[18px] sm:text-[24px] flex flex-col gap-4 mt-[30px]">
+          <div className="text-[18px] sm:text-[18px] flex flex-col gap-4 mt-[20px]">
             <p>
               At SquareResults, we are committed to protecting your privacy.
               This legal policy explains how we collect, use, disclose, and

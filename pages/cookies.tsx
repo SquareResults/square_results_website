@@ -12,7 +12,7 @@ const cookie = () => {
               This policy explains how and why we use cookies on our website.
             </div>
           </div>
-          <div className="text-[18px] sm:text-[24px] flex flex-col gap-4 mt-[30px]">
+          <div className="text-[18px] sm:text-[18px] flex flex-col gap-4 mt-[20px]">
             <p>
               Our website uses cookies to improve your experience while you
               navigate through the website. Out of these cookies, the cookies

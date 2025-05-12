@@ -13,7 +13,7 @@ const terms = () => {
               applicable policies.
             </div>
           </div>
-          <div className="text-[18px] sm:text-[24px] flex flex-col gap-4 mt-[30px]">
+          <div className="text-[18px] sm:text-[18px] flex flex-col gap-4 mt-[20px]">
             <p>
               Welcome to SquareResults. These terms and conditions outline the
               rules and regulations for the use of our website. By accessing
