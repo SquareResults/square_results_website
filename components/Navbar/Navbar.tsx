@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import Link from "next/link"; // ✅ Use Next.js Link
 import { useRouter } from "next/router"; // ✅ Use Next.js Router
+import Image from "next/image";
 import { ChevronRight, Menu, X } from "lucide-react";
 import { FaBuilding, FaUser, FaUsers } from "react-icons/fa";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
@@ -11,6 +12,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -82,6 +84,15 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const isActive = (path: string) => router.pathname === path;
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -93,7 +104,13 @@ const Navbar = () => {
           scrolled ? "shadow-lg" : ""
         }`}>
         <Link href="/" className="flex items-center">
-          <img src="/images/SQRlogo.jpg" alt="Logo" className="w-15 h-14" />
+          <Image
+            src="/images/SQRlogo.jpg"
+            alt="Logo"
+            width={isMobile ? 120 : 160}
+            height={isMobile ? 120 : 160}
+            loading="lazy"
+          />
         </Link>
         <div className="hidden md:flex items-center justify-end flex-wrap text-xl space-x-20 mr-10">
           {menuItems.map((item) => (

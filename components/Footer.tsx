@@ -1,8 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
+
   const theCompanyLinks = [
     { name: "About Us", href: "/about" },
     { name: "Careers", href: "/careers" },
@@ -41,13 +44,28 @@ const Footer = () => {
     },
   ];
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <footer className="bg-primary-dark text-semantic-white p-6">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="w-3/4">
-            <div className="w-1/4">
-              <img src="/images/SQRlogo.jpg" alt="Logo" className="w-25 h-25" />
+            <div className="w-2/4">
+              <Image
+                src="/images/SQRlogo.jpg"
+                alt="Logo"
+                width={isMobile ? 120 : 160}
+                height={isMobile ? 120 : 160}
+                loading="lazy"
+              />
             </div>
             <div className="flex flex-row my-2 center gap-2 md:mb-0 text-primary-light text-sm">
               <h2 className=" font-semibold  mb-4">
