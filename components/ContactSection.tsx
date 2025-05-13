@@ -4,6 +4,7 @@ import { Phone, Mail } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { DemoForm } from "./DemoForm/DemoForm";
 import officeLobbyImage from "../public/images/office_img.png";
+import CustomButton from "./CustomButton";
 
 const ContactSection = () => {
   const [isDemoOpen, setIsDemoOpen] = useState(false);
@@ -129,11 +130,10 @@ const ContactSection = () => {
                 </p>
               </div>
               <div className="flex justify-center">
-                <button
+                <CustomButton
                   onClick={openContactForm}
-                  className="bg-primary hover:bg-semantic-white hover:font-bold text-semantic-white hover:text-primary px-4 py-2 rounded-lg transition-colors hover:shadow-md hover:shadow-primary">
-                  Book an Appointment
-                </button>
+                  content="Book an Appointment"
+                />
               </div>
               <DemoForm open={isDemoOpen} onOpenChange={openContactForm} />
             </motion.div>
