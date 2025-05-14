@@ -6,6 +6,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import Image from "next/image"; // ✅ Next.js optimized image import
+import Link from "next/link";
 
 const services = [
   {
@@ -63,7 +64,10 @@ const Services = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}>
-              <a href={service.url} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={service.url}
+                target="_blank"
+                rel="noopener noreferrer">
                 <Card className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
                   <CardHeader>
                     <div className="w-32 h-32 bg-primary-light/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
@@ -89,7 +93,7 @@ const Services = () => {
                     </CardDescription>
                   </CardHeader>
                 </Card>
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -111,7 +115,7 @@ const Services = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}>
-                <a href={item.url} target="_blank" rel="noopener noreferrer">
+                <Link href={item.url} target="_blank" rel="noopener noreferrer">
                   <Card className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                     <CardHeader>
                       <div className="w-32 h-32 bg-primary-light/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
@@ -131,7 +135,7 @@ const Services = () => {
                       </CardDescription>
                     </CardHeader>
                   </Card>
-                </a>
+                </Link>
               </motion.div>
             ))}
           </div>

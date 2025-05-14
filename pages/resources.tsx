@@ -1,5 +1,7 @@
+import React from "react";
 import { motion } from "motion/react";
 import { FileText, Video, BookOpen } from "lucide-react";
+import Link from "next/link";
 import {
   Card,
   CardHeader,
@@ -9,7 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import BlogsSection from "@/components/BlogsSection";
-import React from "react";
+import CustomButton from "@/components/CustomButton";
 
 const Resources = () => {
   const resources = [
@@ -104,11 +106,10 @@ const Resources = () => {
             We can create tailored resources specific to your industry and
             requirements.
           </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-primary-medium text-semantic-white px-6 py-3 rounded-full hover:bg-[#45B5B5] transition-colors">
-            Contact Us
-          </a>
+          <Link href="/contact">
+            {/* // className="inline-flex items-center gap-2 bg-primary-medium text-semantic-white px-6 py-3 rounded-full hover:bg-[#45B5B5] transition-colors"> */}
+            <CustomButton content="Contact Us" variant="primary" />
+          </Link>
         </motion.div>
       </div>
       <BlogsSection />
