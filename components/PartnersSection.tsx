@@ -53,7 +53,7 @@ const PartnersSection = () => {
               Our Partners
             </motion.h2>
 
-            <div className="grid grid-cols-6 md:grid-cols-3 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8">
               {partners.map((partner, index) => (
                 <motion.div
                   key={index}
