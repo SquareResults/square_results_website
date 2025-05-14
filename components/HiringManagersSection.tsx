@@ -102,7 +102,7 @@ const HiringManagersSection = () => {
   }, [api]);
 
   return (
-    <section className="py-10 md:py-20 lg:py-20 relative overflow-hidden">
+    <section className="py-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-gray-50/95" />
 
       <motion.div
