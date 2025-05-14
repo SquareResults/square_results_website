@@ -13,6 +13,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -97,6 +98,10 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <>
       <nav
@@ -104,13 +109,20 @@ const Navbar = () => {
           scrolled ? "shadow-lg" : ""
         }`}>
         <Link href="/" className="flex items-center">
-          <Image
-            src="/images/SQRlogo.jpg"
-            alt="Logo"
-            width={isMobile ? 120 : 160}
-            height={isMobile ? 120 : 160}
-            loading="lazy"
-          />
+          <div className="relative flex items-center justify-center w-15 h-14 rounded-full overflow-hidden">
+            {!imageLoaded && (
+              <div className="absolute inset-0 bg-primary-dark animate-pulse rounded z-10" />
+            )}
+            <Image
+              src="/images/SQRlogo.jpg"
+              alt="Logo"
+              width={isMobile ? 120 : 160}
+              height={isMobile ? 120 : 160}
+              loading="lazy"
+              className="w-full h-full object-cover"
+              onLoadingComplete={handleImageLoad}
+            />
+          </div>
         </Link>
         <div className="hidden md:flex items-center justify-end flex-wrap text-xl space-x-20 mr-10">
           {menuItems.map((item) => (

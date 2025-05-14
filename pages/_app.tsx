@@ -26,11 +26,17 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <TooltipProvider>
           <Toaster />
           <Sonner />
+
+          {/* ==== Navbar ==== */}
           <Navbar />
+
+          {/* ==== Main Content ==== */}
           <Component {...pageProps} />
 
           {/* ==== Chat Component ==== */}
           <ChatbotComponent />
+
+          {/* ==== Footer ==== */}
           <Footer />
         </TooltipProvider>
       </BrowserRouter>
