@@ -34,7 +34,7 @@ const ChatbotComponent = () => {
     error,
   } = useChat({
     api: "/api/gemini",
-    onResponse: (response) => console.log("API Response:", response),
+    // onResponse: (response) => console.log("API Response:", response),
     onError: (err) => console.error("Chat API Error:", err),
   });
 
