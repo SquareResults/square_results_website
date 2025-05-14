@@ -1,7 +1,8 @@
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { FileText, Users, CheckCircle } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -9,7 +10,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 
 const features = [
   {
@@ -100,7 +100,7 @@ const JobSeekersSection = () => {
   }, [api]);
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-10 md:py-20 lg:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white/95" />
 
       <motion.div
@@ -108,9 +108,8 @@ const JobSeekersSection = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="container mx-auto px-8 relative flex flex-col md:flex-row items-center">
-        <div className="md:w-3/5">
-          {" "}
+        className="container mx-auto px-6 relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 items-center">
+        <div>
           {/* Increased width */}
           <Carousel
             setApi={setApi}
@@ -134,8 +133,7 @@ const JobSeekersSection = () => {
           </Carousel>
         </div>
 
-        <div className="md:w-2/5 mb-16 md:mb-0 md:pl-8">
-          {" "}
+        <div className="mb-16 md:mb-0 md:pl-8">
           {/* Adjusted width */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
