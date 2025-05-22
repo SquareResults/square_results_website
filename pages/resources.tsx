@@ -93,26 +93,24 @@ const Resources = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-16 p-8 bg-primary-light/5 rounded-2xl text-center">
-          <h2 className="text-2xl font-bold text-primary-dark mb-4">
-            Need Custom Resources?
-          </h2>
-          <p className="text-gray-700 mb-6">
-            We can create tailored resources specific to your industry and
-            requirements.
-          </p>
-          <Link href="/contact">
-            {/* // className="inline-flex items-center gap-2 bg-primary-medium text-semantic-white px-6 py-3 rounded-full hover:bg-[#45B5B5] transition-colors"> */}
-            <CustomButton content="Contact Us" variant="primary" />
-          </Link>
-        </motion.div>
       </div>
       <BlogsSection />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="p-8 bg-primary-light/5 rounded-2xl text-center">
+        <h2 className="text-2xl font-bold text-primary-dark mb-4">
+          Need Custom Resources?
+        </h2>
+        <p className="text-gray-700 mb-6">
+          We can create tailored resources specific to your industry and
+          requirements.
+        </p>
+        <Link href="/contact">
+          <CustomButton content="Contact Us" variant="primary" />
+        </Link>
+      </motion.div>
     </div>
   );
 };
