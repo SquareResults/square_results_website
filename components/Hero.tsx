@@ -258,7 +258,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="group relative px-8 py-3 bg-purple text-semantic-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all duration-200 transform overflow-hidden flex items-center">
+              className="w-full group relative px-8 py-3 bg-purple text-semantic-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all duration-200 transform overflow-hidden flex justify-center items-center">
               <span className="relative z-10 group-hover:text-semantic-white">
                 Job Seekers
               </span>
@@ -271,7 +271,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="group relative px-8 py-3 bg-semantic-white text-purple border-2 border-purple rounded-full hover:bg-white/90  transition-colors duration-200 transform flex items-center">
+              className="w-full group relative px-8 py-3 bg-semantic-white text-purple border-2 border-purple rounded-full hover:bg-white/90  transition-colors duration-200 transform flex justify-center items-center">
               <span className="relative z-10 text-purple">Hiring Partners</span>
               <ChevronRight className="inline-block ml-2 w-5 h-5" />
               <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black opacity-20 rounded-full pointer-events-none" />

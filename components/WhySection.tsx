@@ -3,7 +3,7 @@ import styles from "../styles/WhySection.module.css";
 
 const WhySection = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white relative w-full h-screen overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div

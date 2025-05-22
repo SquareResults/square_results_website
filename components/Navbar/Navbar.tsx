@@ -108,21 +108,19 @@ const Navbar = () => {
         className={`fixed top-0 left-0 w-full p-4 flex items-center justify-between z-20 transition-all duration-300 bg-primary-dark ${
           scrolled ? "shadow-lg" : ""
         }`}>
-        <Link href="/" className="flex items-center">
-          <div className="relative flex items-center justify-center w-15 h-14 rounded-full overflow-hidden">
-            {!imageLoaded && (
-              <div className="absolute inset-0 bg-primary-dark animate-pulse rounded z-10" />
-            )}
-            <Image
-              src="/images/SQRlogo.jpg"
-              alt="Logo"
-              width={isMobile ? 120 : 160}
-              height={isMobile ? 120 : 160}
-              loading="lazy"
-              className="w-full h-full object-cover"
-              onLoadingComplete={handleImageLoad}
-            />
-          </div>
+        <Link href="/" className="flex items-center border-semantic-white">
+          {!imageLoaded && (
+            <div className="absolute inset-0 bg-primary-dark animate-pulse rounded z-10" />
+          )}
+          <Image
+            src="/images/SQRlogo.jpg"
+            alt="Logo"
+            width={100}
+            height={100}
+            loading="lazy"
+            className="w-full h-full object-cover"
+            onLoadingComplete={handleImageLoad}
+          />
         </Link>
         <div className="hidden md:flex items-center justify-end flex-wrap text-xl space-x-20 mr-10">
           {menuItems.map((item) => (

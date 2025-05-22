@@ -139,7 +139,7 @@ const Footer = () => {
               </Link>
 
               {/* ===== Social Media ===== */}
-              <div className="flex justify-center space-x-4 text-justify">
+              <div className="flex flex-wrap justify-center space-x-2 text-justify">
                 {socialMediaLinks.map((link) => (
                   <Link
                     key={link.name}
