@@ -80,49 +80,84 @@ const CareersSection: React.FC = () => {
   };
 
   return (
-    <section className="py-12 text-semantic-white min-h-screen">
-      <div className="container mx-auto px-24">
+    <section className="py-8 text-semantic-white min-h-screen">
+      <div className="container mx-auto px-4 lg:px-24 space-y-4">
         {/* === Section Header === */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary-dark mb-6">
+          className="flex flex-col gap-2 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary-dark">
             Careers
           </h1>
+          <p className="text-md md:text-lg lg:text-lg text-gray-700">
+            Joining SquareResults as an employee means becoming part of a
+            dynamic, forward-thinking team dedicated to innovation, growth, and
+            excellence. At SquareResults, you'll have the opportunity to work
+            alongside talented professionals who are passionate about driving
+            meaningful change and shaping the future of the industry.
+          </p>
+          <p className="text-md md:text-lg lg:text-lg text-gray-700">
+            We foster a collaborative culture that values creativity,
+            leadership, and continuous learning, ensuring that every team member
+            has the support and resources needed to thrive. Whether you're
+            looking to expand your skill set, take on exciting challenges, or
+            make a lasting impact, SquareResults is the place where ambition
+            meets opportunity. Take the next step in your career—join us and be
+            part of something extraordinary!
+          </p>
+          <p className="text-md md:text-lg lg:text-lg text-gray-700">
+            Take the next step in your career—join us and be part of something
+            extraordinary!
+          </p>
         </motion.div>
 
         {/* === Filter and Search Section === */}
         {/* This section allows users to filter by department and location, and search by job title or description */}
-        <div className="flex lg:flex-row sm:flex-col justify-between sm:gap-4 mb-8">
-          <select
-            value={departmentFilter}
-            onChange={(e) => setDepartmentFilter(e.target.value)}
-            className="px-12 py-2 rounded bg-black-200 text-gray-700 ">
-            {departmentOptions.map((option, index) => (
-              <option key={index} value={option}>
-                {option || "All Departments"}
-              </option>
-            ))}
-          </select>
-          <select
-            value={locationFilter}
-            onChange={(e) => setLocationFilter(e.target.value)}
-            className="px-12 py-2 rounded bg-black-200 text-gray-700">
-            {locationOptions.map((option, index) => (
-              <option key={index} value={option}>
-                {option || "All Locations"}
-              </option>
-            ))}
-            {/* Add more locations as needed */}
-          </select>
+        <div className="grid grid-cols-1 lg:grid-cols-3 justify-between gap-4 mb-8">
+          <div className="relative w-full">
+            <select
+              value={departmentFilter}
+              onChange={(e) => setDepartmentFilter(e.target.value)}
+              className="w-full appearance-none px-2 py-2 pr-8 rounded bg-black-200 text-gray-700 ">
+              {departmentOptions.map((option, index) => (
+                <option key={index} value={option}>
+                  {option || "All Departments"}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-600">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z" />
+              </svg>
+            </div>
+          </div>
+
+          <div className="relative w-full">
+            <select
+              value={locationFilter}
+              onChange={(e) => setLocationFilter(e.target.value)}
+              className="w-full appearance-none px-2 py-2 pr-8 rounded bg-black-200 text-gray-700">
+              {locationOptions.map((option, index) => (
+                <option key={index} value={option}>
+                  {option || "All Locations"}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-600">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z" />
+              </svg>
+            </div>
+          </div>
+
           <input
             type="text"
             placeholder="Search jobs..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="px-12 py-2 rounded bg-black-200 text-gray-700 w-full"
+            className="px-2 py-2 rounded bg-black-200 text-gray-700 w-full"
           />
         </div>
 
@@ -133,9 +168,11 @@ const CareersSection: React.FC = () => {
             <div
               key={job.id}
               className="p-6 border border-gray-300 rounded-lg shadow-lg bg-white text-gray-700">
-              <div className="flex justify-between items-center">
+              <div className="flex flex-col md:flex-row lg:flex-row justify-between md:items-center lg:items-center">
                 <div>
-                  <h2 className="text-2xl font-semibold">{job.title}</h2>
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-semibold">
+                    {job.title}
+                  </h2>
                   <p className="text-sm text-[#1b54b1]">{job.datePosted}</p>
                 </div>
                 <div>
