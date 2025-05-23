@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+.bottomTriangle {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  height: 100%;
+  width: 54%;
+  background: linear-gradient(rgba(140, 187, 76, 1), rgba(140, 187, 76, 1));
+  -webkit-clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 0%);
+}
+
+.rightTriangle {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  height: 100%;
+  width: 94%;
+  background: linear-gradient(rgba(22, 47, 110, 1), rgba(22, 47, 110, 1));
+  -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 0%);
+}
+
+.careerHeaderWrapper {
+  width: 493px;
+  height: 177px;
+}
+
+.careerHeader {
+  font-family: "Anton", sans-serif;
+  /* font-size: 80px; */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 3.2px;
+  /* width: 393px; */
+  height: 102px;
+}
+
+.careerDescription {
+  /* width: 373px; */
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.contactItem {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  /* text-decoration-line: underline; */
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: "from-font";
+}

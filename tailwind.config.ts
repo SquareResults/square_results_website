@@ -19,6 +19,9 @@ export default {
           dark: "#081321", // Firefly
           mirage: "#1A1A2E", // Mirage
         },
+        secondary: {
+          DEFAULT: "#8CBB4C",
+        },
         semantic: {
           DEFAULT: "FFFFFF",
           white: "#FFFFFF", // Used for white backgrounds
@@ -116,6 +119,11 @@ export default {
         fifth: "moveInCircle 20s ease infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      },
+      fontFamily: {
+        oswald: ["Oswald", "sans-serif"],
+        anton: ["Anton", "sans-serif"],
+        openSans: ["Open Sans", "sans-serif"],
       },
     },
   },

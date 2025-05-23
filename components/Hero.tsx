@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
+import EventHomeAd from "./EventHomeAd";
 
 const Hero = () => {
+  const [isEventAdOpen, setIsEventAdOpen] = useState(true);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
   const particlesRef = useRef<
@@ -233,6 +235,11 @@ const Hero = () => {
     });
   };
 
+  const handleEventAdClose = () => {
+    setIsEventAdOpen(false);
+    // Logic to close the event ad
+  };
+
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <canvas
@@ -279,6 +286,7 @@ const Hero = () => {
           </a>
         </motion.div>
       </div>
+      {/* <EventHomeAd open={isEventAdOpen} onOpenChange={handleEventAdClose} /> */}
     </div>
   );
 };
