@@ -13,14 +13,13 @@ const Home = () => {
     <div className="min-h-screen bg-background">
       <Hero />
       <WhySection />
-
       {/* <KeyFeatures/> */}
       <JobSeekersSection />
       <HiringManagersSection />
       <StatsSection />
       <TestimonialsSection />
 
-      {/* <UpcomingEvents/> */}
+      {/* <UpcomingEvents /> */}
       <PartnersSection />
     </div>
   );
