@@ -120,7 +120,7 @@ const CareersSection: React.FC = () => {
             <select
               value={departmentFilter}
               onChange={(e) => setDepartmentFilter(e.target.value)}
-              className="w-full appearance-none px-2 py-2 pr-8 rounded bg-black-200 text-gray-700 ">
+              className="w-full appearance-none px-2 py-2 pr-8 rounded bg-semantic-white text-gray-700 ">
               {departmentOptions.map((option, index) => (
                 <option key={index} value={option}>
                   {option || "All Departments"}
@@ -138,7 +138,7 @@ const CareersSection: React.FC = () => {
             <select
               value={locationFilter}
               onChange={(e) => setLocationFilter(e.target.value)}
-              className="w-full appearance-none px-2 py-2 pr-8 rounded bg-black-200 text-gray-700">
+              className="w-full appearance-none px-2 py-2 pr-8 rounded bg-semantic-white text-gray-700">
               {locationOptions.map((option, index) => (
                 <option key={index} value={option}>
                   {option || "All Locations"}

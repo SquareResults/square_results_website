@@ -32,14 +32,34 @@ const EventHomeAd = ({
             <DialogDescription className="flex flex-col relative mx-[5%] my-[3%]">
               <div
                 className={`flex flex-col gap-0 md:gap-2 lg:gap-2 lg:text-left md:text-left text-center items-center md:items-start lg:items-start lg:w-[493px] md:w-[50%] w-full`}>
+                <div
+                  style={{
+                    width: "150px",
+                    height: "55px",
+                    position: "absolute",
+                    right: "10%",
+                    top: "70px",
+                  }}>
+                  <img
+                    src="/images/sqr-trl-logo.png"
+                    alt="SQR Logo"
+                    loading="lazy"
+                    className="w-full h-full"
+                  />
+                </div>
                 <h1
                   className={`${styles.careerHeader} text-primary text-[56px] md:text-[80px] lg:text-[80px] md:w-[383px] lg:w-[393px]`}>
-                  CAREER DAY
+                  RECRUITMENT DRIVE
                 </h1>
                 <p
                   className={`${styles.careerDescription} w-[249px] md:w-[350px] lg:w-[373px]`}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Explore Roles. Meet Our Teams. Take the Next Step. Looking to
+                  join a company where your work truly matters? SquareResults
+                  Recruitment Drive is your chance to explore current openings,
+                  meet the teams behind the roles, and understand what it's like
+                  to build a career with us. Join the virtual session, get the
+                  insights you need, and learn how to apply to become part of
+                  our growing team.
                 </p>
               </div>
               <div className="flex-shrink-0 mt-[6%] mb-[8%] w-full text-center md:text-left lg:text-left">
