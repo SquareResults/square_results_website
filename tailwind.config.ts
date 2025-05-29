@@ -19,7 +19,7 @@ export default {
           dark: "#081321", // Firefly
           mirage: "#1A1A2E", // Mirage
         },
-        secondary: {
+        green: {
           DEFAULT: "#8CBB4C",
         },
         semantic: {

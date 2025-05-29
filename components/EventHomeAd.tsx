@@ -18,7 +18,7 @@ const EventHomeAd = ({
   onOpenChange: (open: boolean) => void;
 }) => {
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={true} onOpenChange={onOpenChange}>
       <DialogPortal>
         <DialogOverlay className="fixed inset-0 bg-black/10 transition-opacity overflow-y-auto">
           <DialogContent className="p-0 border-none max-w-[90%] md:max-w-[90%] lg:max-w-[70%] max-h-[90%] md:max-h-[100%] lg:max-h-[100%] flex flex-col md:flex-row lg:flex-row gap-4 overflow-y-auto">
@@ -31,14 +31,11 @@ const EventHomeAd = ({
             </DialogDescription>
             <DialogDescription className="flex flex-col relative mx-[5%] my-[3%]">
               <div
-                className={`flex flex-col gap-0 md:gap-2 lg:gap-2 lg:text-left md:text-left text-center items-center md:items-start lg:items-start lg:w-[493px] md:w-[50%] w-full`}>
+                className={`flex flex-col gap-0 md:gap-2 lg:gap-2 lg:text-left md:text-left text-center items-center md:items-start lg:items-start lg:w-[500px] md:w-[350px] w-full border border-red-500`}>
                 <div
                   style={{
-                    width: "150px",
+                    width: "170px",
                     height: "55px",
-                    position: "absolute",
-                    right: "10%",
-                    top: "70px",
                   }}>
                   <img
                     src="/images/sqr-trl-logo.png"
@@ -47,20 +44,21 @@ const EventHomeAd = ({
                     className="w-full h-full"
                   />
                 </div>
-                <h1
-                  className={`${styles.careerHeader} text-primary text-[56px] md:text-[80px] lg:text-[80px] md:w-[383px] lg:w-[393px]`}>
-                  RECRUITMENT DRIVE
-                </h1>
-                <p
-                  className={`${styles.careerDescription} w-[249px] md:w-[350px] lg:w-[373px]`}>
-                  Explore Roles. Meet Our Teams. Take the Next Step. Looking to
-                  join a company where your work truly matters? SquareResults
-                  Recruitment Drive is your chance to explore current openings,
-                  meet the teams behind the roles, and understand what it's like
-                  to build a career with us. Join the virtual session, get the
-                  insights you need, and learn how to apply to become part of
-                  our growing team.
-                </p>
+                <div className="flex flex-col items-center md:items-start lg:items-start">
+                  <h1
+                    className={`${styles.careerHeader} text-primary text-[56px] md:text-[58px] lg:text-[58px] flex flex-wrap border border-blue-500`}>
+                    Recruitment Drive
+                  </h1>
+                </div>
+                <div>
+                  <p
+                    className={`${styles.careerDescription} border border-blue-500`}>
+                    Explore Roles. Meet the Team. Take the Next Step. <br />{" "}
+                    Discover your future at SquareResults! Join our virtual
+                    recruitment drive to explore current openings, connect with
+                    our teams, and learn how to launch your career with us.
+                  </p>
+                </div>
               </div>
               <div className="flex-shrink-0 mt-[6%] mb-[8%] w-full text-center md:text-left lg:text-left">
                 <CustomButton
@@ -90,7 +88,7 @@ const EventHomeAd = ({
                   />
                   <div className="flex flex-col justify-between">
                     <p className="font-bold">Time</p>
-                    <p className="">8:00 AM - 10:00 AM PST</p>
+                    <p className="">10:00 AM PST</p>
                   </div>
                 </h2>
               </div>

@@ -249,7 +249,7 @@ const Hero = () => {
       />
       <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
       <div className="relative z-1 flex flex-col items-center justify-center h-full text-center text-semantic-white bg-black bg-opacity-30 p-6 rounded-lg">
-        <h1 className="font-bold mb-6 mt-80">
+        <h1 className="font-bold mb-6 mt-70">
           <span className="text-4xl lg:text-10xl md:text-7xl text-semantic-white tracking-wider">
             Making the Job Search Easier
           </span>
