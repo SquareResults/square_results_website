@@ -35,17 +35,17 @@ const EventHomeAd = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  //
   const handleModalResize = useCallback((screenSize: number) => {
     if (screenSize < 770) {
       // Logic for mobile screens
-      return "w-full";
+      return `w-[${screenSize - 20}px]`;
     } else if (screenSize < 1300) {
       // Logic for smaller screens
-      return "w-[360px]";
+      return `w-[${screenSize - 20}px]`;
     } else if (screenSize > 1200) {
       // Logic for larger screens
-      return "w-[500px]";
+      return `w-[500px]`;
     }
   }, []);
 
@@ -63,11 +63,12 @@ const EventHomeAd = ({
                 className=""
               />
             </DialogDescription>
-            <DialogDescription className="flex flex-col relative mx-[3%] my-[3%]">
+            <DialogDescription
+              className={`flex flex-col relative mx-[3%] my-[3%] ${handleModalResize(
+                screenResize.width
+              )} `}>
               <div
-                className={`flex flex-col gap-0 md:gap-2 lg:gap-2 lg:text-left md:text-left text-center items-center md:items-start lg:items-start ${handleModalResize(
-                  screenResize.width
-                )}`}>
+                className={`flex flex-col gap-0 md:gap-2 lg:gap-2 lg:text-left md:text-left text-center items-center md:items-start lg:items-start`}>
                 <div
                   style={{
                     width: "170px",
@@ -82,11 +83,11 @@ const EventHomeAd = ({
                 </div>
                 <div className="flex flex-col items-center md:items-start lg:items-start">
                   <h1
-                    className={`${styles.careerHeader} text-primary text-[40px] md:text-[58px] lg:text-[58px] flex flex-wrap`}>
+                    className={`${styles.careerHeader} text-primary text-[40px] md:text-[50px] lg:text-[58px] flex flex-wrap`}>
                     Recruitment Drive
                   </h1>
                 </div>
-                <div className="flex flex-col items-center md:items-start lg:items-start w-3/5 md:w-full lg:w-3/4">
+                <div className="flex flex-col items-center md:items-start lg:items-start w-3/5 md:w-2/5 lg:w-4/5">
                   <p className={`${styles.careerDescription}`}>
                     Explore Roles. Meet the Team. Take the Next Step. <br />
                     Discover your future at SquareResults! Join our virtual
@@ -95,13 +96,13 @@ const EventHomeAd = ({
                   </p>
                 </div>
               </div>
-              <div className="flex-shrink-0 mt-[6%] mb-[8%] w-full text-center md:text-left lg:text-left">
+              <div className="flex-shrink-0 my-[4%]  text-center md:text-left lg:text-left">
                 <CustomButton
                   variant="primary"
                   content="REGISTER NOW"
                   className="w-[211.111px] h-[60px] text-[22px] font-bold leading-normal font-openSans rounded-[20px] items-center"></CustomButton>
               </div>
-              <div className="flex justify-center flex-row md:flex-col lg:flex-col gap-2 md:bg-transparent lg:bg-transparent lg:border-none md:border-none text-center md:text-left lg:text-left ">
+              <div className="flex  justify-center flex-row md:flex-col lg:flex-col gap-2 md:bg-transparent lg:bg-transparent lg:border-none md:border-none text-center md:text-left lg:text-left ">
                 <h2 className="bg-gray-300 py-2 w-[115px] md:w-full lg:w-full md:bg-transparent lg:bg-transparent text-[12px] md:text-[16px] lg:text-[16px] leading-6 flex flex-col md:flex-row lg:flex-row gap-2 items-center md:items-start lg:items-start">
                   <CalendarDays
                     size={54}
@@ -149,7 +150,7 @@ const EventHomeAd = ({
             <DialogDescription
               className={`${styles.bottomTriangle} hidden lg:block md:block`}>
               <div className={styles.rightTriangle}>
-                <div className="absolute right-10 top-[75%] text-semantic-white flex flex-col gap-2">
+                <div className="absolute md:right-10 lg:right-20 top-[72%] text-semantic-white flex flex-col gap-2">
                   <h2
                     className={`${styles.contactItem} text-[17.9px] leading-6`}>
                     <Phone size={22} className="inline-block mr-2" />
