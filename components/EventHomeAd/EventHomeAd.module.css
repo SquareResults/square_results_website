@@ -30,17 +30,13 @@
 
 .careerHeader {
   font-family: "Anton", sans-serif;
-  /* font-size: 80px; */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: 3.2px;
-  /* width: 393px; */
-  /* height: 102px; */
 }
 
 .careerDescription {
-  /* width: 373px; */
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -54,7 +50,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  /* text-decoration-line: underline; */
   text-decoration-style: solid;
   text-decoration-skip-ink: auto;
   text-decoration-thickness: auto;

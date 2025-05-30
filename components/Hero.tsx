@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
-import EventHomeAd from "./EventHomeAd";
+import EventHomeAd from "./EventHomeAd/EventHomeAd";
 
 const Hero = () => {
   const [isEventAdOpen, setIsEventAdOpen] = useState(true);
