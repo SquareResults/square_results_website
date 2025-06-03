@@ -286,7 +286,7 @@ const Hero = () => {
           </a>
         </motion.div>
       </div>
-      <EventHomeAd open={isEventAdOpen} onOpenChange={handleEventAdClose} />
+      {/* <EventHomeAd open={isEventAdOpen} onOpenChange={handleEventAdClose} /> */}
     </div>
   );
 };

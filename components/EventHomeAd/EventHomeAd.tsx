@@ -37,12 +37,13 @@ const EventHomeAd = ({
   }, []);
   //
   const handleModalResize = useCallback((screenSize: number) => {
+    console.log("Screen Size:", screenSize - 50);
     if (screenSize < 770) {
       // Logic for mobile screens
       return `w-[${screenSize - 20}px]`;
-    } else if (screenSize < 1300) {
+    } else if (screenSize < 1000) {
       // Logic for smaller screens
-      return `w-[${screenSize - 20}px]`;
+      return `w-[${screenSize - 1000}px]`;
     } else if (screenSize > 1200) {
       // Logic for larger screens
       return `w-[500px]`;
@@ -53,9 +54,10 @@ const EventHomeAd = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogPortal>
         <DialogOverlay
-          className="fixed inset-0 bg-black/10 transition-opacity overflow-y-auto"
+          className="fixed inset-0 bg-black/1 transition-opacity overflow-y-auto"
           ref={containerRef}>
-          <DialogContent className="p-0 border-none max-w-[90%] md:max-w-[90%] lg:max-w-[70%] max-h-[90%] md:max-h-[100%] lg:max-h-[100%] flex flex-col md:flex-row lg:flex-row gap-4 overflow-y-auto">
+          <DialogContent
+            className={`${styles.closeX} p-0 border-none max-w-[90%] lg:max-w-[800px] max-h-[90%] md:max-h-[100%] lg:max-h-[550px] flex flex-col md:flex-row lg:flex-row gap-4 overflow-y-auto`}>
             <DialogDescription className="block lg:hidden md:hidden">
               <img
                 src="/images/recruiter-interviewing.jpg"
@@ -68,11 +70,12 @@ const EventHomeAd = ({
                 screenResize.width
               )} `}>
               <div
-                className={`flex flex-col gap-0 md:gap-2 lg:gap-2 lg:text-left md:text-left text-center items-center md:items-start lg:items-start`}>
+                className={`flex flex-col gap-0 md:gap-2 lg:gap-2 lg:text-left md:text-left text-center items-center md:items-start lg:items-start w-full md:w-3/5 lg:w-full`}>
                 <div
+                  className="hidden lg:block md:block mb-0 md:my-0 lg:my-0"
                   style={{
-                    width: "170px",
-                    height: "55px",
+                    width: "165px",
+                    height: "50px",
                   }}>
                   <img
                     src="/images/sqr-trl-logo.png"
@@ -81,28 +84,28 @@ const EventHomeAd = ({
                     className="w-full h-full"
                   />
                 </div>
-                <div className="flex flex-col items-center md:items-start lg:items-start">
+                <div className="flex flex-col items-center md:items-start lg:items-start w-full md:w-4/4 lg:w-full">
                   <h1
-                    className={`${styles.careerHeader} text-primary text-[40px] md:text-[50px] lg:text-[58px] flex flex-wrap`}>
+                    className={`${styles.careerHeader} text-primary text-[40px] md:text-[50px] lg:text-[50px] flex flex-wrap`}>
                     Recruitment Drive
                   </h1>
                 </div>
-                <div className="flex flex-col items-center md:items-start lg:items-start w-3/5 md:w-2/5 lg:w-4/5">
+                <div className="flex flex-col items-center md:items-start lg:items-start w-full md:w-3/4 lg:w-2/4">
                   <p className={`${styles.careerDescription}`}>
-                    Explore Roles. Meet the Team. Take the Next Step. <br />
-                    Discover your future at SquareResults! Join our virtual
-                    recruitment drive to explore current openings, connect with
-                    our teams, and learn how to launch your career with us.
+                    Explore Roles. Meet the Team. Take the Next Step. Discover
+                    your future at SquareResults! Join our virtual recruitment
+                    drive to explore current openings, connect with our teams,
+                    and learn how to launch your career with us.
                   </p>
                 </div>
               </div>
-              <div className="flex-shrink-0 my-[4%]  text-center md:text-left lg:text-left">
+              <div className="flex-shrink-0 my-[6%] md:my-[2%] lg:my-[2%] text-center md:text-left lg:text-left">
                 <CustomButton
                   variant="primary"
                   content="REGISTER NOW"
-                  className="w-[211.111px] h-[60px] text-[22px] font-bold leading-normal font-openSans rounded-[20px] items-center"></CustomButton>
+                  className="w-[211.111px] h-[55px] text-[22px] font-bold leading-normal font-openSans rounded-[20px] items-center"></CustomButton>
               </div>
-              <div className="flex  justify-center flex-row md:flex-col lg:flex-col gap-2 md:bg-transparent lg:bg-transparent lg:border-none md:border-none text-center md:text-left lg:text-left ">
+              <div className="flex  justify-center flex-row md:flex-col lg:flex-col gap-1 md:bg-transparent lg:bg-transparent lg:border-none md:border-none text-center md:text-left lg:text-left ">
                 <h2 className="bg-gray-300 py-2 w-[115px] md:w-full lg:w-full md:bg-transparent lg:bg-transparent text-[12px] md:text-[16px] lg:text-[16px] leading-6 flex flex-col md:flex-row lg:flex-row gap-2 items-center md:items-start lg:items-start">
                   <CalendarDays
                     size={54}
@@ -130,14 +133,14 @@ const EventHomeAd = ({
               </div>
             </DialogDescription>
 
-            <div className="hidden lg:block md:block absolute right-[26%] top-[24%] z-10">
+            <div className="hidden lg:block md:block absolute md:right-[22%] lg:right-[26%] top-[24%] z-10">
               <img
                 src="/images/recruiter-interviewing.jpg"
                 alt="why sqr"
                 className="w-[168px] object-cover h-[168px] rounded-[168px] border-[8px] border-green"
               />
             </div>
-            <div className="hidden lg:block md:block absolute right-[38%] top-[60%] z-10">
+            <div className="hidden lg:block md:block absolute md:right-[36%] lg:right-[40%] top-[60%] z-10">
               <img
                 src="/images/why_sqr.png"
                 alt="why sqr"
@@ -150,11 +153,13 @@ const EventHomeAd = ({
             <DialogDescription
               className={`${styles.bottomTriangle} hidden lg:block md:block`}>
               <div className={styles.rightTriangle}>
-                <div className="absolute md:right-10 lg:right-20 top-[72%] text-semantic-white flex flex-col gap-2">
+                <div className="absolute right-5 md:right-5 lg:right-20 md:top-[76%] lg:top-[72%] text-semantic-white flex flex-col gap-2">
                   <h2
                     className={`${styles.contactItem} text-[17.9px] leading-6`}>
                     <Phone size={22} className="inline-block mr-2" />
-                    <a href="tel:602-418-6255">(602) 418-6255</a>
+                    <a href="tel:602-418-6255" className="hover:underline">
+                      (602) 418-6255
+                    </a>
                   </h2>
                   <h2
                     className={`${styles.contactItem} text-[17.9px] leading-6`}>
@@ -162,14 +167,17 @@ const EventHomeAd = ({
                     <a
                       href="https://www.squareresults.com"
                       target="_blank"
-                      rel="noopener noreferrer">
+                      rel="noopener noreferrer"
+                      className="hover:underline">
                       squareresults.com
                     </a>
                   </h2>
                   <h2
                     className={`${styles.contactItem} text-[17.9px] leading-6`}>
                     <Mail size={22} className="inline-block mr-2" />
-                    <a href="mailto:contact@squareresults.com">
+                    <a
+                      href="mailto:contact@squareresults.com"
+                      className="hover:underline">
                       contact@squareresults.com
                     </a>
                   </h2>

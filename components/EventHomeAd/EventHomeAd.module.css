@@ -23,6 +23,13 @@
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 0%);
 }
 
+.closeX svg.close-x {
+  color: white;
+  stroke-width: 4;
+  width: 19px;
+  height: 19px;
+}
+
 .careerHeaderWrapper {
   width: 493px;
   height: 177px;
@@ -55,4 +62,28 @@
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   text-underline-position: "from-font";
+}
+
+@media screen and (max-width: 992px) {
+  .bottomTriangle {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(rgba(140, 187, 76, 1), rgba(140, 187, 76, 1));
+    -webkit-clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 0%);
+  }
+
+  .rightTriangle {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    height: 100%;
+    width: 92%;
+    background: linear-gradient(rgba(22, 47, 110, 1), rgba(22, 47, 110, 1));
+    -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 0%);
+  }
 }
