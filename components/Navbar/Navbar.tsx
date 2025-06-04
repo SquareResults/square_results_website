@@ -7,6 +7,7 @@ import { ChevronRight, Menu, X } from "lucide-react";
 import { FaBuilding, FaUser, FaUsers } from "react-icons/fa";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import MobileNavbar from "./MobileNavbar";
+import StickyBanner from "../StickyBanner";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -227,6 +228,13 @@ const Navbar = () => {
           toggleMenu={toggleMenu}
         />
       </nav>
+
+      {/* ========== STICKY BANNER ========= */}
+      <StickyBanner
+        content="Jumpstart Your Job Search: Join Our Discussion with Top Corporate
+              and Business Hiring Experts!"
+        bannerLink="https://forms.gle/yZtm2TLPia6SioSg7"
+      />
     </>
   );
 };
