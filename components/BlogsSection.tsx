@@ -16,7 +16,7 @@ const BlogsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-dark to-primary-dark border-b-2 border-primary-light">
+    <section className="py-20 bg-gradient-to-br from-primary-dark to-primary-dark">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
