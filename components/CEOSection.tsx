@@ -11,7 +11,7 @@ const CEOSection = () => {
   };
 
   return (
-    <section className="p-20 bg-gradient-to-br from-[#f0f4f8] to-[#d9e2ec]">
+    <section className="flex px-10 justify-center bg-gradient-to-br from-[#f0f4f8] to-[#d9e2ec]">
       <div className="container max-w-6xl">
         <div className="grid md:grid-cols-2 gap-10 items-center ">
           <motion.div

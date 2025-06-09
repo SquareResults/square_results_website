@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Calendar, User, ArrowRight, ExternalLink } from "lucide-react";
-import { blogs } from "../lib/blodData";
+import { blogs } from "../lib/blogData";
 
 const BlogsSection = () => {
   const [expanded, setExpanded] = useState(Array(blogs.length).fill(false));
