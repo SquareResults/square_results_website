@@ -80,7 +80,7 @@ const CareersSection: React.FC = () => {
   };
 
   return (
-    <section className="py-8 text-semantic-white min-h-screen">
+    <section className="py-20 sm:py-18 text-semantic-white min-h-screen">
       <div className="container mx-auto px-4 lg:px-24 space-y-4">
         {/* === Section Header === */}
         <motion.div
@@ -88,7 +88,7 @@ const CareersSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="flex flex-col gap-2 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary-dark">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary-medium">
             Careers
           </h1>
           <p className="text-md md:text-lg lg:text-lg text-gray-700">
