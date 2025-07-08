@@ -58,6 +58,48 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+**Code Quality**
+
+This project includes code quality tools to ensure consistent code standards:
+
+**ESLint**
+Run ESLint to check for code quality issues and potential errors:
+
+```bash
+npm run lint
+```
+
+To automatically fix linting issues where possible:
+
+```bash
+npm run lint:fix
+```
+
+**Type Checking**
+Run TypeScript type checking to catch type-related errors:
+
+```bash
+npm run type-check
+```
+
+**Pre-commit Hooks**
+This project uses Husky for Git hooks that automatically run code quality checks before commits:
+
+- **commit-msg**: Validates commit messages follow conventional commit format
+- **pre-commit**: Runs ESLint and TypeScript type checking
+
+Valid commit message examples:
+
+```bash
+feat: add user authentication feature
+fix: resolve navigation menu bug
+docs: update API documentation
+style: fix code formatting
+refactor: reorganize component structure
+test: add unit tests for login component
+chore: update dependencies
+```
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
