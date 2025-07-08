@@ -1,10 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useRef,
+  //  useState
+} from "react";
 import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
-import EventHomeAd from "./EventHomeAd/EventHomeAd";
+import Link from "next/link";
+// import EventHomeAd from "./EventHomeAd/EventHomeAd";
 
 const Hero = () => {
-  const [isEventAdOpen, setIsEventAdOpen] = useState(true);
+  // const [isEventAdOpen, setIsEventAdOpen] = useState(true);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
   const particlesRef = useRef<
@@ -67,6 +72,9 @@ const Hero = () => {
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(frameRef.current);
     };
+
+    // TODO: Fix animate function or move to another file
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const drawPaper = (
@@ -162,7 +170,7 @@ const Hero = () => {
     ctx.fill();
 
     // Update and draw particles
-    particlesRef.current.forEach((particle, i) => {
+    particlesRef.current.forEach((particle) => {
       const dx = centerX - particle.x;
       const dy = centerY - particle.y;
       const distance = Math.sqrt(dx * dx + dy * dy);
@@ -189,7 +197,7 @@ const Hero = () => {
     });
 
     // Update and draw papers
-    papersRef.current.forEach((paper, i) => {
+    papersRef.current.forEach((paper) => {
       const dx = centerX - paper.x;
       const dy = centerY - paper.y;
       const distance = Math.sqrt(dx * dx + dy * dy);
@@ -235,10 +243,10 @@ const Hero = () => {
     });
   };
 
-  const handleEventAdClose = () => {
-    setIsEventAdOpen(false);
-    // Logic to close the event ad
-  };
+  // const handleEventAdClose = () => {
+  //   setIsEventAdOpen(false);
+  //   // Logic to close the event ad
+  // };
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
@@ -261,7 +269,7 @@ const Hero = () => {
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center"
           transition={{ delay: 0.4, duration: 0.5 }}>
-          <a href="/services/job-seekers" rel="noopener noreferrer">
+          <Link href="/services/job-seekers" rel="noopener noreferrer">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -273,8 +281,8 @@ const Hero = () => {
               <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-purple rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse" />
               <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black opacity-20 rounded-full pointer-events-none" />
             </motion.button>
-          </a>
-          <a href="/services/hiring-partners" rel="noopener noreferrer">
+          </Link>
+          <Link href="/services/hiring-partners" rel="noopener noreferrer">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -283,7 +291,7 @@ const Hero = () => {
               <ChevronRight className="inline-block ml-2 w-5 h-5" />
               <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black opacity-20 rounded-full pointer-events-none" />
             </motion.button>
-          </a>
+          </Link>
         </motion.div>
       </div>
       {/* <EventHomeAd open={isEventAdOpen} onOpenChange={handleEventAdClose} /> */}

@@ -28,9 +28,9 @@ export default function Submitted() {
           Thank You for Applying!
         </h1>
         <p className="text-lg text-center max-w-lg mb-6  px-4">
-          Thank you for submitting your application. We're excited about your
-          interest in joining our team. We will carefully review your details
-          and get back to you soon!
+          Thank you for submitting your application. We&#39;re excited about
+          your interest in joining our team. We will carefully review your
+          details and get back to you soon!
         </p>
 
         {/* A Call-to-Action */}

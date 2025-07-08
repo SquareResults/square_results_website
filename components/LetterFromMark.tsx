@@ -50,10 +50,10 @@ const LetterFromMark = ({
               <br />
               At our core, SquareResults LLC is driven by a singular mission: to
               make the job search process easier and faster for both candidates
-              and recruiters. Today's recruiters are overwhelmed with a deluge
-              of applications, while candidates struggle to navigate a complex
-              and often impersonal job market. We aim to bridge this gap by
-              providing innovative solutions that streamline the application
+              and recruiters. Today&apos;s recruiters are overwhelmed with a
+              deluge of applications, while candidates struggle to navigate a
+              complex and often impersonal job market. We aim to bridge this gap
+              by providing innovative solutions that streamline the application
               process, improve communication, and foster a more efficient and
               rewarding experience for all stakeholders.
               <br />
@@ -91,9 +91,9 @@ const LetterFromMark = ({
               a better match between job requirements and applicant skills.
               <br />
               <br />
-              Our early success can be attributed to our dynamic team's stellar
-              execution and the strength of our business model, built upon a
-              foundation of hard work and unwavering commitment to our
+              Our early success can be attributed to our dynamic team&apos;s
+              stellar execution and the strength of our business model, built
+              upon a foundation of hard work and unwavering commitment to our
               customers. Our network currently spans tens of thousands of
               candidates and recruiters, connecting them with over 1000
               companies. Our talented engineering and product teams are at the

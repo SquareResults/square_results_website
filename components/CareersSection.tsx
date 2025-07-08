@@ -58,8 +58,6 @@ const CareersSection: React.FC = () => {
     // Note: Ensure these match the job data's location field for filtering to work correctly
   ];
 
-  const mailToLink = "";
-
   const filteredJobs = jobs.filter((job) => {
     return (
       (job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -73,7 +71,7 @@ const CareersSection: React.FC = () => {
     setExpandedJob(expandedJob === id ? null : id);
   };
 
-  const handleApplyNow = (role: string) => {
+  const handleApplyNow = () => {
     setShowApplyForm(true);
     const foundJob = filteredJobs.find((job) => job.id === expandedJob);
     setJobRole(foundJob || jobRoleSchema);
@@ -94,14 +92,14 @@ const CareersSection: React.FC = () => {
           <p className="text-md md:text-lg lg:text-lg text-gray-700">
             Joining SquareResults as an employee means becoming part of a
             dynamic, forward-thinking team dedicated to innovation, growth, and
-            excellence. At SquareResults, you'll have the opportunity to work
-            alongside talented professionals who are passionate about driving
-            meaningful change and shaping the future of the industry.
+            excellence. At SquareResults, you&apos;ll have the opportunity to
+            work alongside talented professionals who are passionate about
+            driving meaningful change and shaping the future of the industry.
           </p>
           <p className="text-md md:text-lg lg:text-lg text-gray-700">
             We foster a collaborative culture that values creativity,
             leadership, and continuous learning, ensuring that every team member
-            has the support and resources needed to thrive. Whether you're
+            has the support and resources needed to thrive. Whether you&apos;re
             looking to expand your skill set, take on exciting challenges, or
             make a lasting impact, SquareResults is the place where ambition
             meets opportunity. Take the next step in your career—join us and be
@@ -258,7 +256,7 @@ const CareersSection: React.FC = () => {
                     </button>
                   </a> */}
                   <button
-                    onClick={() => handleApplyNow(job.title)}
+                    onClick={() => handleApplyNow()}
                     className="mt-4 bg-primary text-semantic-white px-4 py-2 rounded hover:bg-primary-dark transition-colors">
                     Apply Now
                   </button>

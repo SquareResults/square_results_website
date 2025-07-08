@@ -74,6 +74,7 @@ export function DemoForm({
         description: "Something went wrong. Please try again.",
         variant: "destructive",
       });
+      console.warn("Error Message: ", (error as Error).message);
     } finally {
       setIsSubmitting(false);
     }

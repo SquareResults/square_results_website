@@ -40,7 +40,7 @@ const BoardAdvisorSection = () => {
           </h1>
         </div>
         <div className="boardAdvisorSection">
-          {boardMembers.map((member, index) => (
+          {boardMembers.map((member) => (
             <div key={member.name} className="boardAdvisor_div advisor">
               <div className="advisor__div advisor__div--img">
                 <img

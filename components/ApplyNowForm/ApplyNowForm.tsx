@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -492,12 +492,12 @@ export function ApplyNowForm({
                             <SelectItem
                               value="Bachelor's Degree"
                               className="px-3 py-2 pl-8 hover:bg-gray-200">
-                              Bachelor's Degree
+                              Bachelor&apos;s Degree
                             </SelectItem>
                             <SelectItem
                               value="Master's Degree"
                               className="px-3 py-2 pl-8 hover:bg-gray-200">
-                              Master's Degree
+                              Master&apos;s Degree
                             </SelectItem>
                             <SelectItem
                               value="PhD"

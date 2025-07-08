@@ -16,11 +16,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { UseFormReturn } from "react-hook-form";
+
 export function FormFields({
   form,
   jobRoles,
 }: {
-  form: any;
+  form: UseFormReturn<{
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone?: string;
+    jobRole: string;
+    message: string;
+  }>;
   jobRoles: string[];
 }) {
   return (

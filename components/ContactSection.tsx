@@ -123,10 +123,11 @@ const ContactSection = () => {
               {/* ===== CONTACT FORM ====== */}
               <div className="flex items-center px-8 md:pr-8 sm:px-0">
                 <p className="text-primary mb-4">
-                  <strong>Get Started with a Demo</strong> If you're new here,
-                  scheduling a demo is the perfect way to explore our services.
-                  Simply reach out, and we'll connect with you shortly to
-                  understand your needs and arrange a personalized demo.
+                  <strong>Get Started with a Demo</strong> If you&apos;re new
+                  here, scheduling a demo is the perfect way to explore our
+                  services. Simply reach out, and we&apos;ll connect with you
+                  shortly to understand your needs and arrange a personalized
+                  demo.
                 </p>
               </div>
               <div className="flex justify-center">

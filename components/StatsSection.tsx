@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { Users, Building, Network } from "lucide-react";
 
 const stats = [
   {

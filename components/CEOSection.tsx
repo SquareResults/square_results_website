@@ -28,8 +28,8 @@ const CEOSection = () => {
                 technology, our CEO has been at the forefront of revolutionizing
                 how companies and candidates connect. Their vision for
                 SquareResults stems from a deep understanding of the challenges
-                faced by both job seekers and recruiters in today's dynamic job
-                market.
+                faced by both job seekers and recruiters in today&apos;s dynamic
+                job market.
               </p>
               <p className="text-lg text-primary-dark leading-relaxed text-justify">
                 Under their leadership, SquareResults has grown from a startup

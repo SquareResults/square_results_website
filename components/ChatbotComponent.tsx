@@ -157,7 +157,7 @@ const ChatbotComponent = () => {
                               children,
                               ...props
                             }: {
-                              node?: any;
+                              node?: unknown;
                               inline?: boolean;
                               className?: string;
                               children?: React.ReactNode;
