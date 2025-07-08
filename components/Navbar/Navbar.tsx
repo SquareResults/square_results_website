@@ -12,6 +12,8 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  // TODO: REMOVE this line if not needed
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
   const [imageLoaded, setImageLoaded] = useState(false);
 

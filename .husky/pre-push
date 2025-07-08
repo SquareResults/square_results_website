@@ -1,0 +1,11 @@
+echo "🔍 Running pre-push checks..."
+
+# Run full linting on all files
+echo "📋 Checking code quality..."
+npm run lint
+
+# Run type checking
+echo "🔧 Checking TypeScript types..."
+npm run type-check
+
+echo "✅ Pre-push checks completed successfully!"

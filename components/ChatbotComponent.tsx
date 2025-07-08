@@ -147,12 +147,15 @@ const ChatbotComponent = () => {
                             : "text-primary bg-slate-200 rounded-r-lg rounded-bl-lg"
                         }`}>
                         <ReactMarkdown
+                          // eslint-disable-next-line react/no-children-prop
                           children={message.content}
                           remarkPlugins={[remarkGfm]}
                           components={{
                             code({
+                              // eslint-disable-next-line @typescript-eslint/no-unused-vars
                               node,
                               inline,
+                              // eslint-disable-next-line @typescript-eslint/no-unused-vars
                               className,
                               children,
                               ...props

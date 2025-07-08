@@ -83,6 +83,8 @@ const FeatureCard = ({
 };
 
 const JobSeekersSection = () => {
+  // TODO: Remove this line if not needed
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [api, setApi] = useState<any>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const plugin = Autoplay({ delay: 4000, stopOnInteraction: true });
