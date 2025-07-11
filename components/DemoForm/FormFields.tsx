@@ -20,17 +20,17 @@ import { UseFormReturn } from "react-hook-form";
 
 export function FormFields({
   form,
-  jobRoles,
+  inquiryOptions,
 }: {
   form: UseFormReturn<{
     firstName: string;
     lastName: string;
     email: string;
-    phone?: string;
-    jobRole: string;
+    phoneNumber?: string;
+    inquiryType: string;
     message: string;
   }>;
-  jobRoles: string[];
+  inquiryOptions: string[];
 }) {
   return (
     <>
@@ -91,7 +91,7 @@ export function FormFields({
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-semantic-white flex items-center">
-                <label>Work Email</label>
+                <label>Email</label>
                 <Asterisk className="w-4 h-4 text-red-500" />
               </FormLabel>
               <FormControl>
@@ -108,7 +108,7 @@ export function FormFields({
 
         <FormField
           control={form.control}
-          name="phone"
+          name="phoneNumber"
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-semantic-white flex items-center">
@@ -128,11 +128,11 @@ export function FormFields({
 
       <FormField
         control={form.control}
-        name="jobRole"
+        name="inquiryType"
         render={({ field }) => (
           <FormItem>
             <FormLabel className="text-semantic-white flex items-center">
-              <label>Job Role</label>
+              <label>Inquiry Type</label>
               <Asterisk className="w-4 h-4 text-red-500" />
             </FormLabel>
             <FormControl>
@@ -142,17 +142,17 @@ export function FormFields({
                 defaultValue="">
                 <SelectTrigger className="bg-semantic-white placeholder-gray-500">
                   <SelectValue
-                    placeholder="Select your job role"
+                    placeholder="Choose an option"
                     className="placeholder-gray-500"
                   />
                 </SelectTrigger>
                 <SelectContent className="bg-semantic-white">
-                  {jobRoles.map((role) => (
+                  {inquiryOptions.map((option) => (
                     <SelectItem
-                      key={role}
-                      value={role}
+                      key={option}
+                      value={option}
                       className="hover:bg-gray-200">
-                      {role}
+                      {option}
                     </SelectItem>
                   ))}
                 </SelectContent>

@@ -124,6 +124,8 @@ export default {
         oswald: ["Oswald", "sans-serif"],
         anton: ["Anton", "sans-serif"],
         openSans: ["Open Sans", "sans-serif"],
+        bebasNeue: ["Bebas Neue", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },

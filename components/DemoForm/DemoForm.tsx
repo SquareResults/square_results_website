@@ -25,7 +25,13 @@ export function DemoForm({
 }) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const jobRoles = ["Hiring Partner", "Job Seeker", "Other"];
+  const inquiryOptions = [
+    "Hiring Partner",
+    "Job Seeker",
+    "Web Portfolio",
+    "Demo Meeting",
+    "Other (Explain below)",
+  ];
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
@@ -33,8 +39,8 @@ export function DemoForm({
       firstName: "",
       lastName: "",
       email: "",
-      phone: "",
-      jobRole: "",
+      phoneNumber: "",
+      inquiryType: "",
       message: "",
     },
   });
@@ -53,7 +59,7 @@ export function DemoForm({
   async function onSubmit(values: FormSchema) {
     setIsSubmitting(true);
     try {
-      const formLink = `https://formsubmit.co/ajax/${process.env.FORM_SUBMIT_TEST}`;
+      const formLink = `https://squareresults-be.onrender.com/contactus`;
       await fetch(formLink, {
         method: "POST",
         headers: {
@@ -124,7 +130,7 @@ export function DemoForm({
               id="myForm"
               onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-4 md:col-span-2">
-              <FormFields form={form} jobRoles={jobRoles} />
+              <FormFields form={form} inquiryOptions={inquiryOptions} />
               <div className="flex gap-4">
                 <Button
                   type="submit"
