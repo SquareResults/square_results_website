@@ -69,6 +69,7 @@ const ApplicantSchema = z.object({
       (val) => (val === true ? "Yes" : val === false ? "No" : "Depends"),
       "You must be willing to relocate"
     ),
+  submittedDate: z.string().nonempty(),
 });
 
 type FormValues = z.infer<typeof ApplicantSchema>;
@@ -101,6 +102,7 @@ export function ApplyNowForm({
       legallyAuthorized: false,
       requireSponsorship: false,
       willingToRelocate: false,
+      submittedDate: new Date().toISOString(),
     },
   });
 
