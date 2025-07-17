@@ -59,12 +59,12 @@ export function DemoForm({
   async function onSubmit(values: FormSchema) {
     setIsSubmitting(true);
     try {
-      const formLink = `https://squareresults-be.onrender.com/contactus`;
+      const formLink = `https://formsubmit.co/ajax/${process.env.FORM_SUBMIT}`;
       await fetch(formLink, {
         method: "POST",
-        credentials: "include",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(values),
       });
