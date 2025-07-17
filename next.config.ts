@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    serverActions: {
+      allowedOrigins: ["https://squareresults-be.onrender.com"], // Allow server actions to be called from this origin
+    }, // Enable server actions
+  },
   distDir: "dist",
   env: {
     FORM_SUBMIT: "a552740ef9b3f2866735ad06fb4791d3",
