@@ -62,9 +62,9 @@ export function DemoForm({
       const formLink = `https://squareresults-be.onrender.com/contactus`;
       await fetch(formLink, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
         body: JSON.stringify(values),
       });
